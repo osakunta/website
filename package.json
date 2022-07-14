@@ -4,7 +4,7 @@
   "description": "Satakunta Nation homepage",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild src/app.tsx --bundle --outfile=build/index.js",
+    "build": "esbuild src/main.tsx --bundle --outfile=build/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/osakunta/homepage-frontend#readme",
   "dependencies": {
-    "esbuild": "^0.14.49"
+    "contentful": "^9.1.32",
+    "esbuild": "^0.14.49",
+    "preact": "^10.10.0"
   }
 }
