@@ -286,7 +286,7 @@
 
   // src/components/App.tsx
   var App = () => {
-    return /* @__PURE__ */ h("div", null, "Osakunte");
+    return /* @__PURE__ */ h("div", null, "Satakuntalainen Osakunta on Helsingin seudulla opiskelevien satakuntalaisten ja satakuntalaismielisten korkeakouluopiskelijoiden yhteis\xF6. Tarjoamme j\xE4senillemme toimintaa, tapahtumia, palveluita ja kodin keskell\xE4 Kamppia.");
   };
   var App_default = App;
 
