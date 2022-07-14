@@ -1,9 +1,9 @@
-name: Deploy staging to GitHub Pages
+name: Deploy main to GitHub Pages
 
 on:
   push:
     branches:
-      - "staging"
+      - "main"
 
 jobs:
   cd:
