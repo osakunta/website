@@ -1,25 +1,30 @@
 {
-  "name": "homepage-frontend",
-  "version": "1.0.0",
-  "description": "Satakunta Nation homepage",
-  "main": "index.js",
+  "name": "homepage",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
   "scripts": {
-    "build": "esbuild src/main.tsx --bundle --outfile=build/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/osakunta/homepage-frontend.git"
-  },
-  "author": "",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/osakunta/homepage-frontend/issues"
-  },
-  "homepage": "https://github.com/osakunta/homepage-frontend#readme",
+  "devDependencies": {},
   "dependencies": {
-    "contentful": "^9.1.32",
-    "esbuild": "^0.14.49",
-    "preact": "^10.10.0"
-  }
+    "@strapi/strapi": "4.2.3",
+    "@strapi/plugin-users-permissions": "4.2.3",
+    "@strapi/plugin-i18n": "4.2.3",
+    "better-sqlite3": "7.4.6"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "fb89f4c8-9ef6-4f10-bb31-230d24d1f89b"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
 }
