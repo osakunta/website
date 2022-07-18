@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "nav_bars",
+  "info": {
+    "singularName": "nav-bar",
+    "pluralName": "nav-bars",
+    "displayName": "NavBar",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "groups": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::nav-bar-group.nav-bar-group"
+    }
+  }
+}

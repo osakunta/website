@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -16,5 +20,9 @@ body {
   --secondary-color-brown: rgb(201, 180, 140);
   --secondary-color-pink: rgb(255, 204, 203);
   --secondary-color-grey: rgb(241, 243, 244);
+
+}
+
+.main {
 
 }
