@@ -7,10 +7,10 @@ export type LayoutProps = React.PropsWithChildren<{
 
 const Layout: React.FC<LayoutProps> = ({children, navBarProps}) => {
     return (
-        <>
+        <div className="min-h-screen text-grey-100 bg-grey-900">
             <NavBar {...navBarProps} />
             <Main>{children}</Main>
-        </>
+        </div>
     )
 }
 

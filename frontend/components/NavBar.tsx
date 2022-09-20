@@ -1,44 +1,52 @@
-import { Menu, MenuButton, MenuLink, MenuList } from "@reach/menu-button"
-import "@reach/menu-button/styles.css"
+import { Menu } from "@headlessui/react"
 import React from "react"
-import styles from '../styles/NavBar.module.css'
+import Logo from "./svg/Logo.svg"
 
 type MenuItem = {
     text: string
     link: string
+    uid: string
 }
 
 export type NavBarProps = {
     menus: {
         text: string
         items: MenuItem[]
+        uid: string
     }[]
 }
 
-const NavBar: React.FC<NavBarProps> = ({menus}) => {
+const NavBar: React.FC<NavBarProps> = ({ menus }) => {
     return (
-        <header className={styles.container}>
+        <header className="flex justify-start p-4 max-h-32">
+            <Logo className="fill-blue-300 max-w-sm" />
             <nav>
-                <Menu>
-                    {menus.map(
-                        ({ text, items }) => (
-                            <>
-                                <MenuButton>
-                                    {text}
-                                </MenuButton>
-                                <MenuList>
-                                    {items.map(
-                                        ({ text, link }) => (
-                                            <MenuLink href={link}>
-                                                {text}
-                                            </MenuLink>
-                                        )
-                                    )}
-                                </MenuList>
-                            </>
-                        )
-                    )}
-                </Menu>
+                {menus.map(
+                    ({ text, items, uid }) => (
+                        <Menu key={uid}>
+                            {({ open }) => (
+                                <>
+                                    <Menu.Button className="px-2 py-8">
+                                        {text}
+                                    </Menu.Button>
+                                    <Menu.Items className="flex flex-col absolute">
+                                        {items.map(
+                                            ({ text, link, uid }) => (
+                                                <Menu.Item key={uid}>
+                                                    {({ active }) => (
+                                                        <a className={`p-2`} href={link}>
+                                                            {text}
+                                                        </a>
+                                                    )}
+                                                </Menu.Item>
+                                            )
+                                        )}
+                                    </Menu.Items>
+                                </>
+                            )}
+                        </Menu>
+                    )
+                )}
             </nav>
         </header>
     )
