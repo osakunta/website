@@ -15,7 +15,7 @@ COPY . .
 RUN npm run build
 
 
-FROM node:16-alpine as runner
+FROM node:16-alpine as prod
 WORKDIR /usr/app
 
 ENV NEXT_TELEMETRY_DISABLED 1
