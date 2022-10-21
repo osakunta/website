@@ -1,8 +1,11 @@
 services:
   frontend:
-    image: node:alpine
+    build:
+      context: ./frontend
+      target: builder
     volumes:
       - ./frontend:/usr/app
+      - ~/.config/gcloud:/root/.config/gcloud
     ports:
       - 3000:3000
     command: sh -c "npm install && npm run dev"
