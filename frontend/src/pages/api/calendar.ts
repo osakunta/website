@@ -28,5 +28,5 @@ export default async function handler(
         singleEvents: true
     })
     
-    res.status(200).json(result.data)
+    res.status(200).json(result.data.items)
 }

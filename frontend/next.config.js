@@ -1,9 +1,4 @@
 /** @type {import('next').NextConfig} */
-const withTM = require("next-transpile-modules")([
-  "@fullcalendar/common",
-  "@fullcalendar/daygrid",
-  "@fullcalendar/timegrid"
-])
 
 const nextConfig = {
   reactStrictMode: true,
@@ -19,4 +14,4 @@ const nextConfig = {
   output: "standalddone"
 }
 
-module.exports = withTM(nextConfig)
+module.exports = nextConfig
