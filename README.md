@@ -1,4 +1,4 @@
-# homepage - The new home page for Satakunta Nation
+# website - The new website for Satakunta Nation
 
 ## Design & prototyping
 
