@@ -1,23 +1,13 @@
-import FullCalendar from "@fullcalendar/react"
-import dayGridPlugin from "@fullcalendar/daygrid"
-import resourceTimegrid from "@fullcalendar/resource-timegrid"
 import React from 'react';
+import dynamic from "next/dynamic";
 
+const DynamicCalendar = dynamic(() => import("../components/Calendar"), {ssr: false})
 
 const Calendar: React.FC = () => {
     
     return (
-    <div style={{width: "800px", height: "600px"}}>
-
-     <FullCalendar
-        plugins={[ dayGridPlugin, resourceTimegrid ]}
-        initialView="resourceTimeGridDay"
-        schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
-        events="/api/calendar"
-        resources={[
-          { title: 'event 1', date: '2022-10-10' },
-          { title: 'event 2', date: '2022-10-11' }
-        ]} />
+    <div style={{width: "1600px", height: "1200px"}}>
+        <DynamicCalendar />
     </div>)
 
 }

@@ -10,8 +10,7 @@ type HomeProps = {
 const Home: NextPage<HomeProps> = ({layoutProps}) => {
   const id = "1FAIpQLSdn2Rp4nWnjQDaJOXL-ylMTYnT_F2wrHaX7kVM98RKbbAJzVQ"
   return (
-    <Layout {...layoutProps}>
-    <div className="flex flex-wrap justify-center items-start gap-16 w-full p-10 font-normal bg-grey-900 text-grey-100">
+    <Layout {...layoutProps}> <div className="flex flex-wrap justify-center items-start gap-16 w-full p-10 font-normal bg-grey-900 text-grey-100">
       <Card
         image={asuntolaImage.src}
         title="Asuntola"
