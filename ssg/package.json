@@ -1,0 +1,26 @@
+{
+  "scripts": {
+    "build": "eleventy --input=src/site",
+    "dev": "npm-run-all dev:*",
+    "dev:eleventy": "eleventy --input=src/site --serve",
+    "dev:tailwind": "tailwindcss --input src/css/main.css --output _site/main.css --watch",
+    "prettier": "prettier --write **/*.{js,njk,html}"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.0-canary.16",
+    "@11ty/eleventy-plugin-webc": "^0.8.1",
+    "@11ty/is-land": "^3.0.0",
+    "@fullcalendar/core": "^6.0.2",
+    "@fullcalendar/google-calendar": "^6.0.0",
+    "esbuild": "^0.16.8",
+    "fullcalendar-scheduler": "^6.0.2",
+    "npm-run-all": "^4.1.5",
+    "preact": "^10.11.3",
+    "prettier": "^2.8.1",
+    "prettier-plugin-tailwindcss": "^0.2.1",
+    "react-big-calendar": "^1.5.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
