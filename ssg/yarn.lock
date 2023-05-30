@@ -33,6 +33,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@11ty/eleventy-dev-server@npm:^1.0.3":
+  version: 1.0.4
+  resolution: "@11ty/eleventy-dev-server@npm:1.0.4"
+  dependencies:
+    "@11ty/eleventy-utils": ^1.0.1
+    chokidar: ^3.5.3
+    debug: ^4.3.4
+    dev-ip: ^1.0.1
+    finalhandler: ^1.2.0
+    mime: ^3.0.0
+    minimist: ^1.2.8
+    morphdom: ^2.7.0
+    please-upgrade-node: ^3.2.0
+    ssri: ^8.0.1
+    ws: ^8.13.0
+  bin:
+    eleventy-dev-server: cmd.js
+  checksum: 82c6dc42ebf78b8859af531f5f09012d7194ec6be627b185212c0f4363298e16c5d86866ac87a249ac2afb979f341e57cc85ef46778eb0bbefd8d59c86334602
+  languageName: node
+  linkType: hard
+
 "@11ty/eleventy-plugin-webc@npm:^0.8.1":
   version: 0.8.1
   resolution: "@11ty/eleventy-plugin-webc@npm:0.8.1"
@@ -52,12 +73,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@11ty/eleventy@npm:^2.0.0-canary.18":
-  version: 2.0.0-canary.24
-  resolution: "@11ty/eleventy@npm:2.0.0-canary.24"
+"@11ty/eleventy@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@11ty/eleventy@npm:2.0.0"
   dependencies:
     "@11ty/dependency-tree": ^2.0.1
-    "@11ty/eleventy-dev-server": ^1.0.0-canary.14
+    "@11ty/eleventy-dev-server": ^1.0.3
     "@11ty/eleventy-utils": ^1.0.1
     "@iarna/toml": ^2.2.5
     "@sindresorhus/slugify": ^1.1.2
@@ -98,7 +119,7 @@ __metadata:
     slugify: ^1.6.5
   bin:
     eleventy: cmd.js
-  checksum: 6b4e137f026428a444fbe5e50abae8ee55e0d4beb3f65d5fce30243c32c45220db8029a809c52da583f3e1cb37f916474e12a8b500521b233afc3be0076e9c86
+  checksum: 3a1fabbda86c2e3ca60e2e04104af51446e94b8f22f611cd094b33faa8e9082e1dcccf44e983e76397177484b41c9ab1d4ad04a44d0099a136a8c194b4325998
   languageName: node
   linkType: hard
 
@@ -1125,6 +1146,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"commander@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "commander@npm:10.0.0"
+  checksum: 9f6495651f878213005ac744dd87a85fa3d9f2b8b90d1c19d0866d666bda7f735adfd7c2f10dfff345782e2f80ea258f98bb4efcef58e4e502f25f883940acfd
+  languageName: node
+  linkType: hard
+
 "commander@npm:^5.1.0":
   version: 5.1.0
   resolution: "commander@npm:5.1.0"
@@ -1674,7 +1702,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"finalhandler@npm:^1.1.2":
+"finalhandler@npm:^1.1.2, finalhandler@npm:^1.2.0":
   version: 1.2.0
   resolution: "finalhandler@npm:1.2.0"
   dependencies:
@@ -2451,13 +2479,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"liquidjs@npm:^10.3.3, liquidjs@npm:^10.4.0":
+"liquidjs@npm:^10.3.3":
   version: 10.4.0
   resolution: "liquidjs@npm:10.4.0"
   bin:
     liquid: bin/liquid.js
     liquidjs: bin/liquid.js
   checksum: 71b93691b0ca92b2c6e287fa50a3ef67ec772b39a442d0129928a1350430ccf70f381ac1d4a10eb70840a1e443e2e601df559eb0859f939016b71b70f3858f4c
+  languageName: node
+  linkType: hard
+
+"liquidjs@npm:^10.4.0":
+  version: 10.7.0
+  resolution: "liquidjs@npm:10.7.0"
+  dependencies:
+    commander: ^10.0.0
+  bin:
+    liquid: bin/liquid.js
+    liquidjs: bin/liquid.js
+  checksum: 68975bd81015a6254de7117b5345bbb1213cb184c49986f0b29caecd71c987982175a3631cbde1a37eab60be5ac919847cf04ca2dcc49e21e73bb2ea6d17f427
   languageName: node
   linkType: hard
 
@@ -2564,9 +2604,9 @@ __metadata:
   linkType: hard
 
 "luxon@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "luxon@npm:3.2.1"
-  checksum: 3fa3def2c5f5d3032b4c46220c4da8aeb467ac979888fc9d2557adcd22195f93516b4ad5909a75862bec8dc6ddc0953b0f38e6d2f4a8ab8450ddc531a83cf20d
+  version: 3.3.0
+  resolution: "luxon@npm:3.3.0"
+  checksum: 50cf17a0dc155c3dcacbeae8c0b7e80db425e0ba97b9cbdf12a7fc142d841ff1ab1560919f033af46240ed44e2f70c49f76e3422524c7fc8bb8d81ca47c66187
   languageName: node
   linkType: hard
 
@@ -2700,6 +2740,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"minimist@npm:^1.2.8":
+  version: 1.2.8
+  resolution: "minimist@npm:1.2.8"
+  checksum: 75a6d645fb122dad29c06a7597bddea977258957ed88d7a6df59b5cd3fe4a527e253e9bbf2e783e4b73657f9098b96a5fe96ab8a113655d4109108577ecf85b0
+  languageName: node
+  linkType: hard
+
 "minipass-collect@npm:^1.0.2":
   version: 1.0.2
   resolution: "minipass-collect@npm:1.0.2"
@@ -2826,6 +2873,13 @@ __metadata:
   version: 2.6.1
   resolution: "morphdom@npm:2.6.1"
   checksum: 8930281b27df2c918a168872a650931d92ac728b9177ed6d74779acf40a4bf6a1c62482a267496a1007f9658d0c6a4125e7080ec1194c6b937ff55f903235ad0
+  languageName: node
+  linkType: hard
+
+"morphdom@npm:^2.7.0":
+  version: 2.7.0
+  resolution: "morphdom@npm:2.7.0"
+  checksum: de18e5b04b0a6222913e70d7a578eb0c15156a4501db3e8d9620ce9e5d998cd926418901b49726b6cc9344b05ea2df945ef77b0b49e3949f818c48d54f43d3c7
   languageName: node
   linkType: hard
 
@@ -3742,7 +3796,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@11ty/eleventy": ^2.0.0-canary.18
+    "@11ty/eleventy": ^2.0.0
     "@11ty/eleventy-plugin-webc": ^0.8.1
     "@11ty/is-land": ^3.0.0
     "@fullcalendar/core": ^6.0.2
@@ -4358,6 +4412,21 @@ __metadata:
   version: 1.0.2
   resolution: "wrappy@npm:1.0.2"
   checksum: 159da4805f7e84a3d003d8841557196034155008f817172d4e986bd591f74aa82aa7db55929a54222309e01079a65a92a9e6414da5a6aa4b01ee44a511ac3ee5
+  languageName: node
+  linkType: hard
+
+"ws@npm:^8.13.0":
+  version: 8.13.0
+  resolution: "ws@npm:8.13.0"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ">=5.0.2"
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: 53e991bbf928faf5dc6efac9b8eb9ab6497c69feeb94f963d648b7a3530a720b19ec2e0ec037344257e05a4f35bd9ad04d9de6f289615ffb133282031b18c61c
   languageName: node
   linkType: hard
 

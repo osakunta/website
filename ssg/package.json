@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "run-s -c clean 'build:*'",
+    "build": "run-s -lnc clean 'build:*'",
     "build:eleventy": "eleventy --input=src/site",
     "build:tailwind": "tailwindcss --input src/css/main.css --output _site/main.css --minify",
     "dev": "run-p -l 'dev:*'",
@@ -10,7 +10,7 @@
     "prettier": "prettier --write **/*.{js,njk,html}"
   },
   "dependencies": {
-    "@11ty/eleventy": "^2.0.0-canary.18",
+    "@11ty/eleventy": "^2.0.0",
     "@11ty/eleventy-plugin-webc": "^0.8.1",
     "@11ty/is-land": "^3.0.0",
     "@fullcalendar/core": "^6.0.2",

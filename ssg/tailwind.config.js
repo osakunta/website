@@ -2,7 +2,14 @@
 module.exports = {
   content: ["**/*.njk"],
   theme: {
-    extend: {},
+    fontFamily: {
+      goblin: ["Goblin One"],
+    },
+    extend: {
+      colors: {
+        "sato-yellow": "#F0CA58",
+      },
+    },
   },
   plugins: [],
 };

@@ -2,6 +2,79 @@
 layout: layouts/layout.njk
 ---
 
-<h1 class="text-3xl font-bold underline">Satakuntalainen osakunta</h1>
-<p></p>
-{% include "components/calendar.html" %}
+{#%- from "components/calendar.njk" import calendar -%#}
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Goblin+One&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+/>
+
+{# header #}
+<div class="flex items-center justify-start p-2">
+  <h1 class="font-goblin text-lg leading-6">Satakuntalainen Osakunta</h1>
+  <span class="material-symbols-outlined">menu</span>
+</div>
+
+<img src="./img/homebanner.png" />
+
+<div class="mt-4 flex flex-col gap-2 p-2">
+  <h1 class="font-goblin text-xl leading-6">
+    Kivoja tapahtumia, ystäviä ja koti Kampissa
+  </h1>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur.
+  </p>
+  <button
+    class="align-center flex flex-row gap-4 bg-black px-4 py-3 text-white"
+  >
+    Tietoja osakunnasta
+    <span class="material-symbols-outlined"> east </span>
+  </button>
+</div>
+
+<img class="my-4" src="./img/hattu.png" />
+<h3 class="text-l p-2  font-goblin leading-6">
+    Tutustu osakuntalaisuuden etuihin:
+  </h3>
+<div class="flex flex-col p-2 gap-6">
+  
+  {% for card in [{ 
+    img: "card1.png",
+    title: "JÄSENENÄ ON KIVA OLLA", 
+    body: " Pää olkapää peppu polvet varpaat polvet varpaat ", 
+    button: "Liity jäseneksi" },
+    { 
+    img: "card2.png",
+    title: "TAPAHTUMAT", 
+    body: "No johan on monenmoista tapahtumaa, diipa daapa tekstiä", 
+    button: "Lue lisää" }, { 
+    img: "card3.png",
+    title: "YHTEISÖLLISTÄ ASUMISTA", 
+    body: "No johan on monenmoisia kämppiksiä. Kenen kengät eteisessä? Kuka soittaa torvea? Kuka paistoi makkaraa yöllä kongin keittiössä?", 
+    button: "Hae asuntoa" }
+    ] %}
+  <div class="bg-sato-yellow p-2 shadow-md flex flex-col gap-2 text-smi items-start">
+    <img class="w-full" src="./img/{{ card.img }}" />
+    <h4 class="font-bold">{{ card.title }}</h4>
+    <p class="">{{ card.body }}</p>
+    <button class="bg-white text-black px-4 py-3 flex flex-row align-center gap-4 ">
+      <span class="font-bold">
+{{ card.button }}
+      </span>
+      <span class="material-symbols-outlined"> east </span>
+    </button>
+  </div>
+  {% endfor %}
+</div>
+
+{#{ calendar() }#}

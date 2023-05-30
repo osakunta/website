@@ -1,5 +1,4 @@
 const esbuild = require("esbuild");
-const pluginWebc = require("@11ty/eleventy-plugin-webc");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 
 module.exports = (config) => {
@@ -20,8 +19,7 @@ module.exports = (config) => {
   config.addWatchTarget("./src");
   config.addWatchTarget("./src/site");
 
-  config.addPlugin(pluginWebc, {
-    components: "./src/site/_includes/components/**/*.webc",
-  });
+  config.addPassthroughCopy({"./src/img": "img"});
+
   config.addPlugin(EleventyRenderPlugin);
 };
