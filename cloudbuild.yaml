@@ -2,10 +2,12 @@ steps:
   - name: node
     entrypoint: yarn
     args: ['install']
+    dir: "./ssg"
 
   - name: node
     entrypoint: yarn
     args: ['build']
+    dir: "./ssg"
 
   - name: gcr.io/cloud-builders/gsutil
     args: ["-m", "rsync", "-r", "-c", "-d", "./ssg/_site", "gs://sato-website"]
