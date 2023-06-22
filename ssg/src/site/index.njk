@@ -21,6 +21,8 @@ layout: layouts/layout.njk
   <span class="material-symbols-outlined">menu</span>
 </div>
 
+<div>{{ "home.welcome" }}</div>
+
 <img src="./img/homebanner.png" />
 
 <div class="mt-4 flex flex-col gap-2 p-2">
@@ -43,38 +45,33 @@ layout: layouts/layout.njk
 </div>
 
 <img class="my-4" src="./img/hattu.png" />
-<h3 class="text-l p-2  font-goblin leading-6">
-    Tutustu osakuntalaisuuden etuihin:
-  </h3>
-<div class="flex flex-col p-2 gap-6">
-  
-  {% for card in [{ 
-    img: "card1.png",
-    title: "JÄSENENÄ ON KIVA OLLA", 
-    body: " Pää olkapää peppu polvet varpaat polvet varpaat ", 
-    button: "Liity jäseneksi" },
-    { 
-    img: "card2.png",
-    title: "TAPAHTUMAT", 
-    body: "No johan on monenmoista tapahtumaa, diipa daapa tekstiä", 
-    button: "Lue lisää" }, { 
-    img: "card3.png",
-    title: "YHTEISÖLLISTÄ ASUMISTA", 
-    body: "No johan on monenmoisia kämppiksiä. Kenen kengät eteisessä? Kuka soittaa torvea? Kuka paistoi makkaraa yöllä kongin keittiössä?", 
-    button: "Hae asuntoa" }
-    ] %}
-  <div class="bg-sato-yellow p-2 shadow-md flex flex-col gap-2 text-smi items-start">
+<h3 class="text-l p-2 font-goblin leading-6">
+  Tutustu osakuntalaisuuden etuihin:
+</h3>
+<div class="flex flex-col gap-6 p-2">
+  {% for card in [{ img: "card1.png", title: "JÄSENENÄ ON KIVA OLLA", body: "
+  Pää olkapää peppu polvet varpaat polvet varpaat ", button: "Liity jäseneksi"
+  }, { img: "card2.png", title: "TAPAHTUMAT", body: "No johan on monenmoista
+  tapahtumaa, diipa daapa tekstiä", button: "Lue lisää" }, { img: "card3.png",
+  title: "YHTEISÖLLISTÄ ASUMISTA", body: "No johan on monenmoisia kämppiksiä.
+  Kenen kengät eteisessä? Kuka soittaa torvea? Kuka paistoi makkaraa yöllä
+  kongin keittiössä?", button: "Hae asuntoa" } ] %}
+  <div
+    class="text-smi flex flex-col items-start gap-2 bg-sato-yellow p-2 shadow-md"
+  >
     <img class="w-full" src="./img/{{ card.img }}" />
     <h4 class="font-bold">{{ card.title }}</h4>
     <p class="">{{ card.body }}</p>
-    <button class="bg-white text-black px-4 py-3 flex flex-row align-center gap-4 ">
-      <span class="font-bold">
-{{ card.button }}
-      </span>
+    <button
+      class="align-center flex flex-row gap-4 bg-white px-4 py-3 text-black"
+    >
+      <span class="font-bold"> {{ card.button }} </span>
       <span class="material-symbols-outlined"> east </span>
     </button>
   </div>
   {% endfor %}
 </div>
+
+<div>{{ cms.text | dump }}</div>
 
 {#{ calendar() }#}

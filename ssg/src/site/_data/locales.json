@@ -1,0 +1,19 @@
+[
+    {
+        "lang": "fi",
+        "dir": "ltr",
+        "locale": "fi"
+    },
+    
+    {
+        "lang": "en",
+        "dir": "ltr",
+        "locale": "en"
+    },
+    
+    {
+        "lang": "sv",
+        "dir": "ltr",
+        "locale": "sv"
+    }
+]
