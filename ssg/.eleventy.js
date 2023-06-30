@@ -1,5 +1,7 @@
+require('dotenv').config();
 const esbuild = require("esbuild");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
+
 
 module.exports = (config) => {
   config.on("eleventy.after", () => {
