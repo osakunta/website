@@ -1,7 +1,15 @@
+---
+  pagination:
+    data: locales
+    size: 1
+    alias: locale
+  permalink: "{{ locale.lang }}/{{ page.filePathStem }}.html"
+---
+
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8" lang="{{ locale.lang }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="main.css" rel="stylesheet" />
   </head>
