@@ -4,11 +4,10 @@
     "build:eleventy": "eleventy --input=src/site",
     "build:tailwind": "tailwindcss --input src/css/main.css --output _site/main.css --minify",
     "dev": "run-p -l 'dev:*'",
-    "dev:eleventy": "NODE_OPTIONS='--stack-trace-limit=10000' eleventy --input=src/site --serve",
+    "dev:eleventy": "eleventy --input=src/site --serve",
     "dev:tailwind": "tailwindcss --input src/css/main.css --output _site/main.css --watch",
     "clean": "rimraf _site/*",
-    "prettier": "prettier --write **/*.{js,ts,njk,html}",
-    "fetch-i18n": "node scripts/getTranslations.js > ./src/site/_data/i18n.json"
+    "prettier": "prettier --write **/*.{js,ts,njk,html}"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.0",
