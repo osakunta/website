@@ -1,13 +1,19 @@
 steps:
   - name: node
     entrypoint: yarn
-    args: ['install']
+    args: ["install"]
     dir: "./ssg"
 
   - name: node
     entrypoint: yarn
-    args: ['build']
+    args: ["build"]
     dir: "./ssg"
+    secretEnv: ["CMS_URL"]
 
   - name: gcr.io/cloud-builders/gsutil
     args: ["-m", "rsync", "-r", "-c", "-d", "./ssg/_site", "gs://sato-website"]
+
+availableSecrets:
+  secretManager:
+    - versionName: projects/$PROJECT_ID/secrets/CMS_URL/versions/latest
+      env: "CMS_URL"
