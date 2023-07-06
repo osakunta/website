@@ -60,6 +60,10 @@ const fetchI18n = async () => {
 };
 
 module.exports = (config) => {
+  if (process.env.PATH_PREFIX) {
+    console.log("BUILDING TO PREFIX " + process.env.PATH_PREFIX);
+  }
+
   config.on("eleventy.before", fetchI18n);
 
   config.on("eleventy.after", () => {
@@ -93,4 +97,8 @@ module.exports = (config) => {
     i18n.setLocale(this.page.locale);
     return content.replace(/t:([\w:]+)/g, (_, key) => i18n.__(key));
   });
+
+  return {
+    pathPrefix: process.env.PATH_PREFIX || "",
+  };
 };
