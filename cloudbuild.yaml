@@ -1,9 +1,11 @@
 steps:
   - name: node
+    entrypoint: yarn
     args: [install]
     dir: "./ssg"
 
   - name: node
+    entrypoint: yarn
     args: [build]
     dir: "./ssg"
     secretEnv: ["CMS_URL"]
