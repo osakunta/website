@@ -6,7 +6,7 @@ steps:
 
   - name: "gcr.io/cloud-builders/yarn"
     args:
-      - install
+      - build
     dir: "./ssg"
     secretEnv: ["CMS_URL"]
     env:
