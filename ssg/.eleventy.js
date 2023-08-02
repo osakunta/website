@@ -92,8 +92,12 @@ module.exports = (config) => {
 
   const i18n = new I18n({
     locales: ["fi", "en", "sv"],
+    defaultLocale: "fi",
     directory: LOCALES_DIR,
     updateFiles: false,
+    logErrorFn: console.error,
+    logWarnFn: console.warn,
+    logDebugFn: console.debug,
   });
 
   config.addTransform("translate", async function (content) {
