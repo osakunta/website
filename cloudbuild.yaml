@@ -1,12 +1,10 @@
 steps:
-  - name: "gcr.io/cloud-builders/yarn"
-    args:
-      - install
+  - name: node
+    args: [install]
     dir: "./ssg"
 
-  - name: "gcr.io/cloud-builders/yarn"
-    args:
-      - build
+  - name: node
+    args: [build]
     dir: "./ssg"
     secretEnv: ["CMS_URL"]
     env:
