@@ -7,8 +7,8 @@ steps:
         "-r",
         "-c",
         "-d",
-        "${yarn config get cacheDir}",
-        "gs://sato-build-cache/website/yarn-cache",
+        ".yarn/cache",
+        "gs://sato-build-cache/website/.yarn/cache",
       ]
 
   - name: "gcr.io/cloud-builders/yarn"
@@ -35,8 +35,8 @@ steps:
         "-r",
         "-c",
         "-d",
-        "gs://sato-build-cache/website/yarn-cache",
-        "${yarn config get cacheDir}",
+        "gs://sato-build-cache/website/.yarn/cache",
+        ".yarn/cache",
       ]
 
 availableSecrets:
