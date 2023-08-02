@@ -1,4 +1,7 @@
 steps:
+  - name: bash
+    script: "mkdir ./ssg/yarn-cache"
+
   - name: gcr.io/cloud-builders/gsutil
     allowFailure: true
     args:
@@ -9,7 +12,7 @@ steps:
         "-c",
         "-d",
         "gs://sato-build-cache/website/.yarn/cache",
-        "./ssg/.yarn/cache",
+        "./ssg/yarn-cache",
       ]
 
   - name: "gcr.io/cloud-builders/yarn"
@@ -17,7 +20,7 @@ steps:
       - install
     dir: "./ssg"
     env:
-      - "YARN_CACHE_FOLDER=.yarn/cache"
+      - "YARN_CACHE_FOLDER=yarn-cache"
 
   - name: "gcr.io/cloud-builders/yarn"
     args:
@@ -26,7 +29,7 @@ steps:
     secretEnv: ["CMS_URL"]
     env:
       - "PATH_PREFIX=sato-website"
-      - "YARN_CACHE_FOLDER=.yarn/cache"
+      - "YARN_CACHE_FOLDER=yarn-cache"
 
   - name: gcr.io/cloud-builders/gsutil
     args: ["-m", "rsync", "-r", "-c", "-d", "./ssg/_site", "gs://sato-website"]
@@ -39,7 +42,7 @@ steps:
         "-r",
         "-c",
         "-d",
-        "./ssg/.yarn/cache",
+        "./ssg/yarn-cache",
         "gs://sato-build-cache/website/.yarn/cache",
       ]
 
