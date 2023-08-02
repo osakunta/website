@@ -9,7 +9,7 @@ steps:
         "-c",
         "-d",
         "gs://sato-build-cache/website/.yarn/cache",
-        "./.yarn/cache",
+        "ssg/.yarn/cache",
       ]
 
   - name: "gcr.io/cloud-builders/yarn"
@@ -36,7 +36,7 @@ steps:
         "-r",
         "-c",
         "-d",
-        "./.yarn/cache",
+        "ssg/.yarn/cache",
         "gs://sato-build-cache/website/.yarn/cache",
       ]
 
