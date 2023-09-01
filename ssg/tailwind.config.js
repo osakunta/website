@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["**/*.njk"],
+  content: ["./src/site/**/*.njk"],
   theme: {
     fontFamily: {
       goblin: ["Goblin One"],

@@ -5,5 +5,7 @@
     ],
     "emmet.syntaxProfiles": {
         "nunjucks": "html"
-    }
+    },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

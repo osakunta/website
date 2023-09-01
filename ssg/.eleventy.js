@@ -43,6 +43,8 @@ const fetchI18n = async () => {
     {}
   );
 
+  await fs.mkdir(LOCALES_DIR, { recursive: true });
+
   await fs.writeFile(
     path.join(LOCALES_DIR, "fi.json"),
     JSON.stringify(locales.fi, null, 2)
@@ -90,12 +92,24 @@ module.exports = (config) => {
 
   const i18n = new I18n({
     locales: ["fi", "en", "sv"],
+    defaultLocale: "fi",
     directory: LOCALES_DIR,
+    updateFiles: false,
+    logErrorFn: console.error,
+    logWarnFn: console.warn,
+    logDebugFn: console.debug,
   });
 
   config.addTransform("translate", async function (content) {
     i18n.setLocale(this.page.locale);
-    return content.replace(/t:([\w:]+)/g, (_, key) => i18n.__(key));
+    return content.replace(/t:([\w:]+)/g, (_, key) => {
+      const translation = i18n.__(key);
+      if (translation === undefined) {
+        console.warn("Could not find translation with key " + key);
+        return key;
+      }
+      return translation;
+    });
   });
 
   return {
