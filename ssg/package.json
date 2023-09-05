@@ -1,19 +1,15 @@
 {
   "license": "GPL-3.0-or-later",
   "scripts": {
-
     "eleventy:base": "node -r esbuild-register node_modules/.bin/eleventy",
     "eleventy:build": "yarn eleventy:base --input=src/site",
     "eleventy:dev": "yarn eleventy:base --input=src/site --serve",
-
     "tailwind:base": "tailwindcss --input src/css/main.css --output _site/main.css",
     "tailwind:build": "yarn tailwind:base --minify",
     "tailwind:dev": "yarn tailwind:base --watch",
-
     "clean": "rimraf _site/*",
     "build": "run-s -lnc clean '*:build'",
     "dev": "run-p -l '*:dev'",
-
     "prettier": "prettier --write **/*.{js,ts,njk,html}",
     "prepare": "cd .. && husky install"
   },

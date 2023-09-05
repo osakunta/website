@@ -15,6 +15,11 @@
     <meta charset="UTF-8" lang="{{ locale.lang }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/main.css" rel="stylesheet" />
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,7 +30,7 @@
   </head>
   <body class="font-roboto bg-slate-600">
     <div class="mx-auto flex max-w-[360px] flex-row flex-wrap bg-white">
-      {{ content | safe }}
+      <div class="w-full">{{ content | safe }}</div>
     </div>
   </body>
 </html>

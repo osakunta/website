@@ -1,11 +1,14 @@
 {
-    "prettier.configPath": "./ssg/.prettierrc.json",
-    "prettier.documentSelectors": [
-        "**/*.{njk, js, md}"
-    ],
-    "emmet.syntaxProfiles": {
-        "nunjucks": "html"
-    },
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "prettier.configPath": "./ssg/.prettierrc.json",
+  "prettier.documentSelectors": ["**/*.{njk, js, md}"],
+  "emmet.syntaxProfiles": {
+    "nunjucks": "html"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.associations": {
+    "*.njk": "html"
+  },
+  "html.format.indentHandlebars": true,
+  "html.format.templating": true
 }

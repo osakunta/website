@@ -1,0 +1,254 @@
+{
+  "sections": [
+    {
+      "name": "Osakunta",
+      "contacts": [
+        {
+          "title": "Inspehtori",
+          "names": ["FT Jari Yli-Kauhaluoma"],
+          "email": "inspehtori@satakuntatalo.fi"
+        },
+        {
+          "title": "Kuraattori",
+          "names": ["Maria Djakonowsky"],
+          "email": "kuraattori@satakuntatalo.fi"
+        }
+      ]
+    },
+    {
+      "name": "Hallitus",
+      "contacts": [
+        {
+          "title": "Hallituksen puheenjohtaja",
+          "names": ["Ester Sundström"],
+          "email": "hallituksenpuheenjohtaja@satakuntatalo.fi"
+        },
+        {
+          "title": "Pääsihteeri",
+          "names": ["Katariina Rissa"],
+          "email": "paasihteeri@satakuntatalo.fi"
+        },
+        {
+          "title": "Isäntä",
+          "names": ["Tuomas Honkanen"],
+          "email": "isanta@satakuntatalo.fi"
+        },
+        {
+          "title": "Emäntä",
+          "names": ["Heidi Pajamäki"],
+          "email": "emanta@satakuntatalo.fi"
+        },
+        {
+          "title": "Tiedotussihteeri",
+          "names": ["Henna Heino"],
+          "email": "tiedotussihteeri@satakuntatalo.fi"
+        },
+        {
+          "title": "Jäsenet",
+          "names": [
+            "Mikaela Lindberg",
+            "Emma Miikkulainen",
+            "Patrik Mäkelä",
+            "Afrin Sarasvirta"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Virkailijat",
+      "contacts": [
+        {
+          "title": "Karhunkierroksen päätoimittaja",
+          "names": ["Katarina Jääskeläinen"],
+          "email": "paatoimittaja@satakuntatalo.fi"
+        },
+        {
+          "title": "Taloudenhoitaja",
+          "names": ["Oskari Aapasuo"],
+          "email": "taloudenhoitaja@satakuntatalo.fi"
+        },
+        {
+          "title": "Galleristi",
+          "names": ["Henna Heino"],
+          "email": "galleristi@satakuntatalo.fi"
+        },
+        {
+          "title": "Haronmäen isäntä",
+          "names": ["Jaakko Pasanen", "Elias Tomperi"],
+          "email": "haronmaenisanta@satakuntatalo.fi"
+        },
+        {
+          "title": "Historioitsija",
+          "names": ["Gerda Hermonen"],
+          "email": "historioitsija@satakuntatalo.fi"
+        },
+        {
+          "title": "Juhlamestari",
+          "names": ["Eero Kemppinen"],
+          "email": "juhlamestari@satakuntatalo.fi"
+        },
+        {
+          "title": "Jäsensihteeri",
+          "names": ["Otava Huumarkangas", "Emma Miikkulainen"],
+          "email": "jasensihteeri@satakuntatalo.fi"
+        },
+        {
+          "title": "Kamreeri",
+          "names": ["Ari Kamppikoski"],
+          "email": "kamreeri@satakuntatalo.fi"
+        },
+        {
+          "title": "Kappalainen",
+          "names": ["Linda McFarlane"],
+          "email": "kappalainen@satakuntatalo.fi"
+        },
+        {
+          "title": "Kirjastonhoitaja",
+          "names": ["Olavi Nummisto"],
+          "email": "kirjastonhoitaja@satakuntatalo.fi"
+        },
+        {
+          "title": "Kulttuurisihteeri",
+          "names": ["Viivi Laiho"],
+          "email": "kulttuurisihteeri@satakuntatalo.fi"
+        },
+        {
+          "title": "Laulunjohtajat",
+          "names": ["Katarina Jääskeläinen", "Elias Tomperi"],
+          "email": "laulunjohtaja@satakuntatalo.fi"
+        },
+        {
+          "title": "Mainossihteeri",
+          "names": ["Otava Huumarkangas", "Mikko Höytö"],
+          "email": "mainossihteeri@satakuntatalo.fi"
+        },
+        {
+          "title": "Musiikkihuoneenhoitaja",
+          "names": ["Matleena Kallio", "Olli Vuorisalo"],
+          "email": "musiikkihuoneenhoitaja@satakuntatalo.fi"
+        },
+        {
+          "title": "Opastussihteeri",
+          "names": ["Anni Laiho"],
+          "email": "opastussihteeri@satakuntatalo.fi"
+        },
+        {
+          "title": "Urheiluohjaaja",
+          "names": ["Amin Ibrahim"],
+          "email": "urheiluohjaaja@satakuntatalo.fi"
+        },
+        {
+          "title": "Tietotekniikkavastaava",
+          "names": ["Eero Hakala", "Lennu Vuolanne"],
+          "email": "tietotekniikkavastaava@satakuntatalo.fi"
+        },
+        {
+          "title": "Valokuvaaja",
+          "names": ["Otava Huumarkangas", "Siiri Ketola"],
+          "email": "valokuvaaja@satakuntatalo.fi"
+        },
+        {
+          "title": "Valvontatilintarkastaja",
+          "names": ["Heidi Storberg"],
+          "email": "valvontatilintarkastaja@satakuntatalo.fi"
+        },
+        {
+          "title": "Verkkovastaava",
+          "names": ["Elma Nevala", "Lennu Vuolanne"],
+          "email": "verkkovastaava@satakuntatalo.fi"
+        },
+        {
+          "title": "Yhteiskuntasihteeri",
+          "names": ["Karoliina Vaakanainen"],
+          "email": "yhteiskuntasihteeri@satakuntatalo.fi"
+        },
+        {
+          "title": "Seniorisihteeri",
+          "names": ["Riikka Pasanen"],
+          "email": "seniorisihteeri@satakuntatalo.fi"
+        }
+      ]
+    },
+    {
+      "name": "Kerhot ja muut seurat",
+      "contacts": [
+        {
+          "title": "Akateemisen isäntäseuran pj.",
+          "names": ["Ville Kopio"],
+          "email": "ais-hallitus@satakuntatalo.fi"
+        },
+        {
+          "title": "EVVK:n pj.",
+          "names": ["Lauri Porkka"],
+          "email": "evvknpj@satakuntatalo.fi"
+        },
+        {
+          "title": "Elokuvakerhon pj.",
+          "names": ["Taneli Heinänen"],
+          "email": "elokuvakerhonpj@satakuntatalo.fi"
+        },
+        {
+          "title": "Juristikerhon pj.",
+          "names": ["Niina Lindholm"],
+          "email": "juristikerhonpj@satakuntatalo.fi"
+        },
+        {
+          "title": "Kiva-kerhon pj.",
+          "names": ["Maria Djakonowsky"],
+          "email": "kikenpj@satakuntatalo.fi"
+        },
+        {
+          "title": "Kulinaarikerhon pj.",
+          "names": ["Miliza Paloviita"],
+          "email": "kulinaarikerhonpj@satakuntatalo.fi"
+        },
+        {
+          "title": "Kuoron pj.",
+          "names": ["Tero Alitalo"],
+          "email": "kuoronpuheenjohtaja@satakuntatalo.fi"
+        },
+        {
+          "title": "Lukupiirin pj.",
+          "names": ["Kauri Uljas"],
+          "email": "lukupiirinpj@satakuntatalo.fi"
+        },
+        {
+          "title": "Salakerhon pj.",
+          "names": ["Oskari Aapasuo"],
+          "email": "salakerhonpj@satakuntatalo.fi"
+        },
+        {
+          "title": "Satakunnan Turvan pj.",
+          "names": ["Johannes Pessi"],
+          "email": "satunpj@satakuntatalo.fi"
+        },
+        {
+          "title": "Satakuntalaisen Olutseuran pj.",
+          "names": ["Altti Klemetti"],
+          "email": "sospj@satakuntatalo.fi"
+        },
+        {
+          "title": "Valokuvauskerhon pj.",
+          "names": ["Ilja Pippa"],
+          "email": "valokuvauskerhonpj@satakuntatalo.fi"
+        },
+        {
+          "title": "Satalinnan Säätiön hallituksen opiskelijajäsenet",
+          "names": ["Mikael De Meulder", "Eero Hakala", "Iikka Terho"]
+        },
+        {
+          "title": "Turun ja Porin läänin hallitus",
+          "names": ["Mikaela Lindberg"]
+        },
+        {
+          "title": "HYYn Osakuntalainen Unioni",
+          "names": ["Henna Heino"]
+        },
+        {
+          "title": "Helsingi Raumlaiste Seor",
+          "names": ["Taneli Heinänen"]
+        }
+      ]
+    }
+  ]
+}
