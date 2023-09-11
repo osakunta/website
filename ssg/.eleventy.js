@@ -66,7 +66,9 @@ module.exports = (config) => {
     console.log("BUILDING TO PREFIX " + process.env.PATH_PREFIX);
   }
 
-  config.on("eleventy.before", fetchI18n);
+  config.on("eleventy.before", () =>
+    fetchI18n().catch((e) => console.error("FAILED TO FETCH LOCALES: " + e))
+  );
 
   config.on("eleventy.after", () => {
     return esbuild.build({

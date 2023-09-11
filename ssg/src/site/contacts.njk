@@ -2,8 +2,6 @@
 layout: layouts/layout.njk
 ---
 
-<script src="//unpkg.com/alpinejs" defer></script>
-
 <div
   class="fixed flex h-16 w-[360px] items-center justify-between bg-white px-4 py-2"
 >
@@ -34,15 +32,15 @@ layout: layouts/layout.njk
 
   <div>
     {% for section in sections %}
-    <div x-cloak x-data="{open: false}">
-      <div
-        @click="open = !open"
-        class="flex justify-between border-b-2 border-b-black px-6 py-2 text-lg"
+    <details class="group">
+      <summary
+        class="flex items-center justify-between border-b-2 border-b-black px-6 py-2 text-lg"
       >
         <h3 class="text-lg font-bold">{{section.name}}</h3>
-        <span class="text-lg font-bold">-</span>
-      </div>
-      <ul x-show="open" class="border-b-2 border-b-black py-2">
+        <img class="w-4 group-open:hidden" src="/img/plus.svg" />
+        <img class="hidden w-4 group-open:inline" src="/img/minus.svg" />
+      </summary>
+      <ul class="border-b-2 border-b-black py-2">
         {% for contact in section.contacts %}
         <li class="ml-12">
           <h4 class="text-lg font-bold">{{contact.title}}</h4>
@@ -53,7 +51,7 @@ layout: layouts/layout.njk
         </li>
         {% endfor %}
       </ul>
-    </div>
+    </details>
     {% endfor %}
   </div>
 </div>
