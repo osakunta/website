@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy-fetch": "^4.0.0",
     "@fullcalendar/core": "^6.0.2",
     "@fullcalendar/google-calendar": "^6.0.0",
     "@types/node": "^20.3.2",
