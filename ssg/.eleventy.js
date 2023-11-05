@@ -1,6 +1,5 @@
 require("dotenv").config();
 const esbuild = require("esbuild");
-const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const { I18n } = require("i18n");
 const fs = require("fs").promises;
@@ -47,6 +46,27 @@ module.exports = (config) => {
   if (process.env.PATH_PREFIX) {
     console.log("BUILDING TO PREFIX " + process.env.PATH_PREFIX);
   }
+
+  config.addWatchTarget("./src/components");
+
+  config.on("eleventy.before", ({ runMode }) => {
+    console.log(runMode);
+    console.log("Building components");
+    esbuild.buildSync({
+      entryPoints: ["src/components/Gallery.tsx"],
+      outdir: "_site/components",
+      minify: runMode === "build",
+      bundle: true,
+      loader: {
+        ".woff2": "file",
+        ".woff": "file",
+        ".ttf": "file",
+        ".svg": "file",
+        ".gif": "file",
+      },
+    });
+    console.log("Components built");
+  });
 
   config.addWatchTarget("./src/site");
 
