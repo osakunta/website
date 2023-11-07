@@ -10,7 +10,7 @@
     "clean": "rimraf _site/*",
     "build": "run-s -lnc clean '*:build'",
     "dev": "run-p -l '*:dev'",
-    "prettier": "prettier --write **/*.{js,ts,njk,html}",
+    "prettier": "prettier --write src/**/*.{js,ts,njk,html}",
     "prepare": "cd .. && husky install"
   },
   "dependencies": {
