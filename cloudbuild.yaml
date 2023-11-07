@@ -1,10 +1,9 @@
 steps:
-  - name: node
-    entrypoint: yarn
+  - name: gcr.io/cloud-builders/yarn
     args: [install]
     dir: "./ssg"
 
-  - name: node
+  - name: gcr.io/cloud-builders/yarn
     entrypoint: yarn
     args: [build]
     dir: "./ssg"
