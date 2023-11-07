@@ -1,8 +1,9 @@
 {
-    "overrides": [
-      {
-        "files": "*.njk",
-        "options": { "parser": "html" }
-      }
-    ]
-  }
+  "overrides": [
+    {
+      "files": "*.njk",
+      "options": { "parser": "html" }
+    }
+  ],
+  "plugins": ["prettier-plugin-tailwindcss"]
+}
