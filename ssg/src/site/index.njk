@@ -2,108 +2,109 @@
 layout: layouts/layout.njk
 ---
 
-<link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
-
-{# header #}
-<div class="fixed flex h-16 w-[360px] items-center justify-between bg-white px-4 py-2">
-  <img class="w-8 fill-black" src="/img/karhu.svg" />
-  <h1 class="text-lg font-bold leading-6">{{ t["general:nation"] }}</h1>
-  <img class="w-8 fill-black" src="/img/menu.svg" />
-</div>
-
-<img src="https://placehold.co/360x770" />
-
-
-<div class="flex flex-col items-start gap-8 bg-[#E7F0FF] px-4 py-8">
-  <h1 class="text-4xl font-bold">
-    Ystäviä, tapahtumia <br />
-    & koti Kampissa
-  </h1>
-  <button class="align-center flex flex-row gap-4 bg-black px-4 py-3 text-white">
-    Liity osakuntaan
-    <span class="material-symbols-outlined"> east </span>
-  </button>
-</div>
-
-<div class="flex flex-col gap-3 p-4">
-  <h2 class="text-2xl font-semibold">Tervetuloa satolaisten pariin!</h2>
-  <p class="text-sm">
-    Satakuntalainen Osakunta on Helsingin seudulla opiskelevien
-    satakuntalaisten ja satakuntalaismielisten korkeakouluopiskelijoiden
-    yhteisö.
-  </p>
-  <p class="text-sm">
-    Tarjoamme jäsenillemme toimintaa, tapahtumia, palveluita ja kodin keskellä
-    Kamppia.
-  </p>
-</div>
-
-<div class="flex flex-col gap-6 p-10">
-  {% for card in [{ img: "sisapiha.png", title: "Satakuntatalo", body:
-    "Satalinnan Säätiön vuokraamat asunnot ovat satakuntalaisille
-    korkeakouluopiskelijoille tarkoitettuja vuokratasoltaan kohtuullisia
-    opiskelija-asuntoja.", button: "Hae asuntoa" }, { img: "kesatanssit.png",
-    title: "SatOlla tapahtuu", body: "Viikottain ja vuosittain – tutustu
-    tapahtumiin ja tule mukaan!", button: "Tapahtumakalenteri" }, { img:
-    "kiltahuone.png", title: "Yhteinen olohuone", body: "Kuntosalilta saunan
-    kautta kattoterassille istumaan iltaa – Satakuntatalossa sijaitsevat tilamme
-    ovat vapaassa käytössä ympäri vuorokauden.", button: "Tutustu tiloihin" }, {
-    img: "karhunkierros.png", title: "Karhunkierros", body: "Satolaisten oma
-    lehti. Tule mukaan toimitukseen!", button: "Selaa lehtiä" }] %}
-  <div class="flex flex-col items-start gap-5 pb-7 shadow-md">
-    <img class="w-full" src="/img/{{ card.img }}" />
-    <div class="mx-7">
-      <h4 class="mb-2 text-lg font-bold">{{ card.title }}</h4>
-      <p class="text-xs">{{ card.body }}</p>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0"
+/>
+<div>
+  {# header #}
+  <div
+    class="fixed flex h-16 w-[360px] items-center justify-between bg-white px-4 py-2"
+  >
+    <div class="flex gap-3">
+      <img class="w-8 fill-black" src="/img/karhu.svg" />
+      <h1 class="w-36 text-lg font-semibold leading-5">
+        {{ t["general:nation"] }}
+      </h1>
     </div>
-    <button class="align-center mx-7 flex flex-row gap-4 bg-black px-4 py-2 text-white">
-      <span class="font-bold"> {{ card.button }} </span>
-      <span class="material-symbols-outlined"> east </span>
-    </button>
-  </div>
-  {% endfor %}
-</div>
-
-<img class="" src="/img/valkolakit.png" />
-
-<div class="flex w-full flex-col items-start gap-5 bg-[#E7F0FF] p-4">
-  <div>
-    <h4 class="text-lg font-semibold">Ota yhteyttä</h4>
-    <p class="text-xs">
-      Meihin voi olla yhteydessä matalalla kynnyksellä! Alla olevista
-      linkeistä pääset yhteydenottolomakkeelle. Pyrimme vastaamaan x ajan
-      kuluessa.
-    </p>
+    <img class="w-8 fill-black" src="/img/menu.svg" />
   </div>
 
-  {% for button in ["Postia hallitukselle", "Yhteystiedot", "Häirintälomake"]
-    %}
-  <button class="align-center flex flex-row gap-4 bg-black px-4 py-2 text-white">
-    {{ button }}
-    <span class="material-symbols-outlined"> east </span>
-  </button>
-  {% endfor %}
-</div>
+  {# banner #}
+  <section
+    class="flex h-[770px] flex-col items-center justify-center gap-6 bg-[url('https://placehold.co/360x770')] font-semibold"
+  >
+    <h1 class="p-8 text-center text-2xl leading-7 text-white">
+      Tervetuloa SatOlaisten pariin!
+    </h1>
+    <a class="bg-[#FFE161] px-12 py-4 text-base font-semibold leading-4"
+      >Tutustu osakuntaan</a
+    >
+  </section>
+  {# cards #}
+  <section>
+    {% for card in cards %}
+    <article
+      class="my-8 bg-white bg-[url('{{card.img}}')] bg-no-repeat pt-[150px]"
+    >
+      <div class="mx-4 flex flex-col items-start gap-6 bg-white px-4 py-6">
+        <h3 class="text-2xl font-semibold leading-7">{{ card.heading }}</h3>
+        <p class="text-xs font-normal leading-5">{{ card.text }}</p>
+        <a class="bg-[#FFE161] px-5 py-3 text-base font-medium leading-5"
+          >{{card.link}}</a
+        >
+      </div>
+    </article>
+    {% endfor %}
+  </section>
 
-<div class="flex w-full flex-col gap-10 bg-black px-4 py-8 text-white">
-  <div>
-    <h2 class="text-lg font-semibold">Seuraa meitä</h2>
-    <div class="flex flex-col px-4 text-xs leading-6">
-      <span>Instagram</span>
-      <span>Facebook</span>
-      <span>Twitter</span>
-      <span>Youtube</span>
+  <section class="mt-20">
+    <h2 class="m-2 text-2xl font-semibold">Ajankohtaista</h2>
+    {% set sections = [ { bg: "#003E93", text: "white", article: news[0] }, {
+    bg: "#FFBCD4", text: "black", article: news[1] }, { bg: "#FFE161", text:
+    "black", article: news[2] } ] %} {% for section in sections %}
+    <article
+      class="flex flex-col pl-10 py-5 text-{{section.text}} bg-[{{section.bg}}]"
+    >
+      <img src="{{section.article.img}}" />
+      <h3 class="mt-4 pr-5 text-lg font-semibold leading-5">
+        {{ section.article.heading }}
+      </h3>
+      <a class="mt-2 self-end pr-5 text-base font-medium leading-5"
+        >Lue lisää</a
+      >
+    </article>
+    {% endfor %}
+  </section>
+
+  <section class="mt-20">
+    <h2 class="m-2 text-2xl font-semibold">Osakunnan viikko</h2>
+    <calendar></calendar>
+  </section>
+
+  <section class="px-4 py-8 bg-[#003E93]">
+    <h2 class="text-2xl mb-6 font-semibold text-white">
+      Tulevat tapahtumat
+    </h2>
+    {% for event in events %}
+    <article class="flex flex-col px-6 pt-6 pb-4 bg-[#ECF3FF] mb-2">
+      <h3 class="text-base font-bold">{{event.name}}</h3>
+      <p class="text-xs font-normal leading-normal mb-5">
+        Ajankohta {{event.datetime}} </br>
+        Ilmoittautuminen päättyy {{event.registrationEnd}}
+      </p>
+      <a class="self-end text-xs font-bold underline">Lisätiedot ja ilmoittautuminen</a>
+    </article>
+    {% endfor %}
+  </section>
+
+  <div class="flex w-full flex-col gap-10 bg-black px-4 py-8 text-white">
+    <div>
+      <h2 class="text-lg font-semibold">Seuraa meitä</h2>
+      <div class="flex flex-col px-4 text-xs leading-6">
+        <span>Instagram</span>
+        <span>Facebook</span>
+        <span>Twitter</span>
+        <span>Youtube</span>
+      </div>
     </div>
+    <div class="flex flex-col">
+      <h1 class="text-lg font-semibold">SATAKUNTALAINEN OSAKUNTA</h1>
+      <span>LAPINRINNE 1 E1</span>
+      <span>00180 HELSINKI</span>
+      <span>SATO@SATAKUNTATALO.FI</span>
+      <span>Y-TUNNUS: 2593042-3</span>
+    </div>
+    <img class="w-10 fill-white" src="/img/karhu.svg" />
   </div>
-  <div class="flex flex-col">
-    <h1 class="text-lg font-semibold">SATAKUNTALAINEN OSAKUNTA</h1>
-    <span>LAPINRINNE 1 E1</span>
-    <span>00180 HELSINKI</span>
-    <span>SATO@SATAKUNTATALO.FI</span>
-    <span>Y-TUNNUS: 2593042-3</span>
-  </div>
-  <img class="w-10 fill-white" src="/img/karhu.svg" />
-</div>
-{#{ calendar() }#}
 </div>

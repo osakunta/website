@@ -1,0 +1,48 @@
+{
+  "cards": [
+    {
+      "img": "https://placehold.co/360x300",
+      "heading": "Tietoa osakunnasta",
+      "text": "Satakuntalainen Osakunta on Helsingin seudulla opiskelevien satakuntalaisten ja satakuntalaismielisten korkeakouluopiskelijoiden yhteisö. Tarjoamme jäsenillemme toimintaa, tapahtumia, palveluita ja kodin keskellä Kamppia.",
+      "link": "Tutustu osakuntaan"
+    },
+    {
+      "img": "https://placehold.co/360x300",
+      "heading": "Osakunnan tapahtumat",
+      "text": "Satakuntalainen Osakunta on Helsingin seudulla opiskelevien satakuntalaisten ja satakuntalaismielisten korkeakouluopiskelijoiden yhteisö. Tarjoamme jäsenillemme toimintaa, tapahtumia, palveluita ja kodin keskellä Kamppia.",
+      "link": "Tutustu osakuntaan"
+    },
+    {
+      "img": "https://placehold.co/360x300",
+      "heading": "Asu satakuntatalolla",
+      "text": "Satakuntalainen Osakunta on Helsingin seudulla opiskelevien satakuntalaisten ja satakuntalaismielisten korkeakouluopiskelijoiden yhteisö. Tarjoamme jäsenillemme toimintaa, tapahtumia, palveluita ja kodin keskellä Kamppia.",
+      "link": "Lue asumisesta"
+    }
+  ],
+  "news": [
+    {
+      "img": "https://placehold.co/310x220",
+      "heading": "Kutsu Satakuntalaisen Osakunnan lokakuun kokoukseen ke 18.10.2023 klo 19.15"
+    },
+    {
+      "img": "https://placehold.co/310x220",
+      "heading": "Kutsu Satakuntalaisen Osakunnan lokakuun kokoukseen ke 18.10.2023 klo 19.15"
+    },
+    {
+      "img": "https://placehold.co/310x220",
+      "heading": "Elokuvakerhon vierailu Orioniin"
+    }
+  ],
+  "events": [
+    {
+      "name": "Satakuntalainen ehtoo 2023",
+      "datetime": "28.10.2023 klo 18.00",
+      "registrationEnd": "15.10.2023 klo 23.59"
+    },
+    {
+      "name": "Satakuntalainen ehtoo 2023",
+      "datetime": "28.10.2023 klo 18.00",
+      "registrationEnd": "15.10.2023 klo 23.59"
+    }
+  ]
+}
