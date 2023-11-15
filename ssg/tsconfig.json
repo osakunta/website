@@ -13,5 +13,5 @@
       "react-dom": ["./node_modules/preact/compat/"]
     }
   },
-  "files": ["./src/components/Gallery.tsx"]
+  "files": ["./src/components/Gallery.tsx", "./src/components/Calendar.tsx"]
 }

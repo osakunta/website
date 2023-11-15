@@ -315,12 +315,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fullcalendar/core@npm:^6.0.2, @fullcalendar/core@npm:~6.1.8":
+"@fullcalendar/core@npm:^6.1.9":
+  version: 6.1.9
+  resolution: "@fullcalendar/core@npm:6.1.9"
+  dependencies:
+    preact: ~10.12.1
+  checksum: 836db3e40cd441faab974665a454e46f8e5288d6a5fcb38193ae95c19ec3dc639c48c944a69d633ec64e73f7b6752d76f92363c3c6ca8c08dbd88d84b160ab77
+  languageName: node
+  linkType: hard
+
+"@fullcalendar/core@npm:~6.1.8":
   version: 6.1.8
   resolution: "@fullcalendar/core@npm:6.1.8"
   dependencies:
     preact: ~10.12.1
   checksum: 66c13078c95573c4dc1c767c2a855c8f77608d1c0cee07eac4923fa1d967a64557640079b45e3da43a68cb8942873dd06523716544f25d98efa3641c0754045f
+  languageName: node
+  linkType: hard
+
+"@fullcalendar/daygrid@npm:^6.1.9":
+  version: 6.1.9
+  resolution: "@fullcalendar/daygrid@npm:6.1.9"
+  peerDependencies:
+    "@fullcalendar/core": ~6.1.9
+  checksum: 3db55247c4e1911462c37ff0448fcef8be132c5a0a0eada9ec00aef6c203f2d4fdffb82131566318e6eec2848b9ad6b8174b5e36c307106fa0c48071942096f4
   languageName: node
   linkType: hard
 
@@ -351,6 +369,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fullcalendar/list@npm:^6.1.9":
+  version: 6.1.9
+  resolution: "@fullcalendar/list@npm:6.1.9"
+  peerDependencies:
+    "@fullcalendar/core": ~6.1.9
+  checksum: 978dd54b7131369d023e4d8a0e97b986a89a986b94a0d71dc6e9782e60e6c268184f2c596dcc7fa0580b143bfd39390a40ea4c9114afd1fa2eca5c48a7b0aaab
+  languageName: node
+  linkType: hard
+
 "@fullcalendar/list@npm:~6.1.8":
   version: 6.1.8
   resolution: "@fullcalendar/list@npm:6.1.8"
@@ -377,6 +404,17 @@ __metadata:
   peerDependencies:
     "@fullcalendar/core": ~6.1.8
   checksum: 7396f965543e79fb0fefc0c80346eed3ea5d08cd1158447dd510a0bf4a112132ad3f9d823efa2e1ba0a89a910632b2302ead78e77b21a8d3ffd07f3178cf7fd9
+  languageName: node
+  linkType: hard
+
+"@fullcalendar/react@npm:^6.1.9":
+  version: 6.1.9
+  resolution: "@fullcalendar/react@npm:6.1.9"
+  peerDependencies:
+    "@fullcalendar/core": ~6.1.9
+    react: ^16.7.0 || ^17 || ^18
+    react-dom: ^16.7.0 || ^17 || ^18
+  checksum: 7471c2947c11371af7eca6a71f38108483150347780eb2fb2bf6bf7c4c357f5d3b51136b3dfd9bf79e627ace7cd4e544b10fd4f06021b0240945126a3f392602
   languageName: node
   linkType: hard
 
@@ -3788,8 +3826,11 @@ __metadata:
   dependencies:
     "@11ty/eleventy": ^2.0.0
     "@11ty/eleventy-fetch": ^4.0.0
-    "@fullcalendar/core": ^6.0.2
+    "@fullcalendar/core": ^6.1.9
+    "@fullcalendar/daygrid": ^6.1.9
     "@fullcalendar/google-calendar": ^6.0.0
+    "@fullcalendar/list": ^6.1.9
+    "@fullcalendar/react": ^6.1.9
     "@types/node": ^20.3.2
     "@types/preact-custom-element": ^4.0.3
     dotenv: ^16.3.1

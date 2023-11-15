@@ -16,8 +16,11 @@
   "dependencies": {
     "@11ty/eleventy": "^2.0.0",
     "@11ty/eleventy-fetch": "^4.0.0",
-    "@fullcalendar/core": "^6.0.2",
+    "@fullcalendar/core": "^6.1.9",
+    "@fullcalendar/daygrid": "^6.1.9",
     "@fullcalendar/google-calendar": "^6.0.0",
+    "@fullcalendar/list": "^6.1.9",
+    "@fullcalendar/react": "^6.1.9",
     "@types/node": "^20.3.2",
     "@types/preact-custom-element": "^4.0.3",
     "dotenv": "^16.3.1",

@@ -11,19 +11,26 @@ module.exports = (config) => {
 
   config.on("eleventy.before", ({ runMode }) => {
     console.log("Building components");
-    esbuild.buildSync({
-      entryPoints: ["src/components/Gallery.tsx"],
-      outdir: "_site/components",
-      minify: runMode === "build",
-      bundle: true,
-      loader: {
-        ".woff2": "file",
-        ".woff": "file",
-        ".ttf": "file",
-        ".svg": "file",
-        ".gif": "file",
-      },
-    });
+    try {
+      esbuild.buildSync({
+        entryPoints: [
+          "src/components/Gallery.tsx",
+          "src/components/Calendar.tsx",
+        ],
+        outdir: "_site/components",
+        minify: runMode === "build",
+        bundle: true,
+        loader: {
+          ".woff2": "file",
+          ".woff": "file",
+          ".ttf": "file",
+          ".svg": "file",
+          ".gif": "file",
+        },
+      });
+    } catch (e) {
+      console.log(e);
+    }
     console.log("Components built");
   });
 
