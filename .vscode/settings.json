@@ -1,5 +1,5 @@
 {
-  "prettier.configPath": "./ssg/.prettierrc.json",
+  "prettier.configPath": ".prettierrc.json",
   "prettier.documentSelectors": ["**/*.{njk, js, md}"],
   "emmet.syntaxProfiles": {
     "nunjucks": "html"
