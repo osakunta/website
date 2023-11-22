@@ -4,109 +4,130 @@ layout: layouts/layout.njk
 
 <script src="../components/Calendar.js"></script>
 
+<script>
+    window.addEventListener("scroll", () => {
+        const navbar = document.getElementById("navbar");
+        const bannerHeight = document.querySelector("section").offsetHeight;
+        if (window.scrollY >= bannerHeight) {
+            navbar.style.backgroundColor = "white";
+        } else {
+            navbar.style.backgroundColor = "transparent";
+        }
+    });
+</script>
+
 <link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0"
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0"
 />
 <div>
-  {# header #}
-  <div
-    class="fixed flex h-16 w-[360px] items-center justify-between bg-white px-4 py-2"
-  >
-    <div class="flex gap-3">
-      <img class="w-8 fill-black" src="/img/karhu.svg" />
-      <h1 class="w-36 text-lg font-semibold leading-5">
-        {{ t["general:nation"] }}
-      </h1>
+    {# navbar #}
+    <div
+        id="navbar"
+        class="fixed flex h-16 w-[360px] items-center justify-between bg-transparent px-4 py-2"
+    >
+        <div class="flex gap-3">
+            <img class="w-8 fill-black" src="/img/karhu.svg" />
+            <h1 class="w-36 text-lg font-semibold leading-5">
+                {{ t["general:nation"] }}
+            </h1>
+        </div>
+        <img class="w-8 fill-black" src="/img/menu.svg" />
     </div>
-    <img class="w-8 fill-black" src="/img/menu.svg" />
-  </div>
 
-  {# banner #}
-  <section
-    class="flex h-[770px] flex-col items-center justify-center gap-6 bg-[url('https://placehold.co/360x770')] font-semibold"
-  >
-    <h1 class="p-8 text-center text-2xl leading-7 text-white">
-      Tervetuloa SatOlaisten pariin!
-    </h1>
-    <a class="bg-[#FFE161] px-12 py-4 text-base font-semibold leading-4"
-      >Tutustu osakuntaan</a
+    {# banner #}
+    <section
+        id="banner"
+        class="flex h-[770px] flex-col items-center justify-center gap-6 bg-[url('https://placehold.co/360x770')] font-semibold"
     >
-  </section>
-  {# cards #}
-  <section>
-    {% for card in cards %}
-    <article
-      class="my-8 bg-white bg-[url('{{card.img}}')] bg-no-repeat pt-[150px]"
-    >
-      <div class="mx-4 flex flex-col items-start gap-6 bg-white px-4 py-6">
-        <h3 class="text-2xl font-semibold leading-7">{{ card.heading }}</h3>
-        <p class="text-xs font-normal leading-5">{{ card.text }}</p>
-        <a class="bg-[#FFE161] px-5 py-3 text-base font-medium leading-5"
-          >{{card.link}}</a
+        <h1 class="p-8 text-center text-2xl leading-7 text-white">
+            Tervetuloa SatOlaisten pariin!
+        </h1>
+        <a class="bg-[#FFE161] px-12 py-4 text-base font-semibold leading-4"
+            >Tutustu osakuntaan</a
         >
-      </div>
-    </article>
-    {% endfor %}
-  </section>
+    </section>
+    {# cards #}
+    <section>
+        {% for card in cards %}
+        <article
+            class="my-8 bg-white bg-[url('{{card.img}}')] bg-no-repeat pt-[150px]"
+        >
+            <div
+                class="mx-4 flex flex-col items-start gap-6 bg-white px-4 py-6"
+            >
+                <h3 class="text-2xl font-semibold leading-7">
+                    {{ card.heading }}
+                </h3>
+                <p class="text-xs font-normal leading-5">{{ card.text }}</p>
+                <a
+                    class="bg-[#FFE161] px-5 py-3 text-base font-medium leading-5"
+                    >{{card.link}}</a
+                >
+            </div>
+        </article>
+        {% endfor %}
+    </section>
 
-  <section class="mt-20">
-    <h2 class="m-2 text-2xl font-semibold">Ajankohtaista</h2>
-    {% set sections = [ { bg: "#003E93", text: "white", article: news[0] }, {
-    bg: "#FFBCD4", text: "black", article: news[1] }, { bg: "#FFE161", text:
-    "black", article: news[2] } ] %} {% for section in sections %}
-    <article
-      class="flex flex-col pl-10 py-5 text-{{section.text}} bg-[{{section.bg}}]"
-    >
-      <img src="{{section.article.img}}" />
-      <h3 class="mt-4 pr-5 text-lg font-semibold leading-5">
-        {{ section.article.heading }}
-      </h3>
-      <a class="mt-2 self-end pr-5 text-base font-medium leading-5"
-        >Lue lisää</a
-      >
-    </article>
-    {% endfor %}
-  </section>
+    <section class="mt-20">
+        <h2 class="m-2 text-2xl font-semibold">Ajankohtaista</h2>
+        {% set sections = [ { bg: "#003E93", text: "white", article: news[0] },
+        { bg: "#FFBCD4", text: "black", article: news[1] }, { bg: "#FFE161",
+        text: "black", article: news[2] } ] %} {% for section in sections %}
+        <article
+            class="flex flex-col pl-10 py-5 text-{{section.text}} bg-[{{section.bg}}]"
+        >
+            <img src="{{section.article.img}}" />
+            <h3 class="mt-4 pr-5 text-lg font-semibold leading-5">
+                {{ section.article.heading }}
+            </h3>
+            <a class="mt-2 self-end pr-5 text-base font-medium leading-5"
+                >Lue lisää</a
+            >
+        </article>
+        {% endfor %}
+    </section>
 
-  <section class="mt-20">
-    <h2 class="m-2 text-2xl font-semibold">Osakunnan viikko</h2>
-    <calendar-component></calendar-component>
-  </section>
+    <section class="mt-20">
+        <h2 class="m-2 text-2xl font-semibold">Osakunnan viikko</h2>
+        <calendar-component></calendar-component>
+    </section>
 
-  <section class="mt-20 bg-[#003E93] px-4 py-8">
-    <h2 class="mb-6 text-2xl font-semibold text-white">Tulevat tapahtumat</h2>
-    {% for event in events %}
-    <article class="mb-2 flex flex-col bg-[#ECF3FF] px-6 pb-4 pt-6">
-      <h3 class="text-base font-bold">{{event.name}}</h3>
-      <p class="mb-5 text-xs font-normal leading-normal">
-        Ajankohta {{event.datetime}} <br />
-        Ilmoittautuminen päättyy {{event.registrationEnd}}
-      </p>
-      <a class="self-end text-xs font-bold underline"
-        >Lisätiedot ja ilmoittautuminen</a
-      >
-    </article>
-    {% endfor %}
-  </section>
+    <section class="mt-20 bg-[#003E93] px-4 py-8">
+        <h2 class="mb-6 text-2xl font-semibold text-white">
+            Tulevat tapahtumat
+        </h2>
+        {% for event in events %}
+        <article class="mb-2 flex flex-col bg-[#ECF3FF] px-6 pb-4 pt-6">
+            <h3 class="text-base font-bold">{{event.name}}</h3>
+            <p class="mb-5 text-xs font-normal leading-normal">
+                Ajankohta {{event.datetime}} <br />
+                Ilmoittautuminen päättyy {{event.registrationEnd}}
+            </p>
+            <a class="self-end text-xs font-bold underline"
+                >Lisätiedot ja ilmoittautuminen</a
+            >
+        </article>
+        {% endfor %}
+    </section>
 
-  <div class="flex w-full flex-col gap-10 bg-black px-4 py-8 text-white">
-    <div>
-      <h2 class="text-lg font-semibold">Seuraa meitä</h2>
-      <div class="flex flex-col px-4 text-xs leading-6">
-        <span>Instagram</span>
-        <span>Facebook</span>
-        <span>Twitter</span>
-        <span>Youtube</span>
-      </div>
+    <div class="flex w-full flex-col gap-10 bg-black px-4 py-8 text-white">
+        <div>
+            <h2 class="text-lg font-semibold">Seuraa meitä</h2>
+            <div class="flex flex-col px-4 text-xs leading-6">
+                <span>Instagram</span>
+                <span>Facebook</span>
+                <span>Twitter</span>
+                <span>Youtube</span>
+            </div>
+        </div>
+        <div class="flex flex-col">
+            <h1 class="text-lg font-semibold">SATAKUNTALAINEN OSAKUNTA</h1>
+            <span>LAPINRINNE 1 E1</span>
+            <span>00180 HELSINKI</span>
+            <span>SATO@SATAKUNTATALO.FI</span>
+            <span>Y-TUNNUS: 2593042-3</span>
+        </div>
+        <img class="w-10 fill-white" src="/img/karhu.svg" />
     </div>
-    <div class="flex flex-col">
-      <h1 class="text-lg font-semibold">SATAKUNTALAINEN OSAKUNTA</h1>
-      <span>LAPINRINNE 1 E1</span>
-      <span>00180 HELSINKI</span>
-      <span>SATO@SATAKUNTATALO.FI</span>
-      <span>Y-TUNNUS: 2593042-3</span>
-    </div>
-    <img class="w-10 fill-white" src="/img/karhu.svg" />
-  </div>
 </div>
