@@ -8,11 +8,16 @@ layout: layouts/layout.njk
     window.addEventListener("scroll", () => {
         const navbar = document.getElementById("navbar");
         const bannerHeight = document.querySelector("section").offsetHeight;
-        if (window.scrollY >= bannerHeight) {
-            navbar.style.backgroundColor = "white";
-        } else {
-            navbar.style.backgroundColor = "transparent";
-        }
+        const scrollY = window.scrollY;
+        const startTransition = bannerHeight * 0.75; // Start transition at 75% of the banner height
+        const opacity = Math.max(
+            Math.min(
+                (scrollY - startTransition) / (bannerHeight - startTransition),
+                1
+            ),
+            0
+        );
+        navbar.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
     });
 </script>
 
