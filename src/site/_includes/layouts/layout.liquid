@@ -19,10 +19,22 @@ permalink: "{{ locale.lang }}/{{ page.filePathStem }}.html"
             href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
             rel="stylesheet"
         />
+
+        <script type="module">
+            {% assign files = imports | split: "\n" %}
+            {% capture source %}
+                {% for file in files %}
+                    import("{{ file | strip }}");
+                {% endfor %}
+            {% endcapture %}
+
+            {{ source | esbuild }}
+        </script>
+
     </head>
     <body class="font-roboto bg-slate-600">
         <div class="mx-auto flex max-w-[360px] flex-row flex-wrap bg-white">
-            <div class="w-full">{{ content | safe }}</div>
+            <div class="w-full">{{ content }}</div>
         </div>
     </body>
 </html>
