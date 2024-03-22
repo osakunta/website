@@ -1,7 +1,0 @@
-{
-    "hosting": {
-        "target": "satakuntalainenosakunta",
-        "public": "_site",
-        "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
-    }
-}
