@@ -1,25 +1,17 @@
 # website - The new website for Satakunta Nation
 
-## Design & prototyping
+# Running
 
-See the [Figma project](https://www.figma.com/file/QPVg6H8mrDNMfxOoF8CckZ/SatO-Home-Page?node-id=0%3A1)
+1. Install [node](https://nodejs.org/en)
+2. Run `npm install`
+3. Run `npm run dev` to start a local development server
 
-See the [Miro board](https://miro.com/app/board/uXjVPSkJ34k=/?share_link_id=176555736587)
+# Development workflow
 
-See the [Trello board](https://trello.com/b/foD9vvFs/simple-project-board)
-
-## Setup
-
-### Google Calendar
-
-In our use case we have a private calendar, that we want to embed on our website without allowing other access to it. The setup is as follows:
-
-1. In the development environment, authorize Google API calls using your own credentials with
-
-```gcloud auth application-default login
-    --scopes=https://www.googleapis.com/auth/calendar.readonly,https://www.googleapis.com/auth/cloud-platform.read-only
-    --impersonate-service-account=homepage-calendar@satakuntatalo-services.iam.gserviceaccount.com
-```
+1. Create a new branch, name it so it describes the feature or fix you're implementing.
+2. Push the branch to the repo and create a pull request against the main branch.
+3. Verify your changes through the "preview", the link will appear as a comment in the PR.
+4. If everything is okay, merge the PR. The main branch is automatically deployed to production.
 
 ## License
 
