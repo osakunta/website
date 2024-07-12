@@ -1,43 +1,28 @@
 {
-    "license": "GPL-3.0-or-later",
-    "scripts": {
-        "tsc:dev": "tsc --watch -noEmit",
-        "eleventy:build": "NODE_ENV=PRODUCTION eleventy --input=src/site",
-        "eleventy:dev": "eleventy --input=src/site --serve",
-        "tailwind:base": "tailwindcss --input src/css/main.css --output _site/main.css",
-        "tailwind:build": "yarn tailwind:base --minify",
-        "tailwind:dev": "yarn tailwind:base --watch",
-        "clean": "rimraf _site/*",
-        "build": "run-s -lnc clean '*:build'",
-        "dev": "run-p -l '*:dev'",
-        "prettier": "prettier --write src/**/*.{js,ts,njk,html}",
-        "prepare": "cd .. && husky install"
-    },
-    "dependencies": {
-        "@11ty/eleventy": "^2.0.0",
-        "@11ty/eleventy-fetch": "^4.0.0",
-        "@fullcalendar/core": "^6.1.9",
-        "@fullcalendar/daygrid": "^6.1.9",
-        "@fullcalendar/google-calendar": "^6.0.0",
-        "@fullcalendar/list": "^6.1.9",
-        "@fullcalendar/react": "^6.1.9",
-        "@material/web": "^1.1.1",
-        "@types/node": "^20.3.2",
-        "@types/preact-custom-element": "^4.0.3",
-        "dotenv": "^16.3.1",
-        "esbuild": "^0.16.8",
-        "fullcalendar-scheduler": "^6.0.2",
-        "lightgallery": "^2.7.2",
-        "npm-run-all": "^4.1.5",
-        "preact": "^10.18.2",
-        "preact-custom-element": "^4.3.0",
-        "prettier": "^2.8.1",
-        "prettier-plugin-tailwindcss": "^0.2.1",
-        "typescript": "^5.2.2"
-    },
-    "devDependencies": {
-        "husky": "^8.0.3",
-        "rimraf": "^3.0.2",
-        "tailwindcss": "^3.2.4"
-    }
+  "name": "new-sato-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.20",
+    "dotenv": "^16.4.5",
+    "next": "14.2.4",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.4",
+    "typescript": "^5"
+  }
 }

@@ -9,7 +9,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
-            - run: yarn install && yarn build
+            - run: npm install && npm run lint && npm run build 
               env:
                   CMS_URL: ${{ secrets.CMS_URL }}
             - uses: FirebaseExtended/action-hosting-deploy@v0
