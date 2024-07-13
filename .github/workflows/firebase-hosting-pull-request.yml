@@ -19,12 +19,8 @@ jobs:
                   repoToken: "${{ secrets.GITHUB_TOKEN }}"
                   firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_SATAKUNTATALO_SERVICES }}"
                   projectId: satakuntatalo-services
-            - uses: jakepartusch/psi-action@v1.3
-              id: psi
-              with:
-                  url: ${{ steps.firebase.outputs.details_url }}
             - uses: treosh/lighthouse-ci-action@v12
               id: lighthouse
               with:
                 urls: ${{ steps.firebase.outputs.details_url }}
-                uploadArtifacts: true 
+                temporaryPublicStorage: true
