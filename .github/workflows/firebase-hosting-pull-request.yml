@@ -23,7 +23,6 @@ jobs:
               id: psi
               with:
                   url: ${{ steps.firebase.outputs.details_url }}
-                    - name: Audit URLs using Lighthouse
             - uses: treosh/lighthouse-ci-action@v12
               id: lighthouse
               with:
