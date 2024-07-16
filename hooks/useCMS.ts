@@ -25,7 +25,7 @@ const useCMS = <T>({ collection, query = "", initialData }: UseCMSProps<T>) => {
 
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_DIRECTUS_URL}/items/text`
+          `${process.env.NEXT_PUBLIC_DIRECTUS_URL}/items/text`,
         );
         if (!response.ok) {
           throw new Error(`Error: ${response.status} ${response.statusText}`);
