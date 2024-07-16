@@ -4,23 +4,23 @@
 name: Deploy to Firebase Hosting on PR
 "on": pull_request
 jobs:
-    build_and_preview:
-        if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - run: npm install && npm run lint && npm run build 
-              env:
-                  CMS_URL: ${{ secrets.CMS_URL }}
-            - uses: FirebaseExtended/action-hosting-deploy@v0
-              id: firebase
-              with:
-                  target: "satakuntalainenosakunta"
-                  repoToken: "${{ secrets.GITHUB_TOKEN }}"
-                  firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_SATAKUNTATALO_SERVICES }}"
-                  projectId: satakuntatalo-services
-            - uses: treosh/lighthouse-ci-action@v12
-              id: lighthouse
-              with:
-                urls: ${{ steps.firebase.outputs.details_url }}
-                temporaryPublicStorage: true
+  build_and_preview:
+    if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install && npm run lint && npm run build
+        env:
+          CMS_URL: ${{ secrets.CMS_URL }}
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        id: firebase
+        with:
+          target: "satakuntalainenosakunta"
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_SATAKUNTATALO_SERVICES }}"
+          projectId: satakuntatalo-services
+      - uses: treosh/lighthouse-ci-action@v12
+        id: lighthouse
+        with:
+          urls: ${{ steps.firebase.outputs.details_url }}
+          temporaryPublicStorage: true

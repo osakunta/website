@@ -1,7 +1,7 @@
 # Inital project planning
 
 This effort aims to create a new website for the Satakunta Nation
-The old website has become cumbersome to maintain, and is built with 10 year old technology. The user experience is also not welcoming. 
+The old website has become cumbersome to maintain, and is built with 10 year old technology. The user experience is also not welcoming.
 
 We plan on using Figma for prototyping and designing user interfaces, Trello for tracking tasks and progress, and Miro for diagrams (site maps etc.). The code is hosted here on GitHub.
 
