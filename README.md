@@ -10,6 +10,7 @@
 
 1. Create a new branch, name it so it describes the feature or fix you're implementing.
 2. Push the branch to the repo and create a pull request against the main branch.
+   - A tool called [husky](https://typicode.github.io/husky/) runs the linter and tests locally for each commit
 3. Verify your changes through the "preview", the link will appear as a comment in the PR.
 4. If everything is okay, merge the PR. The main branch is automatically deployed to production.
 

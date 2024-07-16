@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest"
+    "format:check": "prettier . --check",
+    "format": "prettier . --write",
+    "test:watch": "vitest",
+    "test": "vitest run",
+    "prepare": "husky"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
@@ -16,7 +20,7 @@
     "dotenv": "^16.4.5",
     "next": "14.2.4",
     "react": "^18",
-    "react-dom": "^18"
+      "react-dom": "^18"
   },
   "devDependencies": {
     "@testing-library/react": "^16.0.0",
@@ -28,6 +32,7 @@
     "eslint-config-next": "14.2.4",
     "eslint-config-prettier": "^9.1.0",
     "fast-check": "^3.20.0",
+    "husky": "^9.0.11",
     "jsdom": "^24.1.0",
     "prettier": "3.3.3",
     "typescript": "^5",
