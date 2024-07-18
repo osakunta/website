@@ -15,6 +15,12 @@ import Link from "next/link";
 import aino from "../public/aino.png";
 import arrowBlue from "../public/arrow_forward_blue.svg";
 import arrowWhite from "../public/arrow_forward_white.svg";
+import Carousel from "@/components/Carousel";
+import cAside from "../public/contact-aside.png";
+
+const OPTIONS: EmblaOptionsType = { loop: true };
+const SLIDE_COUNT = 10;
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
 export default function Home() {
   return (
@@ -123,7 +129,102 @@ export default function Home() {
           </article>
         </section>
         {/* News */}
-        <section></section>
+        <section className={styles.news}>
+          <h2>Uutisia</h2>
+          <span className={styles.cardContainer}>
+            <Card className={styles.newsCard}>
+              <CardActionArea>
+                <CardMedia
+                  height={250}
+                  component="img"
+                  image="https://lh5.googleusercontent.com/bDp4TqmugenBz4t8K9J4PfQkJbnEzwef49kbULsCaJ-7BY4VZ0Jg0I4V7SYcvb4lFISHnvjeYm1ARN4WVsoRUwdEcAwB9_ogpPV90CBlRMeAkFns7XDevbB3kKlTrwlvZQ=w1280"
+                  alt="Satakuntalainen Osakunta"
+                />
+                <CardContent className={styles.newsCardContent}>
+                  <Typography className={styles.cardTitle}>Title</Typography>
+                  <Typography className={styles.cardDescription}>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Itaque, numquam magnam, eum nihil adipisci tenetur quasi vel
+                    minima nemo ratione molestiae in ab laborum perferendis
+                    beatae impedit dolorem iusto sunt.
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions className={styles.cardLink}>
+                <Link href=""></Link>
+              </CardActions>
+            </Card>
+            <Card className={styles.newsCard}>
+              <CardActionArea>
+                <CardMedia
+                  height={250}
+                  component="img"
+                  image="https://lh5.googleusercontent.com/bDp4TqmugenBz4t8K9J4PfQkJbnEzwef49kbULsCaJ-7BY4VZ0Jg0I4V7SYcvb4lFISHnvjeYm1ARN4WVsoRUwdEcAwB9_ogpPV90CBlRMeAkFns7XDevbB3kKlTrwlvZQ=w1280"
+                  alt="Satakuntalainen Osakunta"
+                />
+                <CardContent className={styles.newsCardContent}>
+                  <Typography className={styles.cardTitle}>Title</Typography>
+                  <Typography className={styles.cardDescription}>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Itaque, numquam magnam, eum nihil adipisci tenetur quasi vel
+                    minima nemo ratione molestiae in ab laborum perferendis
+                    beatae impedit dolorem iusto sunt.
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions className={styles.cardLink}>
+                <Link href=""></Link>
+              </CardActions>
+            </Card>
+          </span>
+        </section>
+        {/* Calendar */}
+        <section className={styles.calendarSection}>
+          <span className={styles.sectionContainer}>
+            <h2>Kalenteri</h2>
+          </span>
+        </section>
+        {/* Carousel */}
+        <section className={styles.karhunkierros}>
+          <h2>Osakuntalehti Karhunkierros</h2>
+
+          <span className={styles.carouselContainer}>
+            <Carousel slides={SLIDES} options={OPTIONS} />
+          </span>
+        </section>
+        {/* Contact */}
+        <section className={styles.contact}>
+          <div className={styles.contactSectionContainer}>
+            <div className={styles.contactInfo}>
+              <h2> Postia hallitikselle</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Asperiores facere at minus officiis nesciunt? Quos labore
+                dolorem et mollitia quia. Recusandae dolores modi quaerat
+                magnam! Autem distinctio ipsa a alias.
+              </p>
+              <Button variant="contained" className={styles.heroBtn}>
+                Siiry lomakkeelle
+                <Image src={arrowWhite} alt="arrow forward" />
+              </Button>
+              <h2>Häirintälomake</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Asperiores facere at minus officiis nesciunt? Quos labore
+                dolorem et mollitia quia. Recusandae dolores modi quaerat
+                magnam! Autem distinctio ipsa a alias.
+              </p>
+              <Button variant="contained" className={styles.heroBtn}>
+                Ota yhteyttä
+                <Image src={arrowWhite} alt="arrow forward" />
+              </Button>
+            </div>
+            <Image src={cAside} alt="various messaging icons"></Image>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <section className={styles.footer}></section>
       </main>
     </>
   );
