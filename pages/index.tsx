@@ -17,6 +17,7 @@ import arrowBlue from "../public/arrow_forward_blue.svg";
 import arrowWhite from "../public/arrow_forward_white.svg";
 import Carousel from "@/components/Carousel";
 import cAside from "../public/contact-aside.png";
+import { EmblaOptionsType } from "embla-carousel";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 const SLIDE_COUNT = 10;
