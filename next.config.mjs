@@ -1,3 +1,5 @@
+import { fetchTranslations } from './fetchTranslations.mjs';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
@@ -6,5 +8,7 @@ const nextConfig = {
   },
   reactStrictMode: true,
 };
+
+fetchTranslations();
 
 export default nextConfig;

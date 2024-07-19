@@ -3,8 +3,9 @@
 # Running
 
 1. Install [node](https://nodejs.org/en)
-2. Run `npm install`
-3. Run `npm run dev` to start a local development server
+2. Rename `.env.local.example` and set the CMS_URL
+3. Run `npm install`
+4. Run `npm run dev` to start a local development server
 
 # Development workflow
 
@@ -13,6 +14,8 @@
    - A tool called [husky](https://typicode.github.io/husky/) runs the linter and tests locally for each commit
 3. Verify your changes through the "preview", the link will appear as a comment in the PR.
 4. If everything is okay, merge the PR. The main branch is automatically deployed to production.
+
+A file `translations.json` is downloaded from the CMS every time you run a command. This allows Typescript to use it's type data for autocompleting and build-time verifying translation keys.
 
 ## License
 
