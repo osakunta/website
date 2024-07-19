@@ -17,7 +17,7 @@ import sato_logo_nav from "../public/sato_logo_nav.png";
 
 type Anchor = "right";
 
-const Navbar = () => {
+function Navbar() {
   const [state, setState] = useState({
     right: false,
   });
@@ -70,7 +70,7 @@ const Navbar = () => {
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
-              <ListItemIcon></ListItemIcon>
+              <ListItemIcon />
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
@@ -81,7 +81,7 @@ const Navbar = () => {
         {["All mail", "Trash", "Spam"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
-              <ListItemIcon></ListItemIcon>
+              <ListItemIcon />
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
@@ -117,6 +117,6 @@ const Navbar = () => {
       </nav>
     </div>
   );
-};
+}
 
 export default Navbar;
