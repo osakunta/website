@@ -102,7 +102,11 @@ export default function Home() {
         </section>
         {/* Living Info */}
         <section className={styles.livingInfo}>
-          <Image src={aino} alt="A photo of SatO's mascot" />
+          <Image
+            src={aino}
+            alt="A photo of SatO's mascot"
+            className={styles.aino}
+          />
 
           <article className={styles.livingArticle}>
             <h2 className={styles.livingTitle}>
@@ -133,6 +137,50 @@ export default function Home() {
         <section className={styles.news}>
           <h2>Uutisia</h2>
           <span className={styles.cardContainer}>
+            <Card className={styles.newsCard}>
+              <CardActionArea>
+                <CardMedia
+                  height={250}
+                  component="img"
+                  image="https://lh5.googleusercontent.com/bDp4TqmugenBz4t8K9J4PfQkJbnEzwef49kbULsCaJ-7BY4VZ0Jg0I4V7SYcvb4lFISHnvjeYm1ARN4WVsoRUwdEcAwB9_ogpPV90CBlRMeAkFns7XDevbB3kKlTrwlvZQ=w1280"
+                  alt="Satakuntalainen Osakunta"
+                />
+                <CardContent className={styles.newsCardContent}>
+                  <Typography className={styles.cardTitle}>Title</Typography>
+                  <Typography className={styles.cardDescription}>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Itaque, numquam magnam, eum nihil adipisci tenetur quasi vel
+                    minima nemo ratione molestiae in ab laborum perferendis
+                    beatae impedit dolorem iusto sunt.
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions className={styles.cardLink}>
+                <Link href=""></Link>
+              </CardActions>
+            </Card>
+            <Card className={styles.newsCard}>
+              <CardActionArea>
+                <CardMedia
+                  height={250}
+                  component="img"
+                  image="https://lh5.googleusercontent.com/bDp4TqmugenBz4t8K9J4PfQkJbnEzwef49kbULsCaJ-7BY4VZ0Jg0I4V7SYcvb4lFISHnvjeYm1ARN4WVsoRUwdEcAwB9_ogpPV90CBlRMeAkFns7XDevbB3kKlTrwlvZQ=w1280"
+                  alt="Satakuntalainen Osakunta"
+                />
+                <CardContent className={styles.newsCardContent}>
+                  <Typography className={styles.cardTitle}>Title</Typography>
+                  <Typography className={styles.cardDescription}>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Itaque, numquam magnam, eum nihil adipisci tenetur quasi vel
+                    minima nemo ratione molestiae in ab laborum perferendis
+                    beatae impedit dolorem iusto sunt.
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions className={styles.cardLink}>
+                <Link href=""></Link>
+              </CardActions>
+            </Card>
             <Card className={styles.newsCard}>
               <CardActionArea>
                 <CardMedia
@@ -208,6 +256,8 @@ export default function Home() {
                 Siiry lomakkeelle
                 <Image src={arrowWhite} alt="arrow forward" />
               </Button>
+              <br />
+              <br />
               <h2>Häirintälomake</h2>
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -220,7 +270,11 @@ export default function Home() {
                 <Image src={arrowWhite} alt="arrow forward" />
               </Button>
             </div>
-            <Image src={cAside} alt="various messaging icons"></Image>
+            <Image
+              src={cAside}
+              alt="various messaging icons"
+              className={styles.contactAside}
+            ></Image>
           </div>
         </section>
 
