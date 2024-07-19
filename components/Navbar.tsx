@@ -10,7 +10,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import close from "../public/close.svg";
 import menu from "../public/menu.svg";
 import sato_logo_nav from "../public/sato_logo_nav.png";
@@ -21,6 +21,25 @@ const Navbar = () => {
   const [state, setState] = useState({
     right: false,
   });
+
+  useEffect(() => {
+    let prevScrollpos = window.scrollY;
+    const handleScroll = () => {
+      const currentScrollpos = window.scrollY;
+      const navWrapper = document.getElementById("navContainer");
+      if (navWrapper) {
+        if (prevScrollpos > currentScrollpos) {
+          navWrapper.style.top = "0";
+        } else {
+          navWrapper.style.top = "-10rem";
+        }
+      }
+      prevScrollpos = currentScrollpos;
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
@@ -72,29 +91,31 @@ const Navbar = () => {
   );
 
   return (
-    <nav id="navbar" className={styles.navbar}>
-      <Link href="/">
-        <Image
-          src={sato_logo_nav}
-          alt="A nav link to the home page"
-          width={120}
-        />
-      </Link>
-      {(["right"] as const).map((anchor) => (
-        <div key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>
-            <Image src={menu} alt="Hamburger menu" width={45} />
-          </Button>
-          <Drawer
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
-          >
-            {list(anchor)}
-          </Drawer>
-        </div>
-      ))}
-    </nav>
+    <div className={styles.navContainer} id="navContainer">
+      <nav id="navbar" className={styles.navbar}>
+        <Link href="/">
+          <Image
+            src={sato_logo_nav}
+            alt="A nav link to the home page"
+            width={120}
+          />
+        </Link>
+        {(["right"] as const).map((anchor) => (
+          <div key={anchor}>
+            <Button onClick={toggleDrawer(anchor, true)}>
+              <Image src={menu} alt="Hamburger menu" width={45} />
+            </Button>
+            <Drawer
+              anchor={anchor}
+              open={state[anchor]}
+              onClose={toggleDrawer(anchor, false)}
+            >
+              {list(anchor)}
+            </Drawer>
+          </div>
+        ))}
+      </nav>
+    </div>
   );
 };
 

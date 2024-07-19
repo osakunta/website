@@ -1,9 +1,19 @@
+.navContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: var(--blue100);
+  z-index: 999;
+  transition: 0.25s ease;
+}
+
 .navbar {
   display: flex;
   flex-direction: row;
   width: 80%;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
   top: 0;
 }
