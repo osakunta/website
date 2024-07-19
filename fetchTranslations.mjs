@@ -18,7 +18,10 @@ export async function fetchTranslations() {
 
     const data = await response.json();
 
-    await writeFile("./hooks/translations.json", JSON.stringify(data, null, 2));
+    await writeFile(
+      "./hooks/translations.json",
+      JSON.stringify(data, null, 2) + "\n",
+    ); // prettier wants a trailing newline
     console.log("Downloaded and saved translations.json");
   } catch (error) {
     console.error("Error downloading translations.json :", error);
