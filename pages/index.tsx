@@ -15,6 +15,8 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Carousel from "@/components/Carousel";
+import { EmblaOptionsType } from "embla-carousel";
 import aino from "../public/aino.png";
 import arrowBlue from "../public/arrow_forward_blue.svg";
 import arrowWhite from "../public/arrow_forward_white.svg";
@@ -79,7 +81,7 @@ export default function Home({ navBar }: HomePageProps) {
               </CardContent>
             </CardActionArea>
             <CardActions className={styles.cardLink}>
-              <Link href=""></Link>
+              <Link href="" />
             </CardActions>
           </Card>
 
@@ -97,7 +99,7 @@ export default function Home({ navBar }: HomePageProps) {
               </CardContent>
             </CardActionArea>
             <CardActions className={styles.cardLink}>
-              <Link href=""></Link>
+              <Link href="" />
             </CardActions>
           </Card>
 
@@ -115,7 +117,7 @@ export default function Home({ navBar }: HomePageProps) {
               </CardContent>
             </CardActionArea>
             <CardActions className={styles.cardLink}>
-              <Link href=""></Link>
+              <Link href="" />
             </CardActions>
           </Card>
         </section>
@@ -175,7 +177,7 @@ export default function Home({ navBar }: HomePageProps) {
                 </CardContent>
               </CardActionArea>
               <CardActions className={styles.cardLink}>
-                <Link href=""></Link>
+                <Link href="" />
               </CardActions>
             </Card>
             <Card className={styles.newsCard}>
@@ -197,7 +199,7 @@ export default function Home({ navBar }: HomePageProps) {
                 </CardContent>
               </CardActionArea>
               <CardActions className={styles.cardLink}>
-                <Link href=""></Link>
+                <Link href="" />
               </CardActions>
             </Card>
             <Card className={styles.newsCard}>
@@ -298,7 +300,8 @@ export default function Home({ navBar }: HomePageProps) {
         </section>
 
         {/* Footer */}
-        <section className={styles.footer}></section>
+        <section className={styles.footer} />
+        <section />
       </main>
     </>
   );

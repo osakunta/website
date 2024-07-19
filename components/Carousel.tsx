@@ -8,6 +8,7 @@ import {
   EmblaOptionsType,
 } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
+import styles from "@/styles/Carousel.module.css";
 import { NextButton, PrevButton, usePrevNextButtons } from "./CarouselArrows";
 import Image from "next/image";
 
