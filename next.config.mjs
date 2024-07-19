@@ -1,14 +1,17 @@
-import { fetchTranslations } from './fetchTranslations.mjs';
+import { fetchTranslations } from "./fetchTranslations.mjs";
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: "export",
-  images: {
-    unoptimized: true,
-  },
-  reactStrictMode: true,
+export default async () => {
+  /**
+   * @type {import('next').NextConfig}
+   */
+  const nextConfig = {
+    output: "export",
+    images: {
+      unoptimized: true,
+    },
+    reactStrictMode: true,
+  };
+
+  await fetchTranslations();
+  return nextConfig;
 };
-
-fetchTranslations();
-
-export default nextConfig;
