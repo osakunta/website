@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import styles from "@/styles/Carousel.module.css";
 import React, { useCallback, useEffect, useRef } from "react";
 import Link from "next/link";

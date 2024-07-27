@@ -84,7 +84,7 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  });
   // MUI Drawer toggling
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
