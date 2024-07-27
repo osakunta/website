@@ -8,6 +8,7 @@ import {
 } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { NextButton, PrevButton, usePrevNextButtons } from "./CarouselArrows";
+import Image from "next/image";
 
 const TWEEN_FACTOR_BASE = 0.84;
 
@@ -93,7 +94,7 @@ const Carousel: React.FC<PropType> = (props) => {
         <div className="embla__container">
           {slides.map((index) => (
             <div className="embla__slide" key={index}>
-              <img
+              <Image
                 className="embla__slide__img"
                 src={`https://picsum.photos/600/350?v=${index}`}
                 alt="Your alt text"
