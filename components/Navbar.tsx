@@ -14,15 +14,60 @@ import { useState, useEffect } from "react";
 import close from "../public/close.svg";
 import menu from "../public/menu.svg";
 import sato_logo_nav from "../public/sato_logo_nav.png";
+import { ListSubheader } from "@mui/material";
 
 type Anchor = "right";
+
+export interface MyCollectionItem {
+  id: number;
+  text: string;
+}
 
 const Navbar = () => {
   const [state, setState] = useState({
     right: false,
   });
+  const [data, setData] = useState({});
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // Import text
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_DIRECTUS_URL}items/nav`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${process.env.NEXT_PUBLIC_DIRECTUS_API_KEY}`,
+            },
+          },
+        );
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status} ${response.statusText}`);
+        }
+        const result = await response.json();
+        setData(result);
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unknown error occurred");
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+    console.log(data);
+
+    // Scroll to hide header
     let prevScrollpos = window.scrollY;
     const handleScroll = () => {
       const currentScrollpos = window.scrollY;
@@ -40,7 +85,7 @@ const Navbar = () => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
+  // MUI Drawer toggling
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -67,7 +112,13 @@ const Navbar = () => {
       </Button>
 
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+        {[
+          "Home",
+          "Events",
+          "Nation Info",
+          "Official Documents",
+          "Karhunkierros",
+        ].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon></ListItemIcon>
@@ -77,16 +128,33 @@ const Navbar = () => {
         ))}
       </List>
       <Divider />
+      <ListSubheader>For Members</ListSubheader>
       <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon></ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        {["Ajankohtaista", "Calendar", "Activities", "Archive", "Contacts"].map(
+          (text, index) => (
+            <ListItem key={text} disablePadding>
+              <ListItemButton>
+                <ListItemIcon></ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItemButton>
+            </ListItem>
+          ),
+        )}
       </List>
+      <ListItem disablePadding>
+        <ListItemButton>
+          <ListItemIcon></ListItemIcon>
+          <ListItemText>Säätiö Rental</ListItemText>
+        </ListItemButton>
+      </ListItem>
+      <Divider />
+      <ListSubheader>Languages</ListSubheader>
+      <div>
+        <ListItemIcon></ListItemIcon>
+        <Button>FI</Button>
+        <Button>SV</Button>
+        <Button>EN</Button>
+      </div>
     </Box>
   );
 
