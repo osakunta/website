@@ -41,10 +41,9 @@ const Navbar = () => {
       setError(null);
 
       const collectionName: string = "Nav";
-      const url = `https://cms-xeluiu6oba-lz.a.run.app/items/Nav`;
+      const url = `${process.env.NEXT_PUBLIC_DIRECTUS_URL}items/${collectionName}`;
       const headers = {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_DIRECTUS_API_KEY}`,
       };
 
@@ -53,7 +52,7 @@ const Navbar = () => {
           method: "GET",
           headers,
         });
-        console.log("Response: ", response);
+        console.log(response);
         if (!response.ok) {
           throw new Error(`Error: ${response.status} ${response.statusText}`);
         }
