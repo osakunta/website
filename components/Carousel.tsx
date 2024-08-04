@@ -99,6 +99,8 @@ const Carousel: React.FC<PropType> = (props) => {
                 className="embla__slide__img"
                 src={`https://picsum.photos/600/350?v=${index}`}
                 alt="Your alt text"
+                width={250}
+                height={100}
               />
             </div>
           ))}

@@ -15,6 +15,7 @@ import close from "../public/close.svg";
 import menu from "../public/menu.svg";
 import sato_logo_nav from "../public/sato_logo_nav.png";
 import { ListSubheader } from "@mui/material";
+import { useRouter } from "next/router";
 
 type Anchor = "right";
 
@@ -30,6 +31,8 @@ const Navbar = () => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
+  const currentRoute = router.pathname;
 
   useEffect(() => {
     // Import text
@@ -37,21 +40,25 @@ const Navbar = () => {
       setLoading(true);
       setError(null);
 
+      const collectionName: string = "Nav";
+      const url = `https://cms-xeluiu6oba-lz.a.run.app/items/Nav`;
+      const headers = {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_DIRECTUS_API_KEY}`,
+      };
+
       try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_DIRECTUS_URL}items/nav`,
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${process.env.NEXT_PUBLIC_DIRECTUS_API_KEY}`,
-            },
-          },
-        );
+        const response = await fetch(url, {
+          method: "GET",
+          headers,
+        });
+        console.log("Response: ", response);
         if (!response.ok) {
           throw new Error(`Error: ${response.status} ${response.statusText}`);
         }
         const result = await response.json();
+        console.log(result);
         setData(result);
       } catch (err) {
         if (err instanceof Error) {
@@ -65,7 +72,6 @@ const Navbar = () => {
     };
 
     fetchData();
-    console.log(data);
 
     // Scroll to hide header
     let prevScrollpos = window.scrollY;
@@ -84,7 +90,7 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  });
+  }, [data]);
   // MUI Drawer toggling
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
@@ -111,31 +117,59 @@ const Navbar = () => {
         <Image src={close} alt="close icon" />
       </Button>
 
-      <List>
-        {[
-          "Home",
-          "Events",
-          "Nation Info",
-          "Official Documents",
-          "Karhunkierros",
-        ].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon></ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+      <ListItem disablePadding>
+        <ListItemButton>
+          <ListItemIcon></ListItemIcon>
+          <Link
+            href="/"
+            className={
+              "/" === currentRoute ? styles.navLinkActive : styles.navLink
+            }
+          >
+            Home
+          </Link>
+        </ListItemButton>
+      </ListItem>
+      <List disablePadding>
+        {["Events", "Nation Info", "Official Documents", "Karhunkierros"].map(
+          (text, index) => (
+            <ListItem key={text} disablePadding>
+              <ListItemButton>
+                <ListItemIcon></ListItemIcon>
+                <Link
+                  href={`/${text.toLowerCase().replace(" ", "-")}`}
+                  className={
+                    `/${text.toLowerCase().replace(" ", "-")}` === currentRoute
+                      ? styles.navLinkActive
+                      : styles.navLink
+                  }
+                >
+                  {text}
+                </Link>
+              </ListItemButton>
+            </ListItem>
+          ),
+        )}
       </List>
+      <br />
       <Divider />
       <ListSubheader>For Members</ListSubheader>
-      <List>
+      <List disablePadding>
         {["Ajankohtaista", "Calendar", "Activities", "Archive", "Contacts"].map(
           (text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
                 <ListItemIcon></ListItemIcon>
-                <ListItemText primary={text} />
+                <Link
+                  href={`/${text.toLowerCase().replace(" ", "-")}`}
+                  className={
+                    `/${text.toLowerCase().replace(" ", "-")}` === currentRoute
+                      ? styles.navLinkActive
+                      : styles.navLink
+                  }
+                >
+                  {text}
+                </Link>
               </ListItemButton>
             </ListItem>
           ),
@@ -144,9 +178,17 @@ const Navbar = () => {
       <ListItem disablePadding>
         <ListItemButton>
           <ListItemIcon></ListItemIcon>
-          <ListItemText>Säätiö Rental</ListItemText>
+          <Link
+            href="/"
+            className={
+              "/säätiö" === currentRoute ? styles.navLinkActive : styles.navLink
+            }
+          >
+            Säätiö Rental
+          </Link>
         </ListItemButton>
       </ListItem>
+      <br />
       <Divider />
       <ListSubheader>Languages</ListSubheader>
       <div>
