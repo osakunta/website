@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import styles from "@/styles/Navbar.module.css";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -28,11 +29,13 @@ const Navbar = () => {
   const [state, setState] = useState({
     right: false,
   });
-  const [data, setData] = useState({});
+  const [cmsData, setCmsData] = useState<CMSData>({ data: [] });
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
   const currentRoute = router.pathname;
+  const navGeneral = cmsData.data.slice(0, 4);
+  const navFormembers = cmsData.data.slice(4);
 
   useEffect(() => {
     // Import text
@@ -44,7 +47,6 @@ const Navbar = () => {
       const url = `${process.env.NEXT_PUBLIC_DIRECTUS_URL}items/${collectionName}`;
       const headers = {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_DIRECTUS_API_KEY}`,
       };
 
       try {
@@ -52,13 +54,11 @@ const Navbar = () => {
           method: "GET",
           headers,
         });
-        console.log(response);
         if (!response.ok) {
           throw new Error(`Error: ${response.status} ${response.statusText}`);
         }
         const result = await response.json();
-        console.log(result);
-        setData(result);
+        setCmsData(result);
       } catch (err) {
         if (err instanceof Error) {
           setError(err.message);
@@ -69,7 +69,6 @@ const Navbar = () => {
         setLoading(false);
       }
     };
-
     fetchData();
 
     // Scroll to hide header
@@ -89,7 +88,8 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [data]);
+  }, []);
+
   // MUI Drawer toggling
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
@@ -116,77 +116,59 @@ const Navbar = () => {
         <Image src={close} alt="close icon" />
       </Button>
 
-      <ListItem disablePadding>
-        <ListItemButton>
-          <ListItemIcon></ListItemIcon>
-          <Link
-            href="/"
-            className={
-              "/" === currentRoute ? styles.navLinkActive : styles.navLink
-            }
-          >
-            Home
-          </Link>
-        </ListItemButton>
-      </ListItem>
+      {/* {cmsData.data.map((data: any) => (
+        <p key={data.id}>{data.text_en}</p>
+      ))} */}
       <List disablePadding>
-        {["Events", "Nation Info", "Official Documents", "Karhunkierros"].map(
-          (text, index) => (
-            <ListItem key={text} disablePadding>
+        {navGeneral.map((data: CMSItem) => {
+          const route =
+            data.text_en.toLowerCase() === "home"
+              ? "/"
+              : `/${data.text_en.toLowerCase().replace(" ", "-")}`;
+
+          return (
+            <ListItem key={data.id} disablePadding>
               <ListItemButton>
                 <ListItemIcon></ListItemIcon>
                 <Link
-                  href={`/${text.toLowerCase().replace(" ", "-")}`}
+                  href={route}
                   className={
-                    `/${text.toLowerCase().replace(" ", "-")}` === currentRoute
+                    route === currentRoute
                       ? styles.navLinkActive
                       : styles.navLink
                   }
                 >
-                  {text}
+                  {data.text_en}
                 </Link>
               </ListItemButton>
             </ListItem>
-          ),
-        )}
+          );
+        })}
       </List>
       <br />
       <Divider />
       <ListSubheader>For Members</ListSubheader>
       <List disablePadding>
-        {["Ajankohtaista", "Calendar", "Activities", "Archive", "Contacts"].map(
-          (text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon></ListItemIcon>
-                <Link
-                  href={`/${text.toLowerCase().replace(" ", "-")}`}
-                  className={
-                    `/${text.toLowerCase().replace(" ", "-")}` === currentRoute
-                      ? styles.navLinkActive
-                      : styles.navLink
-                  }
-                >
-                  {text}
-                </Link>
-              </ListItemButton>
-            </ListItem>
-          ),
-        )}
+        {navFormembers.map((data: any) => (
+          <ListItem key={data.id} disablePadding>
+            <ListItemButton>
+              <ListItemIcon></ListItemIcon>
+              <Link
+                href={`/${data.text_en.toLowerCase().replace(" ", "-")}`}
+                className={
+                  `/${data.text_en.toLowerCase().replace(" ", "-")}` ===
+                  currentRoute
+                    ? styles.navLinkActive
+                    : styles.navLink
+                }
+              >
+                {data.text_en}
+              </Link>
+            </ListItemButton>
+          </ListItem>
+        ))}
       </List>
-      <ListItem disablePadding>
-        <ListItemButton>
-          <ListItemIcon></ListItemIcon>
-          <Link
-            href="/"
-            className={
-              "/säätiö" === currentRoute ? styles.navLinkActive : styles.navLink
-            }
-          >
-            Säätiö Rental
-          </Link>
-        </ListItemButton>
-      </ListItem>
+
       <br />
       <Divider />
       <ListSubheader>Languages</ListSubheader>
