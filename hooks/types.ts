@@ -1,8 +1,8 @@
 type CMSItem = {
   id: number;
-  user_created: string;
+  user_created: null;
   date_created: string;
-  user_updated: string | null;
+  user_updated: null;
   date_updated: string | null;
   text_en: string;
   text_fi: string;

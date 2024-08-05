@@ -30,7 +30,7 @@ const Navbar = () => {
   const router = useRouter();
   const currentRoute = router.pathname;
   const navGeneral = cmsData.data.slice(0, 4);
-  const navFormembers = cmsData.data.slice(4);
+  const navForMembers = cmsData.data.slice(4);
 
   useEffect(() => {
     // Import text
@@ -144,7 +144,7 @@ const Navbar = () => {
       <Divider />
       <ListSubheader>For Members</ListSubheader>
       <List disablePadding>
-        {navFormembers.map((data: any) => (
+        {navForMembers.map((data: any) => (
           <ListItem key={data.id} disablePadding>
             <ListItemButton>
               <ListItemIcon></ListItemIcon>
