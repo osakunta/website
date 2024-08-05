@@ -20,11 +20,6 @@ import { useRouter } from "next/router";
 
 type Anchor = "right";
 
-export interface MyCollectionItem {
-  id: number;
-  text: string;
-}
-
 const Navbar = () => {
   const [state, setState] = useState({
     right: false,
