@@ -1,9 +1,24 @@
 import Navbar from "@/components/Navbar";
+import { fetchNavData } from "@/lib/fetchNavData";
+import { GetStaticProps } from "next";
 
-export default function NationInfo() {
+type Props = {
+  navData: CMSData;
+};
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const navData = await fetchNavData();
+  return {
+    props: {
+      navData,
+    },
+  };
+};
+
+export default function NationInfo({ navData }: Props) {
   return (
     <>
-      <div></div>
+      <Navbar navData={navData} />
     </>
   );
 }

@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import styles from "@/styles/Navbar.module.css";
+import { ListSubheader } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
@@ -8,64 +9,31 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import close from "../public/close.svg";
 import menu from "../public/menu.svg";
 import sato_logo_nav from "../public/sato_logo_nav.png";
-import { ListSubheader } from "@mui/material";
-import { useRouter } from "next/router";
 
 type Anchor = "right";
 
-const Navbar = () => {
+interface NavbarProps {
+  navData: CMSData;
+}
+
+const Navbar = ({ navData }: NavbarProps) => {
   const [state, setState] = useState({
     right: false,
   });
-  const [cmsData, setCmsData] = useState<CMSData>({ data: [] });
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
+  const cmsData = navData;
   const router = useRouter();
   const currentRoute = router.pathname;
   const navGeneral = cmsData.data.slice(0, 4);
   const navForMembers = cmsData.data.slice(4);
 
   useEffect(() => {
-    // Import text
-    const fetchData = async () => {
-      setLoading(true);
-      setError(null);
-
-      const collectionName: string = "Nav";
-      const url = `${process.env.NEXT_PUBLIC_DIRECTUS_URL}items/${collectionName}`;
-      const headers = {
-        "Content-Type": "application/json",
-      };
-
-      try {
-        const response = await fetch(url, {
-          method: "GET",
-          headers,
-        });
-        if (!response.ok) {
-          throw new Error(`Error: ${response.status} ${response.statusText}`);
-        }
-        const result = await response.json();
-        setCmsData(result);
-      } catch (err) {
-        if (err instanceof Error) {
-          setError(err.message);
-        } else {
-          setError("An unknown error occurred");
-        }
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-
     // Scroll to hide header
     let prevScrollpos = window.scrollY;
     const handleScroll = () => {
