@@ -12,3 +12,7 @@ type CMSItem = {
 type CMSData = {
   data: CMSItem[];
 };
+
+type NavProps = {
+  navData: CMSData;
+};
