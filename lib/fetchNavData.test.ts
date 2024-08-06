@@ -20,15 +20,12 @@ describe("fetchNavData", () => {
     const result = await fetchNavData();
     expect(result).toEqual(mockData);
     expect(fetch).toHaveBeenCalledTimes(1);
-    expect(fetch).toHaveBeenCalledWith(
-      `${process.env.NEXT_PUBLIC_DIRECTUS_URL}items/Nav`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
+    expect(fetch).toHaveBeenCalledWith(`${process.env.DIRECTUS_URL}items/Nav`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
       },
-    );
+    });
   });
 
   it("should return an empty data object when the fetch response is not ok", async () => {

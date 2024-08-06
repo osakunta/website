@@ -15,7 +15,7 @@ export default function NationInfo({ navData }: NavProps) {
   return (
     <>
       <Navbar navData={navData} />
-      <p>hi</p>
+      <p>hi!</p>
     </>
   );
 }
