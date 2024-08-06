@@ -36,7 +36,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <main className={styles.main}>
-        <Navbar />
         {/* Hero */}
         <section className={styles.hero}>
           <h2 className={styles.h2}>Ystäviä, tapahtumia ja koti Kampissa</h2>
