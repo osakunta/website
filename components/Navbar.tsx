@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import styles from "@/styles/Navbar.module.css";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -14,6 +15,8 @@ import { useState, useEffect } from "react";
 import close from "../public/close.svg";
 import menu from "../public/menu.svg";
 import sato_logo_nav from "../public/sato_logo_nav.png";
+import { ListSubheader } from "@mui/material";
+import { useRouter } from "next/router";
 
 type Anchor = "right";
 
@@ -21,8 +24,49 @@ const Navbar = () => {
   const [state, setState] = useState({
     right: false,
   });
+  const [cmsData, setCmsData] = useState<CMSData>({ data: [] });
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
+  const currentRoute = router.pathname;
+  const navGeneral = cmsData.data.slice(0, 4);
+  const navForMembers = cmsData.data.slice(4);
 
   useEffect(() => {
+    // Import text
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+
+      const collectionName: string = "Nav";
+      const url = `${process.env.NEXT_PUBLIC_DIRECTUS_URL}items/${collectionName}`;
+      const headers = {
+        "Content-Type": "application/json",
+      };
+
+      try {
+        const response = await fetch(url, {
+          method: "GET",
+          headers,
+        });
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status} ${response.statusText}`);
+        }
+        const result = await response.json();
+        setCmsData(result);
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unknown error occurred");
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+
+    // Scroll to hide header
     let prevScrollpos = window.scrollY;
     const handleScroll = () => {
       const currentScrollpos = window.scrollY;
@@ -41,6 +85,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // MUI Drawer toggling
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -66,27 +111,68 @@ const Navbar = () => {
         <Image src={close} alt="close icon" />
       </Button>
 
-      <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon></ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+      {/* {cmsData.data.map((data: any) => (
+        <p key={data.id}>{data.text_en}</p>
+      ))} */}
+      <List disablePadding>
+        {navGeneral.map((data: CMSItem) => {
+          const route =
+            data.text_en.toLowerCase() === "home"
+              ? "/"
+              : `/${data.text_en.toLowerCase().replace(" ", "-")}`;
+
+          return (
+            <ListItem key={data.id} disablePadding>
+              <ListItemButton>
+                <ListItemIcon></ListItemIcon>
+                <Link
+                  href={route}
+                  className={
+                    route === currentRoute
+                      ? styles.navLinkActive
+                      : styles.navLink
+                  }
+                >
+                  {data.text_en}
+                </Link>
+              </ListItemButton>
+            </ListItem>
+          );
+        })}
       </List>
+      <br />
       <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem key={text} disablePadding>
+      <ListSubheader>For Members</ListSubheader>
+      <List disablePadding>
+        {navForMembers.map((data: any) => (
+          <ListItem key={data.id} disablePadding>
             <ListItemButton>
               <ListItemIcon></ListItemIcon>
-              <ListItemText primary={text} />
+              <Link
+                href={`/${data.text_en.toLowerCase().replace(" ", "-")}`}
+                className={
+                  `/${data.text_en.toLowerCase().replace(" ", "-")}` ===
+                  currentRoute
+                    ? styles.navLinkActive
+                    : styles.navLink
+                }
+              >
+                {data.text_en}
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
       </List>
+
+      <br />
+      <Divider />
+      <ListSubheader>Languages</ListSubheader>
+      <div>
+        <ListItemIcon></ListItemIcon>
+        <Button>FI</Button>
+        <Button>SV</Button>
+        <Button>EN</Button>
+      </div>
     </Box>
   );
 
