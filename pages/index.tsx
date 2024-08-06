@@ -25,11 +25,7 @@ const OPTIONS: EmblaOptionsType = { loop: true };
 const SLIDE_COUNT = 10;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
-type Props = {
-  navData: CMSData;
-};
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<NavProps> = async () => {
   const navData = await fetchNavData();
   return {
     props: {
@@ -38,7 +34,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   };
 };
 
-export default function Home({ navData }: Props) {
+export default function Home({ navData }: NavProps) {
   return (
     <>
       <Head>
