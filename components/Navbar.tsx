@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import close from "../public/close.svg";
 import menu from "../public/menu.svg";
 import sato_logo_nav from "../public/sato_logo_nav.png";
+import { useLanguage } from "@/lib/LocalizationContext";
 
 type Anchor = "right";
 
@@ -32,6 +33,10 @@ const Navbar = ({ navData }: NavbarProps) => {
   const currentRoute = router.pathname;
   const navGeneral = cmsData.data.slice(0, 4);
   const navForMembers = cmsData.data.slice(4);
+  const forMembersLabel = cmsData.data.slice(11, 12)[0];
+  console.log(cmsData);
+  const languagesLabel = cmsData.data.slice(12, 13)[0];
+  const { language, setLanguage } = useLanguage();
 
   useEffect(() => {
     // Scroll to hide header
@@ -79,9 +84,6 @@ const Navbar = ({ navData }: NavbarProps) => {
         <Image src={close} alt="close icon" />
       </Button>
 
-      {/* {cmsData.data.map((data: any) => (
-        <p key={data.id}>{data.text_en}</p>
-      ))} */}
       <List disablePadding>
         {navGeneral.map((data: CMSItem) => {
           const route =
@@ -101,7 +103,8 @@ const Navbar = ({ navData }: NavbarProps) => {
                       : styles.navLink
                   }
                 >
-                  {data.text_en}
+                  {/* @ts-ignore: Dynamic property access */}
+                  {data[`text_${language}`]}
                 </Link>
               </ListItemButton>
             </ListItem>
@@ -110,7 +113,8 @@ const Navbar = ({ navData }: NavbarProps) => {
       </List>
       <br />
       <Divider />
-      <ListSubheader>For Members</ListSubheader>
+      {/* @ts-ignore: Dynamic property access */}
+      <ListSubheader>{forMembersLabel[`text_${language}`]}</ListSubheader>
       <List disablePadding>
         {navForMembers.map((data: any) => (
           <ListItem key={data.id} disablePadding>
@@ -125,7 +129,7 @@ const Navbar = ({ navData }: NavbarProps) => {
                     : styles.navLink
                 }
               >
-                {data.text_en}
+                {data[`text_${language}`]}
               </Link>
             </ListItemButton>
           </ListItem>
@@ -134,12 +138,40 @@ const Navbar = ({ navData }: NavbarProps) => {
 
       <br />
       <Divider />
-      <ListSubheader>Languages</ListSubheader>
+      {/* @ts-ignore: Dynamic property access */}
+      <ListSubheader>{languagesLabel[`text_${language}`]}</ListSubheader>
       <div>
         <ListItemIcon></ListItemIcon>
-        <Button>FI</Button>
-        <Button>SV</Button>
-        <Button>EN</Button>
+        <Button
+          onClick={() => setLanguage("fi")}
+          className={
+            language === "fi"
+              ? styles.activeLanguageButton
+              : styles.languageButton
+          }
+        >
+          FI
+        </Button>
+        <Button
+          onClick={() => setLanguage("sv")}
+          className={
+            language === "sv"
+              ? styles.activeLanguageButton
+              : styles.languageButton
+          }
+        >
+          SV
+        </Button>
+        <Button
+          onClick={() => setLanguage("en")}
+          className={
+            language === "en"
+              ? styles.activeLanguageButton
+              : styles.languageButton
+          }
+        >
+          EN
+        </Button>
       </div>
     </Box>
   );
