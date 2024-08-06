@@ -34,7 +34,6 @@ const Navbar = ({ navData }: NavbarProps) => {
   const navGeneral = cmsData.data.slice(0, 4);
   const navForMembers = cmsData.data.slice(4);
   const forMembersLabel = cmsData.data.slice(11, 12)[0];
-  console.log(cmsData);
   const languagesLabel = cmsData.data.slice(12, 13)[0];
   const { language, setLanguage } = useLanguage();
 
