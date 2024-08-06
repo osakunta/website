@@ -30,3 +30,12 @@
   font-weight: 700;
   color: var(--orange200);
 }
+
+.languageButton {
+  color: var(--black);
+}
+
+.activeLanguageButton {
+  color: var(--orange200);
+  font-weight: 700;
+}

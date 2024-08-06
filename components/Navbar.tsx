@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import styles from "@/styles/Navbar.module.css";
+import { ListSubheader } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
@@ -8,64 +9,35 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import close from "../public/close.svg";
 import menu from "../public/menu.svg";
 import sato_logo_nav from "../public/sato_logo_nav.png";
-import { ListSubheader } from "@mui/material";
-import { useRouter } from "next/router";
+import { useLanguage } from "@/lib/LocalizationContext";
 
 type Anchor = "right";
 
-const Navbar = () => {
+interface NavbarProps {
+  navData: CMSData;
+}
+
+const Navbar = ({ navData }: NavbarProps) => {
   const [state, setState] = useState({
     right: false,
   });
-  const [cmsData, setCmsData] = useState<CMSData>({ data: [] });
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
+  const cmsData = navData;
   const router = useRouter();
   const currentRoute = router.pathname;
   const navGeneral = cmsData.data.slice(0, 4);
   const navForMembers = cmsData.data.slice(4);
+  const forMembersLabel = cmsData.data.slice(11, 12)[0];
+  const languagesLabel = cmsData.data.slice(12, 13)[0];
+  const { language, setLanguage } = useLanguage();
 
   useEffect(() => {
-    // Import text
-    const fetchData = async () => {
-      setLoading(true);
-      setError(null);
-
-      const collectionName: string = "Nav";
-      const url = `${process.env.NEXT_PUBLIC_DIRECTUS_URL}items/${collectionName}`;
-      const headers = {
-        "Content-Type": "application/json",
-      };
-
-      try {
-        const response = await fetch(url, {
-          method: "GET",
-          headers,
-        });
-        if (!response.ok) {
-          throw new Error(`Error: ${response.status} ${response.statusText}`);
-        }
-        const result = await response.json();
-        setCmsData(result);
-      } catch (err) {
-        if (err instanceof Error) {
-          setError(err.message);
-        } else {
-          setError("An unknown error occurred");
-        }
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-
     // Scroll to hide header
     let prevScrollpos = window.scrollY;
     const handleScroll = () => {
@@ -111,9 +83,6 @@ const Navbar = () => {
         <Image src={close} alt="close icon" />
       </Button>
 
-      {/* {cmsData.data.map((data: any) => (
-        <p key={data.id}>{data.text_en}</p>
-      ))} */}
       <List disablePadding>
         {navGeneral.map((data: CMSItem) => {
           const route =
@@ -133,7 +102,8 @@ const Navbar = () => {
                       : styles.navLink
                   }
                 >
-                  {data.text_en}
+                  {/* @ts-ignore: Dynamic property access */}
+                  {data[`text_${language}`]}
                 </Link>
               </ListItemButton>
             </ListItem>
@@ -142,7 +112,8 @@ const Navbar = () => {
       </List>
       <br />
       <Divider />
-      <ListSubheader>For Members</ListSubheader>
+      {/* @ts-ignore: Dynamic property access */}
+      <ListSubheader>{forMembersLabel[`text_${language}`]}</ListSubheader>
       <List disablePadding>
         {navForMembers.map((data: any) => (
           <ListItem key={data.id} disablePadding>
@@ -157,7 +128,7 @@ const Navbar = () => {
                     : styles.navLink
                 }
               >
-                {data.text_en}
+                {data[`text_${language}`]}
               </Link>
             </ListItemButton>
           </ListItem>
@@ -166,12 +137,40 @@ const Navbar = () => {
 
       <br />
       <Divider />
-      <ListSubheader>Languages</ListSubheader>
+      {/* @ts-ignore: Dynamic property access */}
+      <ListSubheader>{languagesLabel[`text_${language}`]}</ListSubheader>
       <div>
         <ListItemIcon></ListItemIcon>
-        <Button>FI</Button>
-        <Button>SV</Button>
-        <Button>EN</Button>
+        <Button
+          onClick={() => setLanguage("fi")}
+          className={
+            language === "fi"
+              ? styles.activeLanguageButton
+              : styles.languageButton
+          }
+        >
+          FI
+        </Button>
+        <Button
+          onClick={() => setLanguage("sv")}
+          className={
+            language === "sv"
+              ? styles.activeLanguageButton
+              : styles.languageButton
+          }
+        >
+          SV
+        </Button>
+        <Button
+          onClick={() => setLanguage("en")}
+          className={
+            language === "en"
+              ? styles.activeLanguageButton
+              : styles.languageButton
+          }
+        >
+          EN
+        </Button>
       </div>
     </Box>
   );

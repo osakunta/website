@@ -1,4 +1,6 @@
+import Carousel from "@/components/Carousel";
 import Navbar from "@/components/Navbar";
+import { fetchNavData } from "@/lib/fetchNavData";
 import styles from "@/styles/Home.module.css";
 import {
   Button,
@@ -9,21 +11,30 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
+import { EmblaOptionsType } from "embla-carousel";
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import aino from "../public/aino.png";
 import arrowBlue from "../public/arrow_forward_blue.svg";
 import arrowWhite from "../public/arrow_forward_white.svg";
-import Carousel from "@/components/Carousel";
 import cAside from "../public/contact-aside.png";
-import { EmblaOptionsType } from "embla-carousel";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 const SLIDE_COUNT = 10;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
-export default function Home() {
+export const getStaticProps: GetStaticProps<NavProps> = async () => {
+  const navData = await fetchNavData();
+  return {
+    props: {
+      navData,
+    },
+  };
+};
+
+export default function Home({ navData }: NavProps) {
   return (
     <>
       <Head>
@@ -36,7 +47,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <main className={styles.main}>
-        <Navbar />
+        <Navbar navData={navData} />
         {/* Hero */}
         <section className={styles.hero}>
           <h2 className={styles.h2}>Ystäviä, tapahtumia ja koti Kampissa</h2>
