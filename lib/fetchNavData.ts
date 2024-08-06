@@ -1,6 +1,6 @@
 export async function fetchNavData() {
   const collectionName: string = "Nav";
-  const url = `${process.env.NEXT_PUBLIC_DIRECTUS_URL}items/${collectionName}`;
+  const url = `${process.env.DIRECTUS_URL}items/${collectionName}`;
   const headers = {
     "Content-Type": "application/json",
   };
