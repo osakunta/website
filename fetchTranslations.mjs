@@ -19,15 +19,24 @@ export async function fetchTranslations() {
 
     const data = await response.json();
 
-    await writeFile(
-      "./hooks/translations.json",
-      JSON.stringify(data, null, 2) + "\n",
-    ); // prettier wants a trailing newline
+    const translations = data.data.reduce(
+      (translations, value) => ({
+        ...translations,
+        [value.key]: {
+          fi: value.text_fi,
+          en: value.text_en,
+          sv: value.text_sv,
+        },
+      }),
+      {},
+    );
+
+    await writeFile("./hooks/translations.json", JSON.stringify(translations));
     console.log(
-      `Downloaded and saved translations.json ${response.status === 304 ? "cached" : ""}`,
+      `Downloaded and saved translations ${response.status === 304 ? "cached" : ""}`,
     );
   } catch (error) {
-    console.error("Error downloading translations.json :", error);
+    console.error("Error downloading translations :", error);
   }
 }
 

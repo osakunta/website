@@ -1,22 +1,13 @@
 {
-  "data": [
-    {
-      "key": "new_test",
-      "text_fi": "moi",
-      "text_en": "hi",
-      "text_sv": "hej"
-    },
-    {
-      "key": "general:nation",
-      "text_fi": "Satakuntalainen Osakunta",
-      "text_en": "Satakunta Nation",
-      "text_sv": "Satakunta Nation"
-    },
-    {
-      "key": "home:welcome",
-      "text_fi": "Tervetuloa Satakuntalaisen Osakunnan sivuille",
-      "text_en": "Welcome to the website of Satakuntalainen Osakunta",
-      "text_sv": "Samma på svenska"
-    }
-  ]
+  "new_test": { "fi": "moi", "en": "hi", "sv": "hej" },
+  "general:nation": {
+    "fi": "Satakuntalainen Osakunta",
+    "en": "Satakunta Nation",
+    "sv": "Satakunta Nation"
+  },
+  "home:welcome": {
+    "fi": "Tervetuloa Satakuntalaisen Osakunnan sivuille",
+    "en": "Welcome to the website of Satakuntalainen Osakunta",
+    "sv": "Samma på svenska"
+  }
 }
