@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import styles from "@/styles/Navbar.module.css";
-import { ListSubheader } from "@mui/material";
+import { ListSubheader, Snackbar, Alert } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
@@ -28,14 +28,17 @@ const Navbar = ({ navData }: NavbarProps) => {
   const [state, setState] = useState({
     right: false,
   });
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const { language, setLanguage } = useLanguage();
   const cmsData = navData;
   const router = useRouter();
   const currentRoute = router.pathname;
   const navGeneral = cmsData.data.slice(0, 4);
-  const navForMembers = cmsData.data.slice(4);
+  const navForMembers = cmsData.data.slice(4, 11);
   const forMembersLabel = cmsData.data.slice(11, 12)[0];
   const languagesLabel = cmsData.data.slice(12, 13)[0];
-  const { language, setLanguage } = useLanguage();
+  const cmsSnackbarMessage = cmsData.data.slice(13, 14)[0];
 
   useEffect(() => {
     // Scroll to hide header
@@ -72,6 +75,23 @@ const Navbar = ({ navData }: NavbarProps) => {
       setState({ ...state, [anchor]: open });
     };
 
+  const handleLanguageChange = (language: any) => {
+    setLanguage(language);
+    // @ts-ignore: Dynamic property access
+    setSnackbarMessage(`${cmsSnackbarMessage[`text_${language}`]}`);
+    setSnackbarOpen(true);
+  };
+
+  const handleSnackbarClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string,
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setSnackbarOpen(false);
+  };
+
   const list = (anchor: Anchor) => (
     <Box
       sx={{ width: 300 }}
@@ -79,7 +99,10 @@ const Navbar = ({ navData }: NavbarProps) => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <Button onClick={toggleDrawer(anchor, false)}>
+      <Button
+        onClick={toggleDrawer(anchor, false)}
+        onKeyDown={toggleDrawer(anchor, false)}
+      >
         <Image src={close} alt="close icon" />
       </Button>
 
@@ -96,6 +119,7 @@ const Navbar = ({ navData }: NavbarProps) => {
                 <ListItemIcon></ListItemIcon>
                 <Link
                   href={route}
+                  locale={language}
                   className={
                     route === currentRoute
                       ? styles.navLinkActive
@@ -142,7 +166,8 @@ const Navbar = ({ navData }: NavbarProps) => {
       <div>
         <ListItemIcon></ListItemIcon>
         <Button
-          onClick={() => setLanguage("fi")}
+          onClick={() => handleLanguageChange("fi")}
+          onKeyDown={() => handleLanguageChange("fi")}
           className={
             language === "fi"
               ? styles.activeLanguageButton
@@ -152,7 +177,8 @@ const Navbar = ({ navData }: NavbarProps) => {
           FI
         </Button>
         <Button
-          onClick={() => setLanguage("sv")}
+          onClick={() => handleLanguageChange("sv")}
+          onKeyDown={() => handleLanguageChange("sv")}
           className={
             language === "sv"
               ? styles.activeLanguageButton
@@ -162,7 +188,8 @@ const Navbar = ({ navData }: NavbarProps) => {
           SV
         </Button>
         <Button
-          onClick={() => setLanguage("en")}
+          onClick={() => handleLanguageChange("en")}
+          onKeyDown={() => handleLanguageChange("en ")}
           className={
             language === "en"
               ? styles.activeLanguageButton
@@ -200,6 +227,19 @@ const Navbar = ({ navData }: NavbarProps) => {
           </div>
         ))}
       </nav>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={3000}
+        onClose={handleSnackbarClose}
+      >
+        <Alert
+          onClose={handleSnackbarClose}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </div>
   );
 };
