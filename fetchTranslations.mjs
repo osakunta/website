@@ -1,4 +1,5 @@
-import "dotenv/config";
+import dotenv from "dotenv";
+dotenv.config({ path: ".env.local" });
 import { writeFile } from "fs/promises";
 
 export async function fetchTranslations() {
@@ -22,8 +23,12 @@ export async function fetchTranslations() {
       "./hooks/translations.json",
       JSON.stringify(data, null, 2) + "\n",
     ); // prettier wants a trailing newline
-    console.log("Downloaded and saved translations.json");
+    console.log(
+      `Downloaded and saved translations.json ${response.status === 304 ? "cached" : ""}`,
+    );
   } catch (error) {
     console.error("Error downloading translations.json :", error);
   }
 }
+
+fetchTranslations();

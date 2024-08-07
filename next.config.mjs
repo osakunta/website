@@ -1,6 +1,4 @@
-import { fetchTranslations } from "./fetchTranslations.mjs";
-
-export default async () => {
+const config = async () => {
   /**
    * @type {import('next').NextConfig}
    */
@@ -12,6 +10,7 @@ export default async () => {
     reactStrictMode: true,
   };
 
-  await fetchTranslations();
   return nextConfig;
 };
+
+export default config;
