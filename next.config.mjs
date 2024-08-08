@@ -1,16 +1,10 @@
-const config = async () => {
-  /**
-   * @type {import('next').NextConfig}
-   */
-  const nextConfig = {
-    output: "export",
-    images: {
-      unoptimized: true,
-    },
-    reactStrictMode: true,
-  };
-
-  return nextConfig;
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
+  reactStrictMode: true,
 };
 
-export default config;
+export default nextConfig;
