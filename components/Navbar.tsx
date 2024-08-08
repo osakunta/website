@@ -115,11 +115,13 @@ const Navbar = ({ navData }: NavbarProps) => {
 
           return (
             <ListItem key={data.id} disablePadding>
-              <ListItemButton>
-                <ListItemIcon></ListItemIcon>
-                <Link
-                  href={route}
-                  locale={language}
+              <Link
+                href={route}
+                locale={language}
+                passHref
+                className={styles.nextLink}
+              >
+                <ListItemButton
                   className={
                     route === currentRoute
                       ? styles.navLinkActive
@@ -128,8 +130,8 @@ const Navbar = ({ navData }: NavbarProps) => {
                 >
                   {/* @ts-ignore: Dynamic property access */}
                   {data[`text_${language}`]}
-                </Link>
-              </ListItemButton>
+                </ListItemButton>
+              </Link>
             </ListItem>
           );
         })}
@@ -141,10 +143,12 @@ const Navbar = ({ navData }: NavbarProps) => {
       <List disablePadding>
         {navForMembers.map((data: any) => (
           <ListItem key={data.id} disablePadding>
-            <ListItemButton>
-              <ListItemIcon></ListItemIcon>
-              <Link
-                href={`/${data.text_en.toLowerCase().replace(" ", "-")}`}
+            <Link
+              href={`/${data.text_en.toLowerCase().replace(" ", "-")}`}
+              passHref
+              className={styles.nextLink}
+            >
+              <ListItemButton
                 className={
                   `/${data.text_en.toLowerCase().replace(" ", "-")}` ===
                   currentRoute
@@ -153,8 +157,8 @@ const Navbar = ({ navData }: NavbarProps) => {
                 }
               >
                 {data[`text_${language}`]}
-              </Link>
-            </ListItemButton>
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>

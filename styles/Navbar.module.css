@@ -18,10 +18,16 @@
   top: 0;
 }
 
+.nextLink {
+  text-decoration: none;
+  width: 100%;
+}
+
 .navLink {
   text-decoration: none;
   font-size: 1.2rem;
   color: var(--black);
+  padding-left: 3rem;
 }
 
 .navLinkActive {
@@ -29,6 +35,7 @@
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--orange200);
+  padding-left: 3rem;
 }
 
 .languageButton {
