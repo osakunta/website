@@ -4,12 +4,13 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import sato_logo_nav from "../public/sato_logo_nav.png";
 import Sidebar from "./Sidebar";
+import { NavigationLink } from "@/lib/cmsClient";
 
-interface NavbarProps {
-  navData: CMSData;
-}
+export type NavbarProps = {
+  links: NavigationLink[];
+};
 
-const Navbar = ({ navData }: NavbarProps) => {
+const Navbar = ({ links }: NavbarProps) => {
   useEffect(() => {
     // Scroll to hide header
     let prevScrollpos = window.scrollY;
@@ -41,7 +42,7 @@ const Navbar = ({ navData }: NavbarProps) => {
             width={120}
           />
         </Link>
-        <Sidebar navData={navData} />
+        <Sidebar links={links} />
       </nav>
     </div>
   );

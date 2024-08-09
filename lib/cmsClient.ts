@@ -1,3 +1,4 @@
+import { TranslationKey } from "@/hooks/useTranslate";
 import { createDirectus, rest } from "@directus/sdk";
 
 type Schema = {
@@ -6,7 +7,7 @@ type Schema = {
 };
 
 export type NavigationLink = {
-  labelKey: string;
+  label_key: TranslationKey;
   url: string;
   category: "GENERAL" | "FOR_MEMBERS";
 };

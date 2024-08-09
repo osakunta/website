@@ -1,5 +1,4 @@
-import Navbar from "@/components/Navbar";
-import { fetchNavData } from "@/lib/fetchNavData";
+import Navbar, { NavbarProps } from "@/components/Navbar";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -7,17 +6,30 @@ import styles from "@/styles/official-documents.module.css";
 import { Button } from "@mui/material";
 import arrowWhite from "../public/arrow_forward_white.svg";
 import Link from "next/link";
+import createClient from "@/lib/cmsClient";
+import { readItems } from "@directus/sdk";
 
-export const getStaticProps: GetStaticProps<NavProps> = async () => {
-  const navData = await fetchNavData();
+export const getStaticProps: GetStaticProps<
+  OfficialDocumentsPageProps
+> = async () => {
+  const client = createClient();
+  const links = await client.request(readItems("NavigationLink"));
   return {
     props: {
-      navData,
+      navBar: {
+        links,
+      },
     },
   };
 };
 
-export default function OfficialDocuments({ navData }: NavProps) {
+type OfficialDocumentsPageProps = {
+  navBar: NavbarProps;
+};
+
+export default function OfficialDocuments({
+  navBar,
+}: OfficialDocumentsPageProps) {
   return (
     <>
       <Head>
@@ -30,7 +42,7 @@ export default function OfficialDocuments({ navData }: NavProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <main className={styles.main}>
-        <Navbar navData={navData} />
+        <Navbar links={navBar.links} />
         <header className={styles.header}>
           <div className={styles.headerContainer}>
             <h1>Viralliset Documentit</h1>
