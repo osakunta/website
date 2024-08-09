@@ -1,22 +1,30 @@
-import Navbar from "@/components/Navbar";
-import { fetchNavData } from "@/lib/fetchNavData";
+import Navbar, { NavbarProps } from "@/components/Navbar";
 import { GetStaticProps } from "next";
 import styles from "@/styles/nation-info.module.css";
 import Head from "next/head";
 import Image from "next/image";
 import { Button } from "@mui/material";
 import arrowWhite from "../public/arrow_forward_white.svg";
+import createClient from "@/lib/cmsClient";
+import { readItems } from "@directus/sdk";
 
-export const getStaticProps: GetStaticProps<NavProps> = async () => {
-  const navData = await fetchNavData();
+export const getStaticProps: GetStaticProps<NationInfoPageProps> = async () => {
+  const client = createClient();
+  const links = await client.request(readItems("NavigationLink"));
   return {
     props: {
-      navData,
+      navBar: {
+        links,
+      },
     },
   };
 };
 
-export default function NationInfo({ navData }: NavProps) {
+type NationInfoPageProps = {
+  navBar: NavbarProps;
+};
+
+export default function NationInfo({ navBar }: NationInfoPageProps) {
   return (
     <>
       <Head>
@@ -29,7 +37,7 @@ export default function NationInfo({ navData }: NavProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <main className={styles.main}>
-        <Navbar navData={navData} />
+        <Navbar links={navBar.links} />
         {/* Image Header */}
         <header className={styles.infoHeader}>
           <div className={styles.headerContainer}>

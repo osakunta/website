@@ -1,6 +1,5 @@
 import Carousel from "@/components/Carousel";
-import Navbar from "@/components/Navbar";
-import { fetchNavData } from "@/lib/fetchNavData";
+import Navbar, { NavbarProps } from "@/components/Navbar";
 import styles from "@/styles/Home.module.css";
 import {
   Button,
@@ -20,21 +19,30 @@ import aino from "../public/aino.png";
 import arrowBlue from "../public/arrow_forward_blue.svg";
 import arrowWhite from "../public/arrow_forward_white.svg";
 import cAside from "../public/contact-aside.png";
+import createClient from "@/lib/cmsClient";
+import { readItems } from "@directus/sdk";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 const SLIDE_COUNT = 10;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
-export const getStaticProps: GetStaticProps<NavProps> = async () => {
-  const navData = await fetchNavData();
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
+  const client = createClient();
+  const links = await client.request(readItems("NavigationLink"));
   return {
     props: {
-      navData,
+      navBar: {
+        links,
+      },
     },
   };
 };
 
-export default function Home({ navData }: NavProps) {
+type HomePageProps = {
+  navBar: NavbarProps;
+};
+
+export default function Home({ navBar }: HomePageProps) {
   return (
     <>
       <Head>
@@ -47,7 +55,7 @@ export default function Home({ navData }: NavProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <main className={styles.main}>
-        <Navbar navData={navData} />
+        <Navbar links={navBar.links} />
         {/* Hero */}
         <section className={styles.hero}>
           <h2 className={styles.h2}>Ystäviä, tapahtumia ja koti Kampissa</h2>

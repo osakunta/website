@@ -1,4 +1,4 @@
-import { useLanguage } from "@/lib/LanguageContext";
+import { Language, useLanguage } from "@/lib/LanguageContext";
 import styles from "@/styles/Navbar.module.css";
 import {
   Alert,
@@ -19,14 +19,15 @@ import { useState } from "react";
 import close from "../public/close.svg";
 import menu from "../public/menu.svg";
 import useTranslate from "@/hooks/useTranslate";
+import { NavigationLink } from "@/lib/cmsClient";
 
 type Anchor = "right";
 
-interface NavbarProps {
-  navData: CMSData;
-}
+type NavbarProps = {
+  links: NavigationLink[];
+};
 
-const Sidebar = ({ navData }: NavbarProps) => {
+const Sidebar = ({ links }: NavbarProps) => {
   const t = useTranslate();
   const [state, setState] = useState({
     right: false,
@@ -36,9 +37,8 @@ const Sidebar = ({ navData }: NavbarProps) => {
   const { language, setLanguage } = useLanguage();
   const router = useRouter();
   const currentRoute = router.pathname;
-  const navGeneral = navData.data.slice(0, 4);
-  const navForMembers = navData.data.slice(4, 11);
-  const cmsSnackbarMessage = navData.data.slice(13, 14)[0];
+  const navGeneral = links.filter((link) => link.category === "GENERAL");
+  const navForMembers = links.filter((link) => link.category === "FOR_MEMBERS");
 
   // MUI Drawer toggling
   const toggleDrawer =
@@ -55,10 +55,9 @@ const Sidebar = ({ navData }: NavbarProps) => {
       setState({ ...state, [anchor]: open });
     };
 
-  const handleLanguageChange = (language: any) => {
-    setLanguage(language);
-    // @ts-ignore: Dynamic property access
-    setSnackbarMessage(`${cmsSnackbarMessage[`text_${language}`]}`);
+  const handleLanguageChange = (newLanguage: Language) => {
+    setLanguage(newLanguage);
+    setSnackbarMessage(t("snackbar:languageChanged", newLanguage));
     setSnackbarOpen(true);
   };
 
@@ -87,29 +86,23 @@ const Sidebar = ({ navData }: NavbarProps) => {
       </Button>
 
       <List disablePadding>
-        {navGeneral.map((data: CMSItem) => {
-          const route =
-            data.text_en.toLowerCase() === "home"
-              ? "/"
-              : `/${data.text_en.toLowerCase().replace(" ", "-")}`;
-
+        {navGeneral.map((link) => {
           return (
-            <ListItem key={data.id} disablePadding>
+            <ListItem key={link.url} disablePadding>
               <Link
-                href={route}
+                href={link.url}
                 locale={language}
                 passHref
                 className={styles.nextLink}
               >
                 <ListItemButton
                   className={
-                    route === currentRoute
+                    link.url === currentRoute
                       ? styles.navLinkActive
                       : styles.navLink
                   }
                 >
-                  {/* @ts-ignore: Dynamic property access */}
-                  {data[`text_${language}`]}
+                  {t(link.label_key)}
                 </ListItemButton>
               </Link>
             </ListItem>
@@ -120,22 +113,17 @@ const Sidebar = ({ navData }: NavbarProps) => {
       <Divider />
       <ListSubheader>{t("nav:forMembers")}</ListSubheader>
       <List disablePadding>
-        {navForMembers.map((data: any) => (
-          <ListItem key={data.id} disablePadding>
-            <Link
-              href={`/${data.text_en.toLowerCase().replace(" ", "-")}`}
-              passHref
-              className={styles.nextLink}
-            >
+        {navForMembers.map((link) => (
+          <ListItem key={link.url} disablePadding>
+            <Link href={link.url} passHref className={styles.nextLink}>
               <ListItemButton
                 className={
-                  `/${data.text_en.toLowerCase().replace(" ", "-")}` ===
-                  currentRoute
+                  link.url === currentRoute
                     ? styles.navLinkActive
                     : styles.navLink
                 }
               >
-                {data[`text_${language}`]}
+                {t(link.label_key)}
               </ListItemButton>
             </Link>
           </ListItem>
@@ -170,7 +158,7 @@ const Sidebar = ({ navData }: NavbarProps) => {
         </Button>
         <Button
           onClick={() => handleLanguageChange("en")}
-          onKeyDown={() => handleLanguageChange("en ")}
+          onKeyDown={() => handleLanguageChange("en")}
           className={
             language === "en"
               ? styles.activeLanguageButton
