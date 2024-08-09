@@ -1,13 +1,19 @@
 {
-  "new_test": { "fi": "moi", "en": "hi", "sv": "hej" },
   "general:nation": {
     "fi": "Satakuntalainen Osakunta",
     "en": "Satakunta Nation",
     "sv": "Satakunta Nation"
   },
-  "home:welcome": {
-    "fi": "Tervetuloa Satakuntalaisen Osakunnan sivuille",
-    "en": "Welcome to the website of Satakuntalainen Osakunta",
+  "nav:forMembers": {
+    "fi": "Jäsenille",
+    "en": "For Members",
+    "sv": "För Medlemmar"
+  },
+  "nav:home": { "fi": "Etusivu", "en": "Home", "sv": "Framsida" },
+  "nav:languages": { "fi": "Kielet", "en": "Languages", "sv": "Språk" },
+  "nav:nationInfo": {
+    "fi": "Tietoa osakunnasta",
+    "en": "Nation Info",
     "sv": "Samma på svenska"
   }
 }

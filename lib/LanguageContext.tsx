@@ -11,16 +11,6 @@ interface LanguageContextType {
 // Create the context
 export const LanguageContext = createContext<LanguageContextType | null>(null);
 
-export const useLanguageContext = () => {
-  const ctx = useContext(LanguageContext);
-
-  if (ctx === null) {
-    throw new Error("could not find LanguageContext");
-  }
-
-  return ctx;
-};
-
 // Create a provider component
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
   children,
@@ -35,4 +25,12 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
 };
 
 // Custom hook to use the language context
-export const useLanguage = () => useContext(LanguageContext);
+export const useLanguage = () => {
+  const ctx = useContext(LanguageContext);
+
+  if (ctx === null) {
+    throw new Error("could not find LanguageContext");
+  }
+
+  return ctx;
+};

@@ -1,10 +1,5 @@
-import { useContext } from "react";
 import translations from "./translations.json";
-import {
-  Language,
-  LanguageContext,
-  useLanguageContext,
-} from "../lib/LanguageContext";
+import { Language, useLanguage } from "../lib/LanguageContext";
 
 type TranslationKey = keyof typeof translations;
 
@@ -23,7 +18,7 @@ const translate =
   };
 
 const useTranslate = () => {
-  const { language } = useLanguageContext();
+  const { language } = useLanguage();
   return translate(language);
 };
 

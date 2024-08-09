@@ -1,4 +1,4 @@
-import { useLanguage } from "@/lib/LocalizationContext";
+import { useLanguage } from "@/lib/LanguageContext";
 import styles from "@/styles/Navbar.module.css";
 import {
   Alert,
@@ -18,6 +18,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import close from "../public/close.svg";
 import menu from "../public/menu.svg";
+import useTranslate from "@/hooks/useTranslate";
 
 type Anchor = "right";
 
@@ -26,6 +27,7 @@ interface NavbarProps {
 }
 
 const Sidebar = ({ navData }: NavbarProps) => {
+  const t = useTranslate();
   const [state, setState] = useState({
     right: false,
   });
@@ -36,8 +38,6 @@ const Sidebar = ({ navData }: NavbarProps) => {
   const currentRoute = router.pathname;
   const navGeneral = navData.data.slice(0, 4);
   const navForMembers = navData.data.slice(4, 11);
-  const forMembersLabel = navData.data.slice(11, 12)[0];
-  const languagesLabel = navData.data.slice(12, 13)[0];
   const cmsSnackbarMessage = navData.data.slice(13, 14)[0];
 
   // MUI Drawer toggling
@@ -118,8 +118,7 @@ const Sidebar = ({ navData }: NavbarProps) => {
       </List>
       <br />
       <Divider />
-      {/* @ts-ignore: Dynamic property access */}
-      <ListSubheader>{forMembersLabel[`text_${language}`]}</ListSubheader>
+      <ListSubheader>{t("nav:forMembers")}</ListSubheader>
       <List disablePadding>
         {navForMembers.map((data: any) => (
           <ListItem key={data.id} disablePadding>
@@ -145,8 +144,7 @@ const Sidebar = ({ navData }: NavbarProps) => {
 
       <br />
       <Divider />
-      {/* @ts-ignore: Dynamic property access */}
-      <ListSubheader>{languagesLabel[`text_${language}`]}</ListSubheader>
+      <ListSubheader>{t("nav:languages")}</ListSubheader>
       <div className={styles.languageButtonGroup}>
         <Button
           onClick={() => handleLanguageChange("fi")}

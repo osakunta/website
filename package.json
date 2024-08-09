@@ -11,10 +11,11 @@
     "format": "prettier . --write",
     "test:watch": "vitest",
     "test": "vitest run",
-    "fetchTranslations": "node fetchTranslations.mjs && prettier hooks/translations.json --write",
+    "fetchTranslations": "tsx fetchTranslations.ts && prettier hooks/translations.json --write",
     "prepare": "husky && npm run fetchTranslations"
   },
   "dependencies": {
+    "@directus/sdk": "^17.0.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.20",
@@ -22,7 +23,8 @@
     "embla-carousel-react": "^8.1.6",
     "next": "14.2.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "tsx": "^4.17.0"
   },
   "devDependencies": {
     "@testing-library/react": "^16.0.0",
