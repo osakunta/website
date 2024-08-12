@@ -10,20 +10,55 @@ import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { NextButton, PrevButton, usePrevNextButtons } from "./CarouselArrows";
 
-const TWEEN_FACTOR_BASE = 0.84;
-
-const numberWithinRange = (number: number, min: number, max: number): number =>
-  Math.min(Math.max(number, min), max);
-
 type PropType = {
   slides: number[];
   options: EmblaOptionsType;
 };
 
-const Carousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props;
+const clamp = (value: number) => Math.min(Math.max(value, 0), 1);
+
+const lerp = (a: number, b: number, t: number) => a + t * (b - a);
+
+// measure distance with wrapping in mind, so the distance between 0.1 and 0.9 is not 0.8, but 0.2
+const wrappedDistance = (a: number, b: number) => {
+  const bigger = Math.max(a, b);
+  const smaller = Math.min(a, b);
+  return Math.min(bigger - smaller, 1 + smaller - bigger);
+};
+
+const opacity = (slidePosition: number, targetPosition: number) =>
+  clamp(1 - wrappedDistance(slidePosition, targetPosition) * 8.4);
+
+const setOpacity = (emblaApi: EmblaCarouselType) => {
+  const slideNodes = emblaApi.slideNodes();
+  const slidesInView = emblaApi.slidesInView();
+
+  const startPosition =
+    emblaApi.scrollSnapList()[emblaApi.previousScrollSnap()];
+  const currentPosition = emblaApi.scrollProgress();
+  const targetPosition =
+    emblaApi.scrollSnapList()[emblaApi.selectedScrollSnap()];
+
+  const animationProgress =
+    wrappedDistance(currentPosition, startPosition) /
+    wrappedDistance(startPosition, targetPosition);
+
+  slidesInView.forEach((slideIndex) => {
+    const slidePosition = emblaApi.scrollSnapList()[slideIndex];
+    // the opacity of this slide when the animation started
+    const startOpacity = opacity(slidePosition, startPosition);
+    // the opacity of this slide when the animation ends
+    const targetOpacity = opacity(slidePosition, targetPosition);
+    slideNodes[slideIndex].style.opacity = lerp(
+      startOpacity,
+      targetOpacity,
+      animationProgress,
+    ).toString();
+  });
+};
+
+const Carousel: React.FC<PropType> = ({ slides, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
-  const tweenFactor = useRef(0);
 
   const {
     prevBtnDisabled,
@@ -32,61 +67,11 @@ const Carousel: React.FC<PropType> = (props) => {
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
 
-  const setTweenFactor = useCallback((emblaApi: EmblaCarouselType) => {
-    tweenFactor.current = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
-  }, []);
-
-  const tweenOpacity = useCallback(
-    (emblaApi: EmblaCarouselType, eventName?: EmblaEventType) => {
-      const engine = emblaApi.internalEngine();
-      const scrollProgress = emblaApi.scrollProgress();
-      const slidesInView = emblaApi.slidesInView();
-      const isScrollEvent = eventName === "scroll";
-
-      emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
-        let diffToTarget = scrollSnap - scrollProgress;
-        const slidesInSnap = engine.slideRegistry[snapIndex];
-
-        slidesInSnap.forEach((slideIndex) => {
-          if (isScrollEvent && !slidesInView.includes(slideIndex)) return;
-
-          if (engine.options.loop) {
-            engine.slideLooper.loopPoints.forEach((loopItem) => {
-              const target = loopItem.target();
-
-              if (slideIndex === loopItem.index && target !== 0) {
-                const sign = Math.sign(target);
-
-                if (sign === -1) {
-                  diffToTarget = scrollSnap - (1 + scrollProgress);
-                }
-                if (sign === 1) {
-                  diffToTarget = scrollSnap + (1 - scrollProgress);
-                }
-              }
-            });
-          }
-
-          const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
-          const opacity = numberWithinRange(tweenValue, 0, 1).toString();
-          emblaApi.slideNodes()[slideIndex].style.opacity = opacity;
-        });
-      });
-    },
-    [],
-  );
-
   useEffect(() => {
     if (!emblaApi) return;
 
-    setTweenFactor(emblaApi);
-    tweenOpacity(emblaApi);
-    emblaApi
-      .on("reInit", setTweenFactor)
-      .on("reInit", tweenOpacity)
-      .on("scroll", tweenOpacity)
-      .on("slideFocus", tweenOpacity);
-  }, [emblaApi, tweenOpacity]);
+    emblaApi.on("reInit", setOpacity).on("scroll", setOpacity);
+  }, [emblaApi]);
 
   return (
     <div className="embla">
