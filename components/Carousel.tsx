@@ -17,7 +17,7 @@ const numberWithinRange = (number: number, min: number, max: number): number =>
 
 type PropType = {
   slides: number[];
-  options?: EmblaOptionsType;
+  options: EmblaOptionsType;
 };
 
 const Carousel: React.FC<PropType> = (props) => {
