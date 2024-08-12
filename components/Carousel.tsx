@@ -8,7 +8,6 @@ import {
 } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
-import styles from "@/styles/Carousel.module.css";
 import { NextButton, PrevButton, usePrevNextButtons } from "./CarouselArrows";
 
 const TWEEN_FACTOR_BASE = 0.84;
@@ -113,6 +112,7 @@ const Carousel: React.FC<PropType> = (props) => {
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
         <div className="embla__buttons">
+          { /* eslint-disable-next-line jsx-a11y/anchor-is-valid -- Placeholder href */ }
           <Link href="" className="embla__link">
             Katso Lisää
           </Link>
