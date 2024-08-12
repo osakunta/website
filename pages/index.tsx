@@ -65,7 +65,7 @@ export default function Home({ navBar }: HomePageProps) {
         </section>
         {/* Cards */}
         <section className={styles.cards}>
-          <Card className={styles.colorCard1}>
+          <Card className={styles.colorCard}>
             <CardActionArea>
               <CardMedia
                 height={250}
@@ -75,7 +75,7 @@ export default function Home({ navBar }: HomePageProps) {
               />
               <CardContent className={styles.cardContent}>
                 <Typography>Tietoa osakunnasta</Typography>
-                <Image src={arrowWhite} alt="arrow forward" />
+                <Image src={arrowBlue} alt="arrow forward" />
               </CardContent>
             </CardActionArea>
             <CardActions className={styles.cardLink}>
@@ -83,7 +83,7 @@ export default function Home({ navBar }: HomePageProps) {
             </CardActions>
           </Card>
 
-          <Card className={styles.colorCard2}>
+          <Card className={styles.colorCard}>
             <CardActionArea>
               <CardMedia
                 height={250}
@@ -93,7 +93,7 @@ export default function Home({ navBar }: HomePageProps) {
               />
               <CardContent className={styles.cardContent}>
                 <Typography>Liity jäseneksi</Typography>
-                <Image src={arrowWhite} alt="arrow forward" />
+                <Image src={arrowBlue} alt="arrow forward" />
               </CardContent>
             </CardActionArea>
             <CardActions className={styles.cardLink}>
@@ -101,7 +101,7 @@ export default function Home({ navBar }: HomePageProps) {
             </CardActions>
           </Card>
 
-          <Card className={styles.colorCard3}>
+          <Card className={styles.colorCard}>
             <CardActionArea>
               <CardMedia
                 height={250}
@@ -111,7 +111,7 @@ export default function Home({ navBar }: HomePageProps) {
               />
               <CardContent className={styles.cardContent}>
                 <Typography>Tapahtumat</Typography>
-                <Image src={arrowWhite} alt="arrow forward" />
+                <Image src={arrowBlue} alt="arrow forward" />
               </CardContent>
             </CardActionArea>
             <CardActions className={styles.cardLink}>
