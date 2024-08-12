@@ -3,7 +3,7 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/official-documents.module.css";
-import { Button } from "@mui/material";
+import { Button, List, ListItem, ListSubheader } from "@mui/material";
 import arrowWhite from "../public/arrow_forward_white.svg";
 import Link from "next/link";
 import createClient from "@/lib/cmsClient";
@@ -55,83 +55,83 @@ export default function OfficialDocuments({
           </div>
         </header>
         <section className={styles.documentSection}>
-          <dl className={styles.documentList}>
-            <dt className={styles.h3}>Rules</dt>
-            <dd>
+          <List className={styles.documentList}>
+            <ListSubheader className={styles.h3}>Rules</ListSubheader>
+            <ListItem>
               <a href="" className={styles.documentLink}>
                 Rules 2011
               </a>
-            </dd>
-            <dt className={styles.h3}>Old Rules</dt>
-            <dd>
+            </ListItem>
+            <ListSubheader className={styles.h3}>Old Rules</ListSubheader>
+            <ListItem>
               <a href="" className={styles.documentLink}>
                 Rules 2007
               </a>
-            </dd>
-            <dd>
+            </ListItem>
+            <ListItem>
               <a href="" className={styles.documentLink}>
                 Rules 2004
               </a>
-            </dd>
-            <dd>
+            </ListItem>
+            <ListItem>
               <a href="" className={styles.documentLink}>
                 Rules at the time of <br /> the cooperative building
               </a>
-            </dd>
-          </dl>
-          <dl className={styles.documentList}>
-            <dt className={styles.h3}>Regulations</dt>
-            <dd>
+            </ListItem>
+          </List>
+          <List className={styles.documentList}>
+            <ListSubheader className={styles.h3}>Regulations</ListSubheader>
+            <ListItem>
               <a href="" className={styles.documentLink}>
                 Guidelines 2020
               </a>
-            </dd>
-            <dt className={styles.h3}>Old Regulations</dt>
-            <dd>
+            </ListItem>
+            <ListSubheader className={styles.h3}>Old Regulations</ListSubheader>
+            <ListItem>
               <a href="" className={styles.documentLink}>
                 Guidelines 2019
               </a>
-            </dd>
-            <dd>
+            </ListItem>
+            <ListItem>
               <a href="" className={styles.documentLink}>
                 Guidelines 2017
               </a>
-            </dd>
-            <dd>
+            </ListItem>
+            <ListItem>
               <a href="" className={styles.documentLink}>
                 Guidelines 2016
               </a>
-            </dd>
-            <dd>
+            </ListItem>
+            <ListItem>
               <a href="" className={styles.documentLink}>
                 Guidelines 2011
               </a>
-            </dd>
-          </dl>
-          <dl className={styles.documentList}>
-            <dt className={styles.h3}>Other Documents</dt>
-            <dd>
+            </ListItem>
+          </List>
+          <List className={styles.documentList}>
+            <ListSubheader className={styles.h3}>Other Documents</ListSubheader>
+            <ListItem>
               <a href="" className={styles.documentLink}>
                 Equality Plan
               </a>
-            </dd>
-            <dd>
+            </ListItem>
+            <ListItem>
               <a href="" className={styles.documentLink}>
                 SatO Safe Space
               </a>
-            </dd>
-            <dd>
+            </ListItem>
+            <ListItem>
               <a href="" className={styles.documentLink}>
                 Environmental plan
               </a>
-            </dd>
-            <dt className={styles.h3}>Dormitory</dt>
-            <dd>
+            </ListItem>
+            <ListSubheader className={styles.h3}>Dormitory</ListSubheader>
+            <ListItem>
               <a href="" className={styles.documentLink}>
                 Dormitory Regulations
               </a>
-            </dd>
-          </dl>
+            </ListItem>
+          </List>
         </section>
         <section className={styles.externalRef}>
           <div className={styles.proceedingsContainer}>

@@ -9,12 +9,16 @@
   --blue100: #d1f5ff;
   --blue200: #348eaa;
   --blue300: #132c43;
-  --green: #a09c44;
   --yellow: #fcc403;
   --pink: #fad1d1;
 
   scroll-behavior: smooth;
   transition: 0.3s ease;
+}
+
+List,
+ListItem {
+  font-family: "Raleway", sans-serif;
 }
 
 body {
