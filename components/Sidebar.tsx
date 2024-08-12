@@ -87,6 +87,7 @@ const Sidebar = ({ links }: NavbarProps) => {
 
       <List disablePadding>
         {navGeneral.map((link) => {
+          console.log(link.url);
           return (
             <ListItem key={link.url} disablePadding>
               <Link

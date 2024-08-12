@@ -34,7 +34,7 @@
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--orange200);
+  color: var(--blue200);
   padding-left: 3rem;
 }
 
@@ -50,6 +50,6 @@
 }
 
 .activeLanguageButton {
-  color: var(--orange200);
+  color: var(--blue200);
   font-weight: 700;
 }
