@@ -2,15 +2,15 @@ import styles from "@/styles/Navbar.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { NavigationLink } from "@/lib/cmsClient";
 import sato_logo_nav from "../public/sato_logo_nav.png";
 import Sidebar from "./Sidebar";
-import { NavigationLink } from "@/lib/cmsClient";
 
 export type NavbarProps = {
   links: NavigationLink[];
 };
 
-const Navbar = ({ links }: NavbarProps) => {
+function Navbar({ links }: NavbarProps) {
   useEffect(() => {
     // Scroll to hide header
     let prevScrollpos = window.scrollY;

@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import styles from "@/styles/Carousel.module.css";
 import React, { useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import {
@@ -8,9 +7,9 @@ import {
   EmblaOptionsType,
 } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
+import Image from "next/image";
 import styles from "@/styles/Carousel.module.css";
 import { NextButton, PrevButton, usePrevNextButtons } from "./CarouselArrows";
-import Image from "next/image";
 
 const TWEEN_FACTOR_BASE = 0.84;
 

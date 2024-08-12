@@ -138,7 +138,7 @@ export default function OfficialDocuments({
             <h3 className={styles.h3}>Proceedings</h3>
             <Button variant="contained" className={styles.proceedingsBtn}>
               See proceedings <br /> (SatO login required)
-              <Image src={arrowWhite} alt="arrow forward"></Image>
+              <Image src={arrowWhite} alt="arrow forward" />
             </Button>
           </div>
           <p className={styles.archiveRedirect}>
@@ -151,7 +151,7 @@ export default function OfficialDocuments({
             page!
           </p>
         </section>
-        <footer className={styles.footer}></footer>
+        <footer className={styles.footer} />
       </main>
     </>
   );

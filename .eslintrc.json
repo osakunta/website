@@ -4,7 +4,7 @@
     "airbnb",
     "airbnb-typescript",
     "prettier",
-"plugin:react/jsx-runtime"
+    "plugin:react/jsx-runtime"
   ],
   "parserOptions": {
     "project": "./tsconfig.json"
