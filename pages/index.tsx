@@ -43,8 +43,8 @@ type HomePageProps = {
   navBar: NavbarProps;
 };
 
-export default function Home({ navBar }: HomePageProps) {
-  return (
+const Home = ({ navBar }: HomePageProps) => 
+  (
     <>
       <Head>
         <title>Satakuntalainen Osakunta</title>
@@ -304,4 +304,5 @@ export default function Home({ navBar }: HomePageProps) {
       </main>
     </>
   );
-}
+
+export default Home;

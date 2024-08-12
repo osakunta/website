@@ -24,8 +24,8 @@ type NationInfoPageProps = {
   navBar: NavbarProps;
 };
 
-export default function NationInfo({ navBar }: NationInfoPageProps) {
-  return (
+const NationInfo = ({ navBar }: NationInfoPageProps)  => 
+  (
     <>
       <Head>
         <title>Satakuntalainen Osakunta</title>
@@ -103,4 +103,5 @@ export default function NationInfo({ navBar }: NationInfoPageProps) {
       </main>
     </>
   );
-}
+
+  export default NationInfo;

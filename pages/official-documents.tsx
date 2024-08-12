@@ -28,10 +28,10 @@ type OfficialDocumentsPageProps = {
   navBar: NavbarProps;
 };
 
-export default function OfficialDocuments({
+const  OfficialDocuments = ({
   navBar,
-}: OfficialDocumentsPageProps) {
-  return (
+}: OfficialDocumentsPageProps) =>  
+  (
     <>
       <Head>
         <title>Satakuntalainen Osakunta</title>
@@ -156,4 +156,5 @@ export default function OfficialDocuments({
       </main>
     </>
   );
-}
+
+  export default OfficialDocuments;
