@@ -5,7 +5,8 @@ import { LanguageProvider } from "@/lib/LanguageContext";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <LanguageProvider>
-      <Component {...pageProps} />
+      { /* eslint-disable react/jsx-props-no-spreading -- Disabled because prop spread here is typical for Next.js projects */ }
+               <Component {...pageProps} />
     </LanguageProvider>
   );
 }

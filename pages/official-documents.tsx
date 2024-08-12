@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid -- Disable because of a lot of placeholder hrefs */
 import Navbar, { NavbarProps } from "@/components/Navbar";
 import { GetStaticProps } from "next";
 import Head from "next/head";
