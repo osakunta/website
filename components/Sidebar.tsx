@@ -27,7 +27,7 @@ type NavbarProps = {
   links: NavigationLink[];
 };
 
-function Sidebar({ links }: NavbarProps) {
+const Sidebar = ({ links }: NavbarProps) => {
   const t = useTranslate();
   const [state, setState] = useState({
     right: false,

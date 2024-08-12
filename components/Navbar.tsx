@@ -10,7 +10,7 @@ export type NavbarProps = {
   links: NavigationLink[];
 };
 
-function Navbar({ links }: NavbarProps) {
+const Navbar = ({ links }: NavbarProps) => {
   useEffect(() => {
     // Scroll to hide header
     let prevScrollpos = window.scrollY;
