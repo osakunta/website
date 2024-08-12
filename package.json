@@ -21,6 +21,7 @@
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.20",
     "dotenv": "^16.4.5",
+    "embla-carousel": "^8.1.6",
     "embla-carousel-react": "^8.1.6",
     "next": "14.2.4",
     "react": "^18",
