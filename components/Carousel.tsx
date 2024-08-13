@@ -1,11 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
-import {
-  EmblaCarouselType,
-  EmblaEventType,
-  EmblaOptionsType,
-} from "embla-carousel";
+import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { NextButton, PrevButton, usePrevNextButtons } from "./CarouselArrows";
@@ -17,8 +13,6 @@ type PropType = {
 
 const clamp = (value: number) => Math.min(Math.max(value, 0), 1);
 
-const lerp = (a: number, b: number, t: number) => a + t * (b - a);
-
 // measure distance with wrapping in mind, so the distance between 0.1 and 0.9 is not 0.8, but 0.2
 const wrappedDistance = (a: number, b: number) => {
   const bigger = Math.max(a, b);
@@ -26,34 +20,18 @@ const wrappedDistance = (a: number, b: number) => {
   return Math.min(bigger - smaller, 1 + smaller - bigger);
 };
 
-const opacity = (slidePosition: number, targetPosition: number) =>
-  clamp(1 - wrappedDistance(slidePosition, targetPosition) * 8.4);
-
 const setOpacity = (emblaApi: EmblaCarouselType) => {
   const slideNodes = emblaApi.slideNodes();
   const slidesInView = emblaApi.slidesInView();
 
-  const startPosition =
-    emblaApi.scrollSnapList()[emblaApi.previousScrollSnap()];
   const currentPosition = emblaApi.scrollProgress();
-  const targetPosition =
-    emblaApi.scrollSnapList()[emblaApi.selectedScrollSnap()];
-
-  const animationProgress =
-    wrappedDistance(currentPosition, startPosition) /
-    wrappedDistance(startPosition, targetPosition);
 
   slidesInView.forEach((slideIndex) => {
     const slidePosition = emblaApi.scrollSnapList()[slideIndex];
-    // the opacity of this slide when the animation started
-    const startOpacity = opacity(slidePosition, startPosition);
-    // the opacity of this slide when the animation ends
-    const targetOpacity = opacity(slidePosition, targetPosition);
-    slideNodes[slideIndex].style.opacity = lerp(
-      startOpacity,
-      targetOpacity,
-      animationProgress,
-    ).toString();
+    const opacity = clamp(
+      1 - wrappedDistance(slidePosition, currentPosition) * 8.4,
+    ).toFixed(2);
+    slideNodes[slideIndex].style.opacity = opacity.toString();
   });
 };
 
