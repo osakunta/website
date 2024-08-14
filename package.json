@@ -18,13 +18,15 @@
     "@directus/sdk": "^17.0.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@googleapis/forms": "^2.0.7",
     "@mui/material": "^5.15.20",
     "dotenv": "^16.4.5",
     "embla-carousel-react": "^8.1.6",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
-    "tsx": "^4.17.0"
+    "tsx": "^4.17.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@testing-library/react": "^16.0.0",
