@@ -1,32 +1,27 @@
-import { TranslationKey } from "@/hooks/useTranslate";
-import { createDirectus, rest } from "@directus/sdk";
+import { translationKeySchema } from "../hooks/useTranslate";
+import { createDirectus, readItems, rest } from "@directus/sdk";
+import { z } from "zod";
 
 type Schema = {
   NavigationLink: NavigationLink[];
-  Translation: Translation[];
 };
 
-export type NavigationLink = {
-  label_key: TranslationKey;
-  url: string;
-  category: "GENERAL" | "FOR_MEMBERS";
+export const navigationLinkSchema = z.object({
+  label_key: translationKeySchema,
+  url: z.string(),
+  category: z.enum(["GENERAL", "FOR_MEMBERS"]),
+});
+
+export type NavigationLink = z.infer<typeof navigationLinkSchema>;
+
+type CmsClient = ReturnType<typeof createClient>;
+
+export const createClient = (url: string) => {
+  return createDirectus<Schema>(url).with(rest());
 };
 
-/*
- * You shouldnt use this type, use the better typed one in useTranslate.tsx instead
- */
-export type Translation = {
-  key: string;
-  fi: string;
-  en: string;
-  sv: string;
-};
+export const getNavigationLinks = async (client: CmsClient) => {
+  const links = await client.request(readItems("NavigationLink"));
 
-const createClient = () => {
-  if (process.env.DIRECTUS_URL === undefined) {
-    throw Error("Environment variable DIRECTUS_URL not defined");
-  }
-  return createDirectus<Schema>(process.env.DIRECTUS_URL).with(rest());
+  return links.map((link) => navigationLinkSchema.parse(link));
 };
-
-export default createClient;

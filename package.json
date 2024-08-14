@@ -15,9 +15,11 @@
     "prepare": "husky && npm run fetchTranslations"
   },
   "dependencies": {
+    "@anatine/zod-mock": "^3.13.4",
     "@directus/sdk": "^17.0.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@faker-js/faker": "^8.4.1",
     "@googleapis/forms": "^2.0.7",
     "@mui/material": "^5.15.20",
     "dotenv": "^16.4.5",
