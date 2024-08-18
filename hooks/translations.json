@@ -10,6 +10,11 @@
     "sv": "För Medlemmar"
   },
   "nav:home": { "fi": "Etusivu", "en": "Home", "sv": "Framsida" },
+  "nav:karhunkierros": {
+    "fi": "Karhunkierros Lehti",
+    "en": "Karhunkierros Magazine",
+    "sv": "Karhunkierros Tidningen"
+  },
   "nav:languages": { "fi": "Kielet", "en": "Languages", "sv": "Språk" },
   "nav:nationInfo": {
     "fi": "Tietoa osakunnasta",

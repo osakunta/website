@@ -9,6 +9,8 @@
   font-size: 2rem;
   font-weight: 600;
   margin: 0.5rem 0;
+  color: var(--blue300);
+  font-family: "Raleway", sans-serif;
 }
 
 .header {
@@ -45,14 +47,23 @@
 .documentList {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 
 .documentLink {
   text-decoration: none;
   font-size: 1.2rem;
-  width: 5rem;
+  width: 11rem;
   text-wrap: wrap;
+  font-family: "Raleway", sans-serif;
+}
+
+.documentLink,
+.documentLink:visited {
+  color: var(--blue200);
+}
+
+.documentLink:hover {
+  color: var(--yellow);
 }
 
 .externalRef {
