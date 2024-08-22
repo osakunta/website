@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useMemo,
+} from "react";
 
 export type Language = "fi" | "sv" | "en";
 
@@ -16,9 +22,13 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [language, setLanguage] = useState<Language>("en");
+  const value = useMemo(
+    () => ({ language, setLanguage }),
+    [language, setLanguage],
+  );
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage }}>
+    <LanguageContext.Provider value={value}>
       {children}
     </LanguageContext.Provider>
   );
