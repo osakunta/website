@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid -- Disabled because of a lot of placeholder hrefs */
 import Navbar, { NavbarProps } from "@/components/Navbar";
 import { GetStaticProps } from "next";
 import createClient from "@/lib/cmsClient";
