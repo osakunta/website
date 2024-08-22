@@ -75,7 +75,7 @@ export default function Karhunkierros({ navBar }: KarhunkierrosPageProps) {
               </CardContent>
             </CardActionArea>
             <CardActions className={styles.cardLink}>
-              <Link href=""></Link>
+              <Link href="" />
             </CardActions>
           </Card>
           <Card className={styles.magazineCard}>
@@ -92,7 +92,7 @@ export default function Karhunkierros({ navBar }: KarhunkierrosPageProps) {
               </CardContent>
             </CardActionArea>
             <CardActions className={styles.cardLink}>
-              <Link href=""></Link>
+              <Link href="" />
             </CardActions>
           </Card>
           <Card className={styles.magazineCard}>
@@ -109,7 +109,7 @@ export default function Karhunkierros({ navBar }: KarhunkierrosPageProps) {
               </CardContent>
             </CardActionArea>
             <CardActions className={styles.cardLink}>
-              <Link href=""></Link>
+              <Link href="" />
             </CardActions>
           </Card>
           <Card className={styles.magazineCard}>
@@ -126,7 +126,7 @@ export default function Karhunkierros({ navBar }: KarhunkierrosPageProps) {
               </CardContent>
             </CardActionArea>
             <CardActions className={styles.cardLink}>
-              <Link href=""></Link>
+              <Link href="" />
             </CardActions>
           </Card>
           <Card className={styles.magazineCard}>
@@ -143,7 +143,7 @@ export default function Karhunkierros({ navBar }: KarhunkierrosPageProps) {
               </CardContent>
             </CardActionArea>
             <CardActions className={styles.cardLink}>
-              <Link href=""></Link>
+              <Link href="" />
             </CardActions>
           </Card>
           <Card className={styles.magazineCard}>
@@ -160,11 +160,11 @@ export default function Karhunkierros({ navBar }: KarhunkierrosPageProps) {
               </CardContent>
             </CardActionArea>
             <CardActions className={styles.cardLink}>
-              <Link href=""></Link>
+              <Link href="" />
             </CardActions>
           </Card>
         </section>
-        <section className={styles.footer}></section>
+        <section className={styles.footer} />
       </main>
     </>
   );

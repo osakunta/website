@@ -5,10 +5,10 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/official-documents.module.css";
 import { Button, List, ListItem, ListSubheader } from "@mui/material";
-import arrowWhite from "../public/arrow_forward_white.svg";
 import Link from "next/link";
 import createClient from "@/lib/cmsClient";
 import { readItems } from "@directus/sdk";
+import arrowWhite from "../public/arrow_forward_white.svg";
 
 export const getStaticProps: GetStaticProps<
   OfficialDocumentsPageProps
