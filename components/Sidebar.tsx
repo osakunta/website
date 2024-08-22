@@ -200,6 +200,6 @@ const Sidebar = ({ links }: NavbarProps) => {
       </Snackbar>
     </div>
   );
-}
+};
 
 export default Sidebar;

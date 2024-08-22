@@ -75,7 +75,7 @@ const Carousel: React.FC<PropType> = ({ slides, options }) => {
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
         <div className="embla__buttons">
-          { /* eslint-disable-next-line jsx-a11y/anchor-is-valid -- Placeholder href */ }
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- Placeholder href */}
           <Link href="" className="embla__link">
             Katso Lisää
           </Link>

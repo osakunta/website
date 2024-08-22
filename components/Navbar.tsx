@@ -46,6 +46,6 @@ const Navbar = ({ links }: NavbarProps) => {
       </nav>
     </div>
   );
-}
+};
 
 export default Navbar;
