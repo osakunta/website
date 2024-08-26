@@ -21,6 +21,7 @@
     "en": "Nation Info",
     "sv": "Samma på svenska"
   },
+  "nav:news": { "fi": "Uutiset", "en": "News", "sv": "Nyheter" },
   "nav:officialDocuments": {
     "fi": "Viralliset Dokumentit",
     "en": "Official Documents",
