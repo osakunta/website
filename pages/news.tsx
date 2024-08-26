@@ -53,7 +53,7 @@ export default function News({ navBar }: NewsPageProps) {
         </div>
       </header>
       <main className={styles.main}>
-        <Paper elevation={3} className={styles.newsContainer}>
+        <Paper elevation={0} className={styles.newsContainer}>
           <div className={styles.listContainer}>
             <List className={styles.articleList}>
               <Tooltip

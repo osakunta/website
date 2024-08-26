@@ -4,6 +4,7 @@
     "en": "Satakunta Nation",
     "sv": "Satakunta Nation"
   },
+  "nav:calendar": { "fi": "Kalenteri", "en": "Calendar", "sv": "Kalender" },
   "nav:forMembers": {
     "fi": "Jäsenille",
     "en": "For Members",
