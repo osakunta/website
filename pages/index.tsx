@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid -- Disabled because of a lot of placeholder hrefs */
 import Carousel from "@/components/Carousel";
 import Navbar, { NavbarProps } from "@/components/Navbar";
 import styles from "@/styles/Home.module.css";
@@ -15,12 +16,12 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import createClient from "@/lib/cmsClient";
+import { readItems } from "@directus/sdk";
 import aino from "../public/aino.png";
 import arrowBlue from "../public/arrow_forward_blue.svg";
 import arrowWhite from "../public/arrow_forward_white.svg";
 import cAside from "../public/contact-aside.png";
-import createClient from "@/lib/cmsClient";
-import { readItems } from "@directus/sdk";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 const SLIDE_COUNT = 10;
@@ -79,7 +80,7 @@ export default function Home({ navBar }: HomePageProps) {
               </CardContent>
             </CardActionArea>
             <CardActions className={styles.cardLink}>
-              <Link href=""></Link>
+              <Link href="" />
             </CardActions>
           </Card>
 
@@ -97,7 +98,7 @@ export default function Home({ navBar }: HomePageProps) {
               </CardContent>
             </CardActionArea>
             <CardActions className={styles.cardLink}>
-              <Link href=""></Link>
+              <Link href="" />
             </CardActions>
           </Card>
 
@@ -115,7 +116,7 @@ export default function Home({ navBar }: HomePageProps) {
               </CardContent>
             </CardActionArea>
             <CardActions className={styles.cardLink}>
-              <Link href=""></Link>
+              <Link href="" />
             </CardActions>
           </Card>
         </section>
@@ -175,7 +176,7 @@ export default function Home({ navBar }: HomePageProps) {
                 </CardContent>
               </CardActionArea>
               <CardActions className={styles.cardLink}>
-                <Link href=""></Link>
+                <Link href="" />
               </CardActions>
             </Card>
             <Card className={styles.newsCard}>
@@ -197,7 +198,7 @@ export default function Home({ navBar }: HomePageProps) {
                 </CardContent>
               </CardActionArea>
               <CardActions className={styles.cardLink}>
-                <Link href=""></Link>
+                <Link href="" />
               </CardActions>
             </Card>
             <Card className={styles.newsCard}>
@@ -219,7 +220,7 @@ export default function Home({ navBar }: HomePageProps) {
                 </CardContent>
               </CardActionArea>
               <CardActions className={styles.cardLink}>
-                <Link href=""></Link>
+                <Link href="" />
               </CardActions>
             </Card>
             <Card className={styles.newsCard}>
@@ -241,7 +242,7 @@ export default function Home({ navBar }: HomePageProps) {
                 </CardContent>
               </CardActionArea>
               <CardActions className={styles.cardLink}>
-                <Link href=""></Link>
+                <Link href="" />
               </CardActions>
             </Card>
           </span>
@@ -293,12 +294,13 @@ export default function Home({ navBar }: HomePageProps) {
               src={cAside}
               alt="various messaging icons"
               className={styles.contactAside}
-            ></Image>
+            />
           </div>
         </section>
 
         {/* Footer */}
-        <section className={styles.footer}></section>
+        <section className={styles.footer} />
+        <section />
       </main>
     </>
   );

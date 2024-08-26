@@ -4,9 +4,9 @@ import styles from "@/styles/nation-info.module.css";
 import Head from "next/head";
 import Image from "next/image";
 import { Button } from "@mui/material";
-import arrowWhite from "../public/arrow_forward_white.svg";
 import createClient from "@/lib/cmsClient";
 import { readItems } from "@directus/sdk";
+import arrowWhite from "../public/arrow_forward_white.svg";
 
 export const getStaticProps: GetStaticProps<NationInfoPageProps> = async () => {
   const client = createClient();
@@ -99,7 +99,7 @@ export default function NationInfo({ navBar }: NationInfoPageProps) {
             />
           </aside>
         </section>
-        <footer className={styles.footer}></footer>
+        <footer className={styles.footer} />
       </main>
     </>
   );

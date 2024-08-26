@@ -16,10 +16,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import close from "../public/close.svg";
-import menu from "../public/menu.svg";
 import useTranslate from "@/hooks/useTranslate";
 import { NavigationLink } from "@/lib/cmsClient";
+import close from "../public/close.svg";
+import menu from "../public/menu.svg";
 
 type Anchor = "right";
 
@@ -86,28 +86,26 @@ const Sidebar = ({ links }: NavbarProps) => {
       </Button>
 
       <List disablePadding>
-        {navGeneral.map((link) => {
-          return (
-            <ListItem key={link.url} disablePadding>
-              <Link
-                href={link.url}
-                locale={language}
-                passHref
-                className={styles.nextLink}
+        {navGeneral.map((link) => (
+          <ListItem key={link.url} disablePadding>
+            <Link
+              href={link.url}
+              locale={language}
+              passHref
+              className={styles.nextLink}
+            >
+              <ListItemButton
+                className={
+                  link.url === currentRoute
+                    ? styles.navLinkActive
+                    : styles.navLink
+                }
               >
-                <ListItemButton
-                  className={
-                    link.url === currentRoute
-                      ? styles.navLinkActive
-                      : styles.navLink
-                  }
-                >
-                  {t(link.label_key)}
-                </ListItemButton>
-              </Link>
-            </ListItem>
-          );
-        })}
+                {t(link.label_key)}
+              </ListItemButton>
+            </Link>
+          </ListItem>
+        ))}
       </List>
       <br />
       <Divider />

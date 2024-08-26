@@ -1,30 +1,42 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import styles from "@/styles/Carousel.module.css";
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
-import {
-  EmblaCarouselType,
-  EmblaEventType,
-  EmblaOptionsType,
-} from "embla-carousel";
+import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import { NextButton, PrevButton, usePrevNextButtons } from "./CarouselArrows";
 import Image from "next/image";
-
-const TWEEN_FACTOR_BASE = 0.84;
-
-const numberWithinRange = (number: number, min: number, max: number): number =>
-  Math.min(Math.max(number, min), max);
+import { NextButton, PrevButton, usePrevNextButtons } from "./CarouselArrows";
 
 type PropType = {
   slides: number[];
-  options?: EmblaOptionsType;
+  options: EmblaOptionsType;
 };
 
-const Carousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props;
+const clamp = (value: number) => Math.min(Math.max(value, 0), 1);
+
+// measure distance with wrapping in mind, so the distance between 0.1 and 0.9 is not 0.8, but 0.2
+const wrappedDistance = (a: number, b: number) => {
+  const bigger = Math.max(a, b);
+  const smaller = Math.min(a, b);
+  return Math.min(bigger - smaller, 1 + smaller - bigger);
+};
+
+const setOpacity = (emblaApi: EmblaCarouselType) => {
+  const slideNodes = emblaApi.slideNodes();
+  const slidesInView = emblaApi.slidesInView();
+
+  const currentPosition = emblaApi.scrollProgress();
+
+  slidesInView.forEach((slideIndex) => {
+    const slidePosition = emblaApi.scrollSnapList()[slideIndex];
+    const opacity = clamp(
+      1 - wrappedDistance(slidePosition, currentPosition) * 8.4,
+    ).toFixed(2);
+    slideNodes[slideIndex].style.opacity = opacity.toString();
+  });
+};
+
+const Carousel: React.FC<PropType> = ({ slides, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
-  const tweenFactor = useRef(0);
 
   const {
     prevBtnDisabled,
@@ -33,61 +45,11 @@ const Carousel: React.FC<PropType> = (props) => {
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
 
-  const setTweenFactor = useCallback((emblaApi: EmblaCarouselType) => {
-    tweenFactor.current = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
-  }, []);
-
-  const tweenOpacity = useCallback(
-    (emblaApi: EmblaCarouselType, eventName?: EmblaEventType) => {
-      const engine = emblaApi.internalEngine();
-      const scrollProgress = emblaApi.scrollProgress();
-      const slidesInView = emblaApi.slidesInView();
-      const isScrollEvent = eventName === "scroll";
-
-      emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
-        let diffToTarget = scrollSnap - scrollProgress;
-        const slidesInSnap = engine.slideRegistry[snapIndex];
-
-        slidesInSnap.forEach((slideIndex) => {
-          if (isScrollEvent && !slidesInView.includes(slideIndex)) return;
-
-          if (engine.options.loop) {
-            engine.slideLooper.loopPoints.forEach((loopItem) => {
-              const target = loopItem.target();
-
-              if (slideIndex === loopItem.index && target !== 0) {
-                const sign = Math.sign(target);
-
-                if (sign === -1) {
-                  diffToTarget = scrollSnap - (1 + scrollProgress);
-                }
-                if (sign === 1) {
-                  diffToTarget = scrollSnap + (1 - scrollProgress);
-                }
-              }
-            });
-          }
-
-          const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
-          const opacity = numberWithinRange(tweenValue, 0, 1).toString();
-          emblaApi.slideNodes()[slideIndex].style.opacity = opacity;
-        });
-      });
-    },
-    [],
-  );
-
   useEffect(() => {
     if (!emblaApi) return;
 
-    setTweenFactor(emblaApi);
-    tweenOpacity(emblaApi);
-    emblaApi
-      .on("reInit", setTweenFactor)
-      .on("reInit", tweenOpacity)
-      .on("scroll", tweenOpacity)
-      .on("slideFocus", tweenOpacity);
-  }, [emblaApi, tweenOpacity]);
+    emblaApi.on("reInit", setOpacity).on("scroll", setOpacity);
+  }, [emblaApi]);
 
   return (
     <div className="embla">
@@ -113,6 +75,7 @@ const Carousel: React.FC<PropType> = (props) => {
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
         <div className="embla__buttons">
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- Placeholder href */}
           <Link href="" className="embla__link">
             Katso Lisää
           </Link>

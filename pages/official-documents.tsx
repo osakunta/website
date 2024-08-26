@@ -1,13 +1,14 @@
+/* eslint-disable jsx-a11y/anchor-is-valid -- Disable because of a lot of placeholder hrefs */
 import Navbar, { NavbarProps } from "@/components/Navbar";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/official-documents.module.css";
 import { Button, List, ListItem, ListSubheader } from "@mui/material";
-import arrowWhite from "../public/arrow_forward_white.svg";
 import Link from "next/link";
 import createClient from "@/lib/cmsClient";
 import { readItems } from "@directus/sdk";
+import arrowWhite from "../public/arrow_forward_white.svg";
 
 export const getStaticProps: GetStaticProps<
   OfficialDocumentsPageProps
@@ -138,7 +139,7 @@ export default function OfficialDocuments({
             <h3 className={styles.h3}>Proceedings</h3>
             <Button variant="contained" className={styles.proceedingsBtn}>
               See proceedings <br /> (SatO login required)
-              <Image src={arrowWhite} alt="arrow forward"></Image>
+              <Image src={arrowWhite} alt="arrow forward" />
             </Button>
           </div>
           <p className={styles.archiveRedirect}>
@@ -151,7 +152,7 @@ export default function OfficialDocuments({
             page!
           </p>
         </section>
-        <footer className={styles.footer}></footer>
+        <footer className={styles.footer} />
       </main>
     </>
   );
