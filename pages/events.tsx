@@ -77,7 +77,7 @@ export default function Events({ navBar }: EventsPageProps) {
         </section>
         <section className={styles.meetingsSection}>
           <div className={styles.meetingsContainer}>
-            <h2>Kerhojen Kokoontumiset</h2>
+            <h2>Kerhojen Kokoontumisett</h2>
             <HorizontalCard
               variant="lightBlue"
               image="/Placeholder_5.png"
