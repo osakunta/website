@@ -40,11 +40,7 @@ export default function Karhunkierros({ navBar }: KarhunkierrosPageProps) {
     <>
       <Head>
         <title>Satakuntalainen Osakunta</title>
-        <link
-          rel="icon"
-          href="/new-sato-website/public/favicon.ico"
-          type="image/x-icon"
-        />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Navbar links={navBar.links} />
