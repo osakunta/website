@@ -22,11 +22,10 @@ const wrappedDistance = (a: number, b: number) => {
 
 const setOpacity = (emblaApi: EmblaCarouselType) => {
   const slideNodes = emblaApi.slideNodes();
-  const slidesInView = emblaApi.slidesInView();
 
   const currentPosition = emblaApi.scrollProgress();
 
-  slidesInView.forEach((slideIndex) => {
+  slideNodes.forEach((_, slideIndex) => {
     const slidePosition = emblaApi.scrollSnapList()[slideIndex];
     const opacity = clamp(
       1 - wrappedDistance(slidePosition, currentPosition) * 8.4,
@@ -48,6 +47,7 @@ const Carousel: React.FC<PropType> = ({ slides, options }) => {
   useEffect(() => {
     if (!emblaApi) return;
 
+    setOpacity(emblaApi);
     emblaApi.on("reInit", setOpacity).on("scroll", setOpacity);
   }, [emblaApi]);
 
