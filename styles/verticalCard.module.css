@@ -1,0 +1,55 @@
+.verticalCard {
+  width: 15rem;
+  border-radius: 1rem;
+  box-shadow: none;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.cardLink {
+  height: 0px;
+  margin: 0;
+  padding: 0;
+}
+
+.verticalCard.darkBlue {
+  background-color: var(--blue300);
+  color: var(--white);
+}
+
+.verticalCard.lightBlue {
+  background-color: var(--blue100);
+  color: var(--blue300);
+}
+
+.verticalCard.pink {
+  background-color: var(--pink);
+  color: var(--blue300);
+}
+
+.verticalCard.yellow {
+  background-color: var(--yellow);
+  color: var(--blue300);
+}
+
+@media (max-width: 821px) {
+  .verticalCard {
+    width: 15rem;
+    max-height: 20rem;
+    text-wrap: nowrap;
+  }
+}
+
+@media (max-width: 431px) {
+  .verticalCard {
+    min-width: 15rem;
+    max-height: 20rem;
+    text-wrap: nowrap;
+  }
+}

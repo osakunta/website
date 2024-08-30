@@ -42,45 +42,14 @@
   padding-bottom: 2.5rem;
 }
 
-.eventsContainer {
+.eventsContainer,
+.meetingsContainer {
   width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
-}
-
-.hCard {
-  display: flex;
-  border-radius: 1rem;
-  background-color: var(--blue300);
-}
-
-.cardContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 50%;
-  color: var(--white);
-}
-
-.cardTitle {
-  font-size: 2rem;
-  font-weight: 500;
-}
-
-.buttonPink {
-  border-radius: 5rem;
-  padding: 0.5rem 1.5rem;
-  background-color: var(--pink);
-  color: var(--blue300);
-}
-
-.cardMedia {
-  border-radius: 1rem;
-  width: 50%;
 }
 
 .meetingsSection {
@@ -91,10 +60,4 @@
   align-items: center;
   padding-top: 2.5rem;
   margin-bottom: 5rem;
-}
-
-.footer {
-  width: 100%;
-  height: 20rem;
-  background-color: var(--blue300);
 }

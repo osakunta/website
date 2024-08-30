@@ -1,15 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid -- Disabled because of a lot of placeholder hrefs */
+import HorizontalCard from "@/components/HorizontalCard";
 import Navbar, { NavbarProps } from "@/components/Navbar";
 import createClient from "@/lib/cmsClient";
 import styles from "@/styles/events.module.css";
 import { readItems } from "@directus/sdk";
-import {
-  Button,
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@mui/material";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 
@@ -52,119 +46,60 @@ export default function Events({ navBar }: EventsPageProps) {
       <main className={styles.main}>
         <section className={styles.eventsSection}>
           <div className={styles.eventsContainer}>
-            <Card className={styles.hCard}>
-              <CardContent className={styles.cardContent}>
-                <span className={styles.cardContentText}>
-                  <Typography className={styles.cardTitle}>
-                    Rapujuhlat
-                  </Typography>
-                  <Typography className={styles.cardDescription}>
-                    <p>
-                      <b>Aika:</b> Lauantaina 11.1.2024
-                    </p>
-                    <p>
-                      <b>Paika:</b> Osakuntahuoneisto viisi
-                    </p>
-                  </Typography>
-                </span>
-                <Button variant="contained" className={styles.buttonPink}>
-                  Lisätiedot
-                </Button>
-              </CardContent>
-              <CardMedia
-                component="img"
-                image="/Placeholder_5.png"
-                alt="A placeholder image"
-                className={styles.cardMedia}
-              />
-            </Card>
-            <Card className={styles.hCard}>
-              <CardContent className={styles.cardContent}>
-                <span className={styles.cardContentText}>
-                  <Typography className={styles.cardTitle}>
-                    Rapujuhlat
-                  </Typography>
-                  <Typography className={styles.cardDescription}>
-                    <p>
-                      <b>Aika:</b> Lauantaina 11.1.2024
-                    </p>
-                    <p>
-                      <b>Paika:</b> Osakuntahuoneisto viisi
-                    </p>
-                  </Typography>
-                </span>
-                <Button variant="contained" className={styles.buttonPink}>
-                  Lisätiedot
-                </Button>
-              </CardContent>
-              <CardMedia
-                component="img"
-                image="/Placeholder_1.png"
-                alt="A placeholder image"
-                className={styles.cardMedia}
-              />
-            </Card>
+            <HorizontalCard
+              variant="darkBlue"
+              image="/Placeholder_1.png"
+              altText="Placeholder image"
+              title="Rapujuhlat"
+              description="Aika: Lauantaina 11.1.2024 Paika:Osakuntahuoneisto viisi"
+              btnText="Lisätiedot"
+              href=""
+            />
+            <HorizontalCard
+              variant="darkBlue"
+              image="/Placeholder_1.png"
+              altText="Placeholder image"
+              title="Rapujuhlat"
+              description="Aika: Lauantaina 11.1.2024 Paika:Osakuntahuoneisto viisi"
+              btnText="Lisätiedot"
+              href=""
+            />
+            <HorizontalCard
+              variant="yellow"
+              image="/Placeholder_1.png"
+              altText="Placeholder image"
+              title="Rapujuhlat"
+              description="Aika: Lauantaina 11.1.2024 Paika:Osakuntahuoneisto viisi"
+              btnText="Lisätiedot"
+              href=""
+            />
           </div>
         </section>
         <section className={styles.meetingsSection}>
-          <div className={styles.eventsContainer}>
+          <div className={styles.meetingsContainer}>
             <h2>Kerhojen Kokoontumiset</h2>
-            <Card className={styles.hCard}>
-              <CardContent className={styles.cardContent}>
-                <span className={styles.cardContentText}>
-                  <Typography className={styles.cardTitle}>
-                    Rapujuhlat
-                  </Typography>
-                  <Typography className={styles.cardDescription}>
-                    <p>
-                      <b>Aika:</b> Lauantaina 11.1.2024
-                    </p>
-                    <p>
-                      <b>Paika:</b> Osakuntahuoneisto viisi
-                    </p>
-                  </Typography>
-                </span>
-                <Button variant="contained" className={styles.buttonPink}>
-                  Lisätiedot
-                </Button>
-              </CardContent>
-              <CardMedia
-                component="img"
-                image="/Placeholder_5.png"
-                alt="A placeholder image"
-                className={styles.cardMedia}
-              />
-            </Card>
-            <Card className={styles.hCard}>
-              <CardContent className={styles.cardContent}>
-                <span className={styles.cardContentText}>
-                  <Typography className={styles.cardTitle}>
-                    Rapujuhlat
-                  </Typography>
-                  <Typography className={styles.cardDescription}>
-                    <p>
-                      <b>Aika:</b> Lauantaina 11.1.2024
-                    </p>
-                    <p>
-                      <b>Paika:</b> Osakuntahuoneisto viisi
-                    </p>
-                  </Typography>
-                </span>
-                <Button variant="contained" className={styles.buttonPink}>
-                  Lisätiedot
-                </Button>
-              </CardContent>
-              <CardMedia
-                component="img"
-                image="/Placeholder_1.png"
-                alt="A placeholder image"
-                className={styles.cardMedia}
-              />
-            </Card>
+            <HorizontalCard
+              variant="lightBlue"
+              image="/Placeholder_5.png"
+              altText="Placeholder image"
+              title="Rapujuhlat"
+              description="Aika: Lauantaina 11.1.2024 Paika:Osakuntahuoneisto viisi"
+              btnText="Lisätiedot"
+              href=""
+            />
+            <HorizontalCard
+              variant="pink"
+              image="/Placeholder_5.png"
+              altText="Placeholder image"
+              title="Rapujuhlat"
+              description="Aika: Lauantaina 11.1.2024 Paika:Osakuntahuoneisto viisi"
+              btnText="Lisätiedot"
+              href=""
+            />
           </div>
         </section>
       </main>
-      <footer className={styles.footer}>blah</footer>
+      <footer className="footer" />
     </>
   );
 }

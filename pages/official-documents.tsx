@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid -- Disable because of a lot of placeholder hrefs */
 import Navbar, { NavbarProps } from "@/components/Navbar";
+import createClient from "@/lib/cmsClient";
+import styles from "@/styles/official-documents.module.css";
+import { readItems } from "@directus/sdk";
+import { Button, List, ListItem, ListSubheader } from "@mui/material";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "@/styles/official-documents.module.css";
-import { Button, List, ListItem, ListSubheader } from "@mui/material";
 import Link from "next/link";
-import createClient from "@/lib/cmsClient";
-import { readItems } from "@directus/sdk";
 import arrowWhite from "../public/arrow_forward_white.svg";
 
 export const getStaticProps: GetStaticProps<
@@ -39,10 +39,10 @@ export default function OfficialDocuments({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Navbar links={navBar.links} />
-      <header className={styles.header}>
-        <div className={styles.headerContainer}>
+      <header className="header">
+        <div className="headerContainer">
           <h1>Viralliset Documentit</h1>
-          <p className={styles.headerText}>
+          <p className="headerText">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor
             doloribus impedit sapiente ipsum rerum neque consequatur tempore,
             sit repellat unde, enim veniam accusantium minima molestias?
@@ -50,16 +50,20 @@ export default function OfficialDocuments({
           </p>
         </div>
       </header>
-      <main className={styles.main}>
+      <main className="main">
         <section className={styles.documentSection}>
           <List className={styles.documentList}>
-            <ListSubheader className={styles.h3}>Rules</ListSubheader>
+            <ListSubheader className={styles.listSubheading}>
+              Rules
+            </ListSubheader>
             <ListItem>
               <a href="" className={styles.documentLink}>
                 Rules 2011
               </a>
             </ListItem>
-            <ListSubheader className={styles.h3}>Old Rules</ListSubheader>
+            <ListSubheader className={styles.listSubheading}>
+              Old Rules
+            </ListSubheader>
             <ListItem>
               <a href="" className={styles.documentLink}>
                 Rules 2007
@@ -77,13 +81,17 @@ export default function OfficialDocuments({
             </ListItem>
           </List>
           <List className={styles.documentList}>
-            <ListSubheader className={styles.h3}>Regulations</ListSubheader>
+            <ListSubheader className={styles.listSubheading}>
+              Regulations
+            </ListSubheader>
             <ListItem>
               <a href="" className={styles.documentLink}>
                 Guidelines 2020
               </a>
             </ListItem>
-            <ListSubheader className={styles.h3}>Old Regulations</ListSubheader>
+            <ListSubheader className={styles.listSubheading}>
+              Old Regulations
+            </ListSubheader>
             <ListItem>
               <a href="" className={styles.documentLink}>
                 Guidelines 2019
@@ -106,7 +114,9 @@ export default function OfficialDocuments({
             </ListItem>
           </List>
           <List className={styles.documentList}>
-            <ListSubheader className={styles.h3}>Other Documents</ListSubheader>
+            <ListSubheader className={styles.listSubheading}>
+              Other Documents
+            </ListSubheader>
             <ListItem>
               <a href="" className={styles.documentLink}>
                 Equality Plan
@@ -122,7 +132,9 @@ export default function OfficialDocuments({
                 Environmental plan
               </a>
             </ListItem>
-            <ListSubheader className={styles.h3}>Dormitory</ListSubheader>
+            <ListSubheader className={styles.listSubheading}>
+              Dormitory
+            </ListSubheader>
             <ListItem>
               <a href="" className={styles.documentLink}>
                 Dormitory Regulations
@@ -132,9 +144,10 @@ export default function OfficialDocuments({
         </section>
         <section className={styles.externalRef}>
           <div className={styles.proceedingsContainer}>
-            <h3 className={styles.h3}>Proceedings</h3>
-            <Button variant="contained" className={styles.proceedingsBtn}>
-              See proceedings <br /> (SatO login required)
+            <h3 className={styles.listSubheading}>Proceedings</h3>
+            <p>(SatO login required)</p>
+            <Button variant="contained" className="button darkBlue">
+              See proceedings <br />
               <Image src={arrowWhite} alt="arrow forward" />
             </Button>
           </div>
@@ -148,7 +161,7 @@ export default function OfficialDocuments({
             page!
           </p>
         </section>
-        <footer className={styles.footer} />
+        <footer className="footer" />
       </main>
     </>
   );

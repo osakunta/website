@@ -37,10 +37,10 @@ export default function News({ navBar }: NewsPageProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Navbar links={navBar.links} />
-      <header className={styles.header}>
-        <div className={styles.headerContainer}>
-          <h1 className={styles.h1}>Uutiset</h1>
-          <p className={styles.headerText}>
+      <header className="header">
+        <div className="headerContainer">
+          <h1>Uutiset</h1>
+          <p className="headerText">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odit
             distinctio, ullam doloremque provident voluptas illo quaerat ex
             saepe voluptate reiciendis rerum fuga obcaecati esse sit cum maxime,
@@ -48,7 +48,7 @@ export default function News({ navBar }: NewsPageProps) {
           </p>
         </div>
       </header>
-      <main className={styles.main}>
+      <main className="main">
         <Paper elevation={0} className={styles.newsContainer}>
           <div className={styles.listContainer}>
             <List className={styles.articleList}>
@@ -167,7 +167,7 @@ export default function News({ navBar }: NewsPageProps) {
           </Paper>
         </Paper>
       </main>
-      <footer className={styles.footer} />
+      <footer className="footer" />
     </>
   );
 }

@@ -43,27 +43,6 @@
   overflow-x: auto;
 }
 
-.colorCard {
-  color: var(--blue300);
-  width: 15rem;
-  border-radius: 0.5rem;
-  background-color: var(--yellow);
-}
-
-.cardContent {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0.5rem 0 0.5rem 0;
-}
-
-.cardLink {
-  height: 0px;
-  margin: 0;
-  padding: 0;
-}
-
 .livingInfo {
   background-color: var(--blue300);
   width: 100%;
@@ -215,12 +194,6 @@
 }
 
 @media (max-width: 821px) {
-  .colorCard {
-    width: 15rem;
-    max-height: 20rem;
-    text-wrap: nowrap;
-  }
-
   .livingArticle {
     width: 70%;
   }
@@ -250,11 +223,6 @@
     justify-content: flex-start;
     align-items: center;
     padding: 0.5rem;
-  }
-  .colorCard {
-    min-width: 15rem;
-    max-height: 20rem;
-    text-wrap: nowrap;
   }
 
   .cardContainer {
