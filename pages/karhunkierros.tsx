@@ -40,26 +40,22 @@ export default function Karhunkierros({ navBar }: KarhunkierrosPageProps) {
     <>
       <Head>
         <title>Satakuntalainen Osakunta</title>
-        <link
-          rel="icon"
-          href="/new-sato-website/public/favicon.ico"
-          type="image/x-icon"
-        />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
+      <Navbar links={navBar.links} />
+      <header className={styles.header}>
+        <div className={styles.headerContainer}>
+          <h1>Karhunkierros lehti</h1>
+          <p className={styles.headerText}>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor
+            doloribus impedit sapiente ipsum rerum neque consequatur tempore,
+            sit repellat unde, enim veniam accusantium minima molestias?
+            Obcaecati quis doloribus quae nesciunt?
+          </p>
+        </div>
+      </header>
       <main className={styles.main}>
-        <Navbar links={navBar.links} />
-        <header className={styles.header}>
-          <div className={styles.headerContainer}>
-            <h1>Karhunkierros lehti</h1>
-            <p className={styles.headerText}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor
-              doloribus impedit sapiente ipsum rerum neque consequatur tempore,
-              sit repellat unde, enim veniam accusantium minima molestias?
-              Obcaecati quis doloribus quae nesciunt?
-            </p>
-          </div>
-        </header>
         <section className={styles.magazines}>
           <Card className={styles.magazineCard}>
             <CardActionArea>

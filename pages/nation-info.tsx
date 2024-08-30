@@ -29,34 +29,30 @@ export default function NationInfo({ navBar }: NationInfoPageProps) {
     <>
       <Head>
         <title>Satakuntalainen Osakunta</title>
-        <link
-          rel="icon"
-          href="/new-sato-website/public/favicon.ico"
-          type="image/x-icon"
-        />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
+      <Navbar links={navBar.links} />
+      {/* Image Header */}
+      <header className={styles.infoHeader}>
+        <div className={styles.headerContainer}>
+          <h1 className={styles.h1}>Tietoa Osakunnosta</h1>
+          <p className={styles.headerText}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odit
+            distinctio, ullam doloremque provident voluptas illo quaerat ex
+            saepe voluptate reiciendis rerum fuga obcaecati esse sit cum maxime,
+            dolorem facilis?
+          </p>
+          <Image
+            src="https://scontent-hel3-1.xx.fbcdn.net/v/t39.30808-6/327171926_575978767373053_5152094067402815471_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=eAMfu1-_YcgQ7kNvgH3C_nE&_nc_ht=scontent-hel3-1.xx&oh=00_AYDTfxBnpbvvmIng2wEwR6CLu35S7gjGnoujSlYQQmp5nw&oe=66B9427E"
+            alt="Nation members holding a flag"
+            width={800}
+            height={300}
+            className={styles.headerImage}
+          />
+        </div>
+      </header>
       <main className={styles.main}>
-        <Navbar links={navBar.links} />
-        {/* Image Header */}
-        <header className={styles.infoHeader}>
-          <div className={styles.headerContainer}>
-            <h1 className={styles.h1}>Tietoa Osakunnosta</h1>
-            <p className={styles.headerText}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-              odit distinctio, ullam doloremque provident voluptas illo quaerat
-              ex saepe voluptate reiciendis rerum fuga obcaecati esse sit cum
-              maxime, dolorem facilis?
-            </p>
-            <Image
-              src="https://scontent-hel3-1.xx.fbcdn.net/v/t39.30808-6/327171926_575978767373053_5152094067402815471_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=eAMfu1-_YcgQ7kNvgH3C_nE&_nc_ht=scontent-hel3-1.xx&oh=00_AYDTfxBnpbvvmIng2wEwR6CLu35S7gjGnoujSlYQQmp5nw&oe=66B9427E"
-              alt="Nation members holding a flag"
-              width={800}
-              height={300}
-              className={styles.headerImage}
-            />
-          </div>
-        </header>
         <section className={styles.infoSection}>
           <aside className={styles.infoContainer}>
             <h2 className={styles.h2}>Mikä on Satakuntalainen osakunta?</h2>

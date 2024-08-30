@@ -1,0 +1,84 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: var(--blue300);
+  font-family: "Raleway", sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+  width: 100%;
+  background-color: var(--blue100);
+  margin-bottom: 5rem;
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+.headerText {
+  width: 70%;
+}
+
+.newsContainer {
+  background-color: var(--blue100);
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 1.5rem;
+}
+
+.listContainer {
+  width: 26%;
+}
+
+.articleList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.articleListItem {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.articleWindow {
+  width: 70%;
+  max-height: 60vh;
+  overflow-y: scroll;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.footer {
+  width: 100%;
+  height: 20rem;
+  background-color: var(--blue300);
+  margin-top: 5rem;
+}

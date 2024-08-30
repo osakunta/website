@@ -1,7 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid -- Disabled because of a lot of placeholder hrefs */
 import Carousel from "@/components/Carousel";
 import Navbar, { NavbarProps } from "@/components/Navbar";
+import WeekCalendar from "@/components/WeekCalendar";
+import createClient from "@/lib/cmsClient";
 import styles from "@/styles/Home.module.css";
+import { readItems } from "@directus/sdk";
 import {
   Button,
   Card,
@@ -16,8 +19,6 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import createClient from "@/lib/cmsClient";
-import { readItems } from "@directus/sdk";
 import aino from "../public/aino.png";
 import arrowBlue from "../public/arrow_forward_blue.svg";
 import arrowWhite from "../public/arrow_forward_white.svg";
@@ -48,22 +49,19 @@ export default function Home({ navBar }: HomePageProps) {
     <>
       <Head>
         <title>Satakuntalainen Osakunta</title>
-        <link
-          rel="icon"
-          href="/new-sato-website/public/favicon.ico"
-          type="image/x-icon"
-        />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
+      <Navbar links={navBar.links} />
+      <header className={styles.hero}>
+        <h2 className={styles.h2}>Ystäviä, tapahtumia ja koti Kampissa</h2>
+        <Button variant="contained" className={styles.heroBtn}>
+          Liity osakuntaan
+        </Button>
+      </header>
       <main className={styles.main}>
-        <Navbar links={navBar.links} />
         {/* Hero */}
-        <section className={styles.hero}>
-          <h2 className={styles.h2}>Ystäviä, tapahtumia ja koti Kampissa</h2>
-          <Button variant="contained" className={styles.heroBtn}>
-            Liity osakuntaan
-          </Button>
-        </section>
+
         {/* Cards */}
         <section className={styles.cards}>
           <Card className={styles.colorCard}>
@@ -251,13 +249,13 @@ export default function Home({ navBar }: HomePageProps) {
         <section className={styles.calendarSection}>
           <span className={styles.sectionContainer}>
             <h2>Kalenteri</h2>
+            <WeekCalendar />
           </span>
         </section>
         {/* Carousel */}
         <section className={styles.karhunkierros}>
-          <h2>Osakuntalehti Karhunkierros</h2>
-
           <span className={styles.carouselContainer}>
+            <h2>Osakuntalehti Karhunkierros</h2>
             <Carousel slides={SLIDES} options={OPTIONS} />
           </span>
         </section>

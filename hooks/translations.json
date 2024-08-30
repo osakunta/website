@@ -4,6 +4,8 @@
     "en": "Satakunta Nation",
     "sv": "Satakunta Nation"
   },
+  "nav:calendar": { "fi": "Kalenteri", "en": "Calendar", "sv": "Kalender" },
+  "nav:events": { "fi": "Tapahtumat", "en": "Events", "sv": "Evenemang" },
   "nav:forMembers": {
     "fi": "Jäsenille",
     "en": "For Members",
@@ -21,6 +23,7 @@
     "en": "Nation Info",
     "sv": "Samma på svenska"
   },
+  "nav:news": { "fi": "Uutiset", "en": "News", "sv": "Nyheter" },
   "nav:officialDocuments": {
     "fi": "Viralliset Dokumentit",
     "en": "Official Documents",
