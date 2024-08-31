@@ -4,6 +4,7 @@
     "en": "Satakunta Nation",
     "sv": "Satakunta Nation"
   },
+  "nav:archive": { "fi": "Arkisto", "en": "Archive", "sv": "Arkiv" },
   "nav:calendar": { "fi": "Kalenteri", "en": "Calendar", "sv": "Kalender" },
   "nav:events": { "fi": "Tapahtumat", "en": "Events", "sv": "Evenemang" },
   "nav:forMembers": {
