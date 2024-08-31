@@ -3,6 +3,7 @@ import { createDirectus, rest } from "@directus/sdk";
 
 type Schema = {
   NavigationLink: NavigationLink[];
+  Contact: Contact[];
   Translation: Translation[];
 };
 
@@ -10,6 +11,14 @@ export type NavigationLink = {
   label_key: TranslationKey;
   url: string;
   category: "GENERAL" | "FOR_MEMBERS";
+};
+
+export type Contact = {
+  label_key: TranslationKey;
+  first_name: string;
+  last_name: string;
+  contact: string;
+  id: number;
 };
 
 /*
