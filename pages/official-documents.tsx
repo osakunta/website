@@ -3,12 +3,10 @@ import Navbar, { NavbarProps } from "@/components/Navbar";
 import createClient from "@/lib/cmsClient";
 import styles from "@/styles/official-documents.module.css";
 import { readItems } from "@directus/sdk";
-import { Button, List, ListItem, ListSubheader } from "@mui/material";
+import { List, ListItem, ListSubheader } from "@mui/material";
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
-import arrowWhite from "../public/arrow_forward_white.svg";
 
 export const getStaticProps: GetStaticProps<
   OfficialDocumentsPageProps
@@ -143,14 +141,6 @@ export default function OfficialDocuments({
           </List>
         </section>
         <section className={styles.externalRef}>
-          <div className={styles.proceedingsContainer}>
-            <h3 className={styles.listSubheading}>Proceedings</h3>
-            <p>(SatO login required)</p>
-            <Button variant="contained" className="button darkBlue">
-              See proceedings <br />
-              <Image src={arrowWhite} alt="arrow forward" />
-            </Button>
-          </div>
           <p className={styles.archiveRedirect}>
             Looking for the Satakunta series or Maila Talvio&apos;s collected
             works? You can now find them on the

@@ -55,6 +55,11 @@
     "en": "For Members",
     "sv": "För Medlemmar"
   },
+  "nav:harassmentForm": {
+    "fi": "Härintälomake\t",
+    "en": "Harrassment Form\t",
+    "sv": "Trakasserianmälan\t"
+  },
   "nav:home": { "fi": "Etusivu", "en": "Home", "sv": "Framsida" },
   "nav:karhunkierros": {
     "fi": "Karhunkierros Lehti",

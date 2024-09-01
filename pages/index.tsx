@@ -97,7 +97,7 @@ export default function Home({ navBar }: HomePageProps) {
             <h2 className={styles.livingTitle}>
               Asuminen
               <br />
-              satakintatalolla
+              satakuntatalolla
             </h2>
             <br />
 
@@ -230,7 +230,7 @@ export default function Home({ navBar }: HomePageProps) {
         <section className={styles.contact}>
           <div className={styles.contactSectionContainer}>
             <div className={styles.contactInfo}>
-              <h2> Postia hallitikselle</h2>
+              <h2> Postia hallitukselle</h2>
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Asperiores facere at minus officiis nesciunt? Quos labore

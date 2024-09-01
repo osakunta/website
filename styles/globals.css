@@ -264,6 +264,9 @@ h1 {
 }
 
 @media (max-width: 431px) {
+  h1 {
+    font-size: 2.5rem;
+  }
   .embla {
     --slide-size: 65%;
   }
