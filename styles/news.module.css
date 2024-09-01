@@ -1,48 +1,9 @@
 .newsContainer {
-  background-color: var(--blue100);
   width: 70%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  border-radius: 1.5rem;
-  margin: 5rem 0;
-}
-
-.listContainer {
-  width: 26%;
-}
-
-.articleList {
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-}
-
-.articleListItem {
-  display: block;
-  max-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-.articleWindow {
-  width: 70%;
-  max-height: 60vh;
-  overflow-y: scroll;
-  padding: 1rem;
-  border-radius: 1rem;
-}
-
-.footer {
-  width: 100%;
-  height: 20rem;
-  background-color: var(--blue300);
-  margin-top: 5rem;
+  align-items: center;
+  margin: 5rem 0;
+  gap: 2rem;
 }

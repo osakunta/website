@@ -73,6 +73,11 @@
     "en": "Official Documents",
     "sv": "Officiella Dokument"
   },
+  "nav:rental": {
+    "fi": "Satalinnan säätiön verkkosivut",
+    "en": "Säätiö Rental Page",
+    "sv": "Satalinnan säätiös webbsida"
+  },
   "snackbar:languageChanged": {
     "fi": "Hienoa! Kieli on vaihdettu suomeksi.",
     "en": "Success! Language set to English.",
