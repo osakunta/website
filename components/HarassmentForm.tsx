@@ -15,14 +15,12 @@ interface Values {
 const validationSchema = Yup.object({
   email: Yup.string()
     .email("Invalid email address")
-    .when("wantsAnswer", {
-      is: true,
-      then: Yup.string().required("Email is required"),
-    }),
-  name: Yup.string().when("wantsAnswer", {
-    is: true,
-    then: Yup.string().required("Name is required"),
-  }),
+    .when("wantsAnswer", (wantsAnswer, schema) =>
+      wantsAnswer ? schema.required("Email is required") : schema,
+    ),
+  name: Yup.string().when("wantsAnswer", (wantsAnswer, schema) =>
+    wantsAnswer ? schema.required("Name is required") : schema,
+  ),
 });
 
 const HarassmentForm = () => {
