@@ -1,11 +1,4 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.h3 {
+.listSubheading {
   font-size: 2rem;
   font-weight: 600;
   margin: 0.5rem 0;
@@ -13,31 +6,10 @@
   font-family: "Raleway", sans-serif;
 }
 
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5rem 0;
-  width: 100%;
-  background-color: var(--blue100);
-}
-
-.headerContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
-}
-
-.headerText {
-  width: 70%;
-}
-
 .documentSection {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   width: 70%;
   margin-top: 5rem;
@@ -69,9 +41,9 @@
 .externalRef {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 60%;
+  width: 70%;
   gap: 17rem;
   margin-bottom: 5rem;
 }

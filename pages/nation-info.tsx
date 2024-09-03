@@ -1,11 +1,11 @@
 import Navbar, { NavbarProps } from "@/components/Navbar";
-import { GetStaticProps } from "next";
+import createClient from "@/lib/cmsClient";
 import styles from "@/styles/nation-info.module.css";
+import { readItems } from "@directus/sdk";
+import { Button } from "@mui/material";
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { Button } from "@mui/material";
-import createClient from "@/lib/cmsClient";
-import { readItems } from "@directus/sdk";
 import arrowWhite from "../public/arrow_forward_white.svg";
 
 export const getStaticProps: GetStaticProps<NationInfoPageProps> = async () => {
@@ -34,25 +34,18 @@ export default function NationInfo({ navBar }: NationInfoPageProps) {
       </Head>
       <Navbar links={navBar.links} />
       {/* Image Header */}
-      <header className={styles.infoHeader}>
-        <div className={styles.headerContainer}>
-          <h1 className={styles.h1}>Tietoa Osakunnosta</h1>
-          <p className={styles.headerText}>
+      <header className="header">
+        <div className="headerContainer">
+          <h1>Tietoa Osakunnosta</h1>
+          <p className="headerText">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odit
             distinctio, ullam doloremque provident voluptas illo quaerat ex
             saepe voluptate reiciendis rerum fuga obcaecati esse sit cum maxime,
             dolorem facilis?
           </p>
-          <Image
-            src="https://scontent-hel3-1.xx.fbcdn.net/v/t39.30808-6/327171926_575978767373053_5152094067402815471_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=eAMfu1-_YcgQ7kNvgH3C_nE&_nc_ht=scontent-hel3-1.xx&oh=00_AYDTfxBnpbvvmIng2wEwR6CLu35S7gjGnoujSlYQQmp5nw&oe=66B9427E"
-            alt="Nation members holding a flag"
-            width={800}
-            height={300}
-            className={styles.headerImage}
-          />
         </div>
       </header>
-      <main className={styles.main}>
+      <main className="main">
         <section className={styles.infoSection}>
           <aside className={styles.infoContainer}>
             <h2 className={styles.h2}>Mikä on Satakuntalainen osakunta?</h2>
@@ -80,7 +73,7 @@ export default function NationInfo({ navBar }: NationInfoPageProps) {
               similique qui in voluptatum corrupti illo?
             </p>
             <br />
-            <Button variant="contained" className={styles.infoBtn}>
+            <Button variant="contained" className="button darkBlue">
               Tapahtumakalenteri
               <Image src={arrowWhite} alt="arrow forward" />
             </Button>
@@ -95,7 +88,7 @@ export default function NationInfo({ navBar }: NationInfoPageProps) {
             />
           </aside>
         </section>
-        <footer className={styles.footer} />
+        <footer className="footer" />
       </main>
     </>
   );

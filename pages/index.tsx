@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid -- Disabled because of a lot of placeholder hrefs */
 import Carousel from "@/components/Carousel";
 import Navbar, { NavbarProps } from "@/components/Navbar";
+import VerticalCard from "@/components/VerticalCard";
 import WeekCalendar from "@/components/WeekCalendar";
 import createClient from "@/lib/cmsClient";
 import styles from "@/styles/Home.module.css";
@@ -20,8 +21,6 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import aino from "../public/aino.png";
-import arrowBlue from "../public/arrow_forward_blue.svg";
-import arrowWhite from "../public/arrow_forward_white.svg";
 import cAside from "../public/contact-aside.png";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
@@ -55,7 +54,7 @@ export default function Home({ navBar }: HomePageProps) {
       <Navbar links={navBar.links} />
       <header className={styles.hero}>
         <h2 className={styles.h2}>Ystäviä, tapahtumia ja koti Kampissa</h2>
-        <Button variant="contained" className={styles.heroBtn}>
+        <Button variant="contained" className="button darkBlue">
           Liity osakuntaan
         </Button>
       </header>
@@ -64,59 +63,27 @@ export default function Home({ navBar }: HomePageProps) {
 
         {/* Cards */}
         <section className={styles.cards}>
-          <Card className={styles.colorCard}>
-            <CardActionArea>
-              <CardMedia
-                height={250}
-                component="img"
-                image="https://lh5.googleusercontent.com/bDp4TqmugenBz4t8K9J4PfQkJbnEzwef49kbULsCaJ-7BY4VZ0Jg0I4V7SYcvb4lFISHnvjeYm1ARN4WVsoRUwdEcAwB9_ogpPV90CBlRMeAkFns7XDevbB3kKlTrwlvZQ=w1280"
-                alt="Satakuntalainen Osakunta"
-              />
-              <CardContent className={styles.cardContent}>
-                <Typography>Tietoa osakunnasta</Typography>
-                <Image src={arrowBlue} alt="arrow forward" />
-              </CardContent>
-            </CardActionArea>
-            <CardActions className={styles.cardLink}>
-              <Link href="" />
-            </CardActions>
-          </Card>
-
-          <Card className={styles.colorCard}>
-            <CardActionArea>
-              <CardMedia
-                height={250}
-                component="img"
-                image="https://lh5.googleusercontent.com/bDp4TqmugenBz4t8K9J4PfQkJbnEzwef49kbULsCaJ-7BY4VZ0Jg0I4V7SYcvb4lFISHnvjeYm1ARN4WVsoRUwdEcAwB9_ogpPV90CBlRMeAkFns7XDevbB3kKlTrwlvZQ=w1280"
-                alt="Satakuntalainen Osakunta"
-              />
-              <CardContent className={styles.cardContent}>
-                <Typography>Liity jäseneksi</Typography>
-                <Image src={arrowBlue} alt="arrow forward" />
-              </CardContent>
-            </CardActionArea>
-            <CardActions className={styles.cardLink}>
-              <Link href="" />
-            </CardActions>
-          </Card>
-
-          <Card className={styles.colorCard}>
-            <CardActionArea>
-              <CardMedia
-                height={250}
-                component="img"
-                image="https://lh5.googleusercontent.com/bDp4TqmugenBz4t8K9J4PfQkJbnEzwef49kbULsCaJ-7BY4VZ0Jg0I4V7SYcvb4lFISHnvjeYm1ARN4WVsoRUwdEcAwB9_ogpPV90CBlRMeAkFns7XDevbB3kKlTrwlvZQ=w1280"
-                alt="Satakuntalainen Osakunta"
-              />
-              <CardContent className={styles.cardContent}>
-                <Typography>Tapahtumat</Typography>
-                <Image src={arrowBlue} alt="arrow forward" />
-              </CardContent>
-            </CardActionArea>
-            <CardActions className={styles.cardLink}>
-              <Link href="" />
-            </CardActions>
-          </Card>
+          <VerticalCard
+            variant="yellow"
+            image="/Placeholder_1.png"
+            title="Tietoa osakunnasta"
+            altText="Placeholder image"
+            href=""
+          />
+          <VerticalCard
+            variant="yellow"
+            image="/Placeholder_1.png"
+            title="Liity jäseneksi"
+            altText="Placeholder image"
+            href=""
+          />
+          <VerticalCard
+            variant="yellow"
+            image="/Placeholder_1.png"
+            title="Tapahtumat"
+            altText="Placeholder image"
+            href=""
+          />
         </section>
         {/* Living Info */}
         <section className={styles.livingInfo}>
@@ -130,7 +97,7 @@ export default function Home({ navBar }: HomePageProps) {
             <h2 className={styles.livingTitle}>
               Asuminen
               <br />
-              satakintatalolla
+              satakuntatalolla
             </h2>
             <br />
 
@@ -146,8 +113,8 @@ export default function Home({ navBar }: HomePageProps) {
             <br />
             <br />
 
-            <Button variant="contained" className={styles.infoBtn}>
-              Satalinnan säätiö <Image src={arrowBlue} alt="arrow forward" />
+            <Button variant="contained" className="button lightBlue">
+              Satalinnan säätiö{" "}
             </Button>
           </article>
         </section>
@@ -263,16 +230,15 @@ export default function Home({ navBar }: HomePageProps) {
         <section className={styles.contact}>
           <div className={styles.contactSectionContainer}>
             <div className={styles.contactInfo}>
-              <h2> Postia hallitikselle</h2>
+              <h2> Postia hallitukselle</h2>
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Asperiores facere at minus officiis nesciunt? Quos labore
                 dolorem et mollitia quia. Recusandae dolores modi quaerat
                 magnam! Autem distinctio ipsa a alias.
               </p>
-              <Button variant="contained" className={styles.heroBtn}>
+              <Button variant="contained" className="button darkBlue">
                 Siiry lomakkeelle
-                <Image src={arrowWhite} alt="arrow forward" />
               </Button>
               <br />
               <br />
@@ -283,9 +249,8 @@ export default function Home({ navBar }: HomePageProps) {
                 dolorem et mollitia quia. Recusandae dolores modi quaerat
                 magnam! Autem distinctio ipsa a alias.
               </p>
-              <Button variant="contained" className={styles.heroBtn}>
+              <Button variant="contained" className="button darkBlue">
                 Ota yhteyttä
-                <Image src={arrowWhite} alt="arrow forward" />
               </Button>
             </div>
             <Image
@@ -297,7 +262,7 @@ export default function Home({ navBar }: HomePageProps) {
         </section>
 
         {/* Footer */}
-        <section className={styles.footer} />
+        <section className="footer" />
         <section />
       </main>
     </>

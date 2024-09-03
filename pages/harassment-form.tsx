@@ -1,12 +1,14 @@
-import MonthCalendar from "@/components/MonthCalendar";
+import HarassmentForm from "@/components/HarassmentForm";
 import Navbar, { NavbarProps } from "@/components/Navbar";
 import createClient from "@/lib/cmsClient";
-import styles from "@/styles/calendar.module.css";
+import styles from "@/styles/harassmentForm.module.css";
 import { readItems } from "@directus/sdk";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 
-export const getStaticProps: GetStaticProps<CalendarPageProps> = async () => {
+export const getStaticProps: GetStaticProps<
+  HarassmentFormPageProps
+> = async () => {
   const client = createClient();
   const links = await client.request(readItems("NavigationLink"));
   return {
@@ -18,11 +20,11 @@ export const getStaticProps: GetStaticProps<CalendarPageProps> = async () => {
   };
 };
 
-type CalendarPageProps = {
+type HarassmentFormPageProps = {
   navBar: NavbarProps;
 };
 
-export default function News({ navBar }: CalendarPageProps) {
+export default function News({ navBar }: HarassmentFormPageProps) {
   return (
     <>
       <Head>
@@ -33,7 +35,7 @@ export default function News({ navBar }: CalendarPageProps) {
       <Navbar links={navBar.links} />
       <header className="header">
         <div className="headerContainer">
-          <h1>Kalenteri</h1>
+          <h1>Häirintälomake</h1>
           <p className="headerText">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odit
             distinctio, ullam doloremque provident voluptas illo quaerat ex
@@ -43,8 +45,8 @@ export default function News({ navBar }: CalendarPageProps) {
         </div>
       </header>
       <main className="main">
-        <div className={styles.calendarContainer}>
-          <MonthCalendar />
+        <div className={styles.formContainer}>
+          <HarassmentForm />
         </div>
       </main>
       <footer className="footer" />

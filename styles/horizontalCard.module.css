@@ -1,0 +1,44 @@
+.horizontalCard {
+  display: flex;
+  border-radius: 1rem;
+  width: 60%;
+  box-shadow: none;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 50%;
+}
+
+.cardTitle {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.cardMedia {
+  border-radius: 1rem;
+  width: 50%;
+}
+
+.horizontalCard.darkBlue {
+  background-color: var(--blue300);
+  color: var(--white);
+}
+
+.horizontalCard.lightBlue {
+  background-color: var(--blue100);
+  color: var(--blue300);
+}
+
+.horizontalCard.pink {
+  background-color: var(--pink);
+  color: var(--blue300);
+}
+
+.horizontalCard.yellow {
+  background-color: var(--yellow);
+  color: var(--blue300);
+}

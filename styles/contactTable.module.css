@@ -1,0 +1,36 @@
+.tableContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem 0;
+  overflow: hidden;
+}
+
+.table {
+  width: 70%;
+  border-radius: 1rem;
+  background-color: var(--white);
+  box-shadow: none;
+  border: 1px solid var(--grey);
+}
+
+.tableLabel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--blue100);
+  padding: 0 1rem;
+}
+
+.searchBar {
+  width: 20%;
+  background-color: var(--white);
+  border-radius: 5rem;
+}
+
+.searchBar:focus {
+  color: var(--blue300);
+}

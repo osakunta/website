@@ -1,15 +1,64 @@
 {
+  "contact:contactLabel": {
+    "fi": "Yhteystiedot",
+    "en": "Contact",
+    "sv": "Kontakt"
+  },
+  "contact:firstName": { "fi": "Etunimi", "en": "First Name", "sv": "Förnamn" },
+  "contact:hallitus": {
+    "fi": "Hallitus\t",
+    "en": "Board\t",
+    "sv": "Styrelsen\t"
+  },
+  "contact:kuraattori": {
+    "fi": "Kuraattori",
+    "en": "Curator",
+    "sv": "Kurator"
+  },
+  "contact:lastName": {
+    "fi": "Sukunimi",
+    "en": "Last Name",
+    "sv": "Efternamn"
+  },
+  "contact:searchLabel": { "fi": "Hae", "en": "Search", "sv": "Sök" },
+  "contact:tableLabel": {
+    "fi": "Yhteystiedot",
+    "en": "Contact Information",
+    "sv": "Kontaktuppgifter"
+  },
+  "contact:title": { "fi": "Nimike", "en": "Title", "sv": "Titel" },
+  "contact:verkkovastaava": {
+    "fi": "Verkkovastaava",
+    "en": "Web Administrator\t",
+    "sv": "Nätverksansvarige"
+  },
+  "contect:inspehtori": {
+    "fi": "Inspehtori\t",
+    "en": "Inspector\t",
+    "sv": "Inspektor\t"
+  },
   "general:nation": {
     "fi": "Satakuntalainen Osakunta",
     "en": "Satakunta Nation",
     "sv": "Satakunta Nation"
   },
+  "nav:archive": { "fi": "Arkisto", "en": "Archive", "sv": "Arkiv" },
   "nav:calendar": { "fi": "Kalenteri", "en": "Calendar", "sv": "Kalender" },
+  "nav:contacts": {
+    "fi": "Ota yhteyttä",
+    "en": "Contact Us ",
+    "sv": "Ta kontakt"
+  },
   "nav:events": { "fi": "Tapahtumat", "en": "Events", "sv": "Evenemang" },
   "nav:forMembers": {
     "fi": "Jäsenille",
     "en": "For Members",
     "sv": "För Medlemmar"
+  },
+  "nav:harassmentForm": {
+    "fi": "Härintälomake\t",
+    "en": "Harrassment Form\t",
+    "sv": "Trakasserianmälan\t"
   },
   "nav:home": { "fi": "Etusivu", "en": "Home", "sv": "Framsida" },
   "nav:karhunkierros": {
@@ -28,6 +77,11 @@
     "fi": "Viralliset Dokumentit",
     "en": "Official Documents",
     "sv": "Officiella Dokument"
+  },
+  "nav:rental": {
+    "fi": "Satalinnan säätiön verkkosivut",
+    "en": "Säätiö Rental Page",
+    "sv": "Satalinnan säätiös webbsida"
   },
   "snackbar:languageChanged": {
     "fi": "Hienoa! Kieli on vaihdettu suomeksi.",
