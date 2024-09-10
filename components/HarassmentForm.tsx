@@ -46,6 +46,7 @@ const HarassmentForm = () => {
   );
   const [buttonText, setButtonText] = useState("Submit");
   const [buttonDisabled, setButtonDisabled] = useState(false);
+  // For development only, disable or delete for prod
   const corsProxy: string = "https://cors-anywhere.herokuapp.com/";
 
   const handleSnackbarClose = () => {
