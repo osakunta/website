@@ -1,14 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-// remove this later^
-import FullCalendar from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import resourceTimelinePlugin from "@fullcalendar/resource-timeline";
-import resourceTimeGridPlugin from "@fullcalendar/resource-timegrid";
-import interactionPlugin from "@fullcalendar/interaction";
 import { useLanguage } from "@/lib/LanguageContext";
+import enLocale from "@fullcalendar/core/locales/en-gb";
 import fiLocale from "@fullcalendar/core/locales/fi";
 import svLocale from "@fullcalendar/core/locales/sv";
-import enLocale from "@fullcalendar/core/locales/en-gb";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import googleCalendarPlugin from "@fullcalendar/google-calendar";
+import FullCalendar from "@fullcalendar/react";
 
 const MonthCalendar = () => {
   const { language } = useLanguage();
@@ -21,8 +17,21 @@ const MonthCalendar = () => {
   return (
     <>
       <FullCalendar
-        schedulerLicenseKey={process.env.FULL_CALENDAR_KEY}
-        plugins={[dayGridPlugin]}
+        plugins={[dayGridPlugin, googleCalendarPlugin]}
+        eventSources={[
+          {
+            googleCalendarId: process.env.NEXT_PUBLIC_CALENDAR_ID_1,
+            googleCalendarApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
+          },
+          {
+            googleCalendarId: process.env.NEXT_PUBLIC_CALENDAR_ID_2,
+            googleCalendarApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
+          },
+          {
+            googleCalendarId: process.env.NEXT_PUBLIC_CALENDAR_ID_3,
+            googleCalendarApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
+          },
+        ]}
         initialView="dayGridMonth"
         locale={currentLocale}
       />
