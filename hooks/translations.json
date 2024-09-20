@@ -42,6 +42,93 @@
     "en": "Satakunta Nation",
     "sv": "Satakunta Nation"
   },
+  "general:seeMore": { "fi": "Katso lisää", "en": "See more", "sv": "Se mer" },
+  "homepage:calendarLabelEvents": {
+    "fi": "Tapahtumat",
+    "en": "Events",
+    "sv": "Evenemang"
+  },
+  "homepage:calendarLabelMeeting": {
+    "fi": "Kokoukset",
+    "en": "Meetings",
+    "sv": "Möten"
+  },
+  "homepage:calendarLabelSports": {
+    "fi": "Urheilut",
+    "en": "Sports",
+    "sv": "Sport"
+  },
+  "homepage:contactBoardDescription": {
+    "fi": "Voit ottaa yhteyttä osakunnan hallitukseen sähköpostitse osoitteella hallitus@satakuntatalo.fi tai alla olevalla lomakkeella. Halutessasi tavoittaa tietyn virkailijan, virkailijoiden yhteystiedot löytyvät \"Ota yhteyttä\" sivulta.\t ",
+    "en": "You can contact the board by sending an email to hallitus@satakuntatalo.fi or by filling out the form. If you need to get in touch with a specific official you can find their contact info on the \"Contact us\" page.\t \t \t \t",
+    "sv": "Du kan kontakta styrelsen via e-post på addressen hallitus@satakuntatalo.fi eller via formuläret. Du kan även kontakta specifika funktionärer, vars kontaktuppgifter hittas på \"Ta kontakt\" sidan.\t \t \t \t"
+  },
+  "homepage:contactBoardHeader": {
+    "fi": "Postia hallitukselle",
+    "en": "Contact the board",
+    "sv": "Kontakta styrelsen"
+  },
+  "homepage:contactFormButton": {
+    "fi": "Siiry Lomakkeelle",
+    "en": "Fill out the form",
+    "sv": "Fyll i formuläret"
+  },
+  "homepage:eventsCard": {
+    "fi": "Tapahtumat",
+    "en": "Events",
+    "sv": "Evengemang"
+  },
+  "homepage:harassmentFormDescription": {
+    "fi": "Tällä lomakkeella voit kertoa osakunnalla kokemastasi häirinnästä tai epätasa-arvoisesta kohtelusta. Tiedot käsittelee luottamuksellisesti osakunnan yhdenvertaisuusvastaavana toimiva kuraattori.\t \t \t \t \t",
+    "en": "With this form, you can report any harassment or unequal treatment you have experienced within the student nation. The curator, who serves as the equality officer, will handle the information confidentially.\t \t \t \t \t",
+    "sv": "Med detta formulär kan du anmäla trakasserier eller ojämlik behandling du upplevt inom nationen. Kuratorn, som fungerar som nationens jämställdhetsanvarig, behandlar uppgifterna konfidentiellt.  \t \t \t \t \t"
+  },
+  "homepage:harassmentFormHeader": {
+    "fi": "Härintälomake\t",
+    "en": "Harrassment form\t",
+    "sv": "Trakasserianmälan\t"
+  },
+  "homepage:heroSectionText": {
+    "fi": "Ystävia, tapahtumia ja koti kampissa",
+    "en": "Friends, events and a home in Kamppi",
+    "sv": "Vänner, evengemang och hem i kampen"
+  },
+  "homepage:join": {
+    "fi": "Liity Osakuntaan",
+    "en": "Join the Nation",
+    "sv": "Bli medlem"
+  },
+  "homepage:karhunkierrosHeader": {
+    "fi": "Osakuntalehti Karhunkierros\t",
+    "en": "Nation Magazine: Karhunkierros\t",
+    "sv": "Nations tidning: Karhunkierros\t"
+  },
+  "homepage:livingInfoDescription": {
+    "fi": "Satakuntatalon asuntola sijaitsee loistavalla paikalla aivan Helsingin ydinkeskustan tuntumassa. Eri korkeakoulut ovat hyvien kulkuyhteyksien päässä, ja edulliselle vuokralle saa vastinetta monien etujen muodossa.\t \t \t \t",
+    "en": "The Satakunta House dormitory is located in a great spot in the middle of Helsinki. The Universities are easily accessible with good transport connections, and rent is affordable with many great benefits included.\t \t \t \t",
+    "sv": "Satakunta husets studerandebostäder finns i Helsingfors centrum. Högskolorna är lätta att nå på grund av nära förbindelser till kollektivtrafik. Hyran är förmånlig och inkluderar många bra förmåner.\t \t \t \t"
+  },
+  "homepage:livingInfoHeader": {
+    "fi": "Asuminen Satakuntatalolla",
+    "en": "Live at the Satakunta house",
+    "sv": "Bo på Satakunta huset"
+  },
+  "homepage:memberCard": {
+    "fi": "Liity jäseneksi\t",
+    "en": "Become a member",
+    "sv": "Bli medlem"
+  },
+  "homepage:nationInfoCard": {
+    "fi": "Tietoa osakunnasta",
+    "en": "Nation Info",
+    "sv": "Nations info"
+  },
+  "homepage:newsCard": { "fi": "Uutiset", "en": "News", "sv": "Nyheter" },
+  "homepage:saatioLinkButtonText": {
+    "fi": "Satalinnan säätiö\t",
+    "en": "Satalinna foundation\t",
+    "sv": "Satalinna Stiftelse\t"
+  },
   "nav:archive": { "fi": "Arkisto", "en": "Archive", "sv": "Arkiv" },
   "nav:calendar": { "fi": "Kalenteri", "en": "Calendar", "sv": "Kalender" },
   "nav:contacts": {
