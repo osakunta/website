@@ -6,20 +6,11 @@ import WeekCalendar from "@/components/WeekCalendar";
 import createClient from "@/lib/cmsClient";
 import styles from "@/styles/Home.module.css";
 import { readItems } from "@directus/sdk";
-import {
-  Button,
-  Card,
-  CardActionArea,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@mui/material";
+import { Button } from "@mui/material";
 import { EmblaOptionsType } from "embla-carousel";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import aino from "../public/aino.png";
 import cAside from "../public/contact-aside.png";
 
@@ -84,6 +75,13 @@ export default function Home({ navBar }: HomePageProps) {
             altText="Placeholder image"
             href=""
           />
+          <VerticalCard
+            variant="yellow"
+            image="/Placeholder_1.png"
+            title="Uutiset"
+            altText="Placeholder image"
+            href=""
+          />
         </section>
         {/* Living Info */}
         <section className={styles.livingInfo}>
@@ -118,100 +116,7 @@ export default function Home({ navBar }: HomePageProps) {
             </Button>
           </article>
         </section>
-        {/* News */}
-        <section className={styles.news}>
-          <h2>Uutisia</h2>
-          <span className={styles.cardContainer}>
-            <Card className={styles.newsCard}>
-              <CardActionArea>
-                <CardMedia
-                  height={250}
-                  component="img"
-                  image="https://lh5.googleusercontent.com/bDp4TqmugenBz4t8K9J4PfQkJbnEzwef49kbULsCaJ-7BY4VZ0Jg0I4V7SYcvb4lFISHnvjeYm1ARN4WVsoRUwdEcAwB9_ogpPV90CBlRMeAkFns7XDevbB3kKlTrwlvZQ=w1280"
-                  alt="Satakuntalainen Osakunta"
-                />
-                <CardContent className={styles.newsCardContent}>
-                  <Typography className={styles.cardTitle}>Title</Typography>
-                  <Typography className={styles.cardDescription}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Itaque, numquam magnam, eum nihil adipisci tenetur quasi vel
-                    minima nemo ratione molestiae in ab laborum perferendis
-                    beatae impedit dolorem iusto sunt.
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions className={styles.cardLink}>
-                <Link href="" />
-              </CardActions>
-            </Card>
-            <Card className={styles.newsCard}>
-              <CardActionArea>
-                <CardMedia
-                  height={250}
-                  component="img"
-                  image="https://lh5.googleusercontent.com/bDp4TqmugenBz4t8K9J4PfQkJbnEzwef49kbULsCaJ-7BY4VZ0Jg0I4V7SYcvb4lFISHnvjeYm1ARN4WVsoRUwdEcAwB9_ogpPV90CBlRMeAkFns7XDevbB3kKlTrwlvZQ=w1280"
-                  alt="Satakuntalainen Osakunta"
-                />
-                <CardContent className={styles.newsCardContent}>
-                  <Typography className={styles.cardTitle}>Title</Typography>
-                  <Typography className={styles.cardDescription}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Itaque, numquam magnam, eum nihil adipisci tenetur quasi vel
-                    minima nemo ratione molestiae in ab laborum perferendis
-                    beatae impedit dolorem iusto sunt.
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions className={styles.cardLink}>
-                <Link href="" />
-              </CardActions>
-            </Card>
-            <Card className={styles.newsCard}>
-              <CardActionArea>
-                <CardMedia
-                  height={250}
-                  component="img"
-                  image="https://lh5.googleusercontent.com/bDp4TqmugenBz4t8K9J4PfQkJbnEzwef49kbULsCaJ-7BY4VZ0Jg0I4V7SYcvb4lFISHnvjeYm1ARN4WVsoRUwdEcAwB9_ogpPV90CBlRMeAkFns7XDevbB3kKlTrwlvZQ=w1280"
-                  alt="Satakuntalainen Osakunta"
-                />
-                <CardContent className={styles.newsCardContent}>
-                  <Typography className={styles.cardTitle}>Title</Typography>
-                  <Typography className={styles.cardDescription}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Itaque, numquam magnam, eum nihil adipisci tenetur quasi vel
-                    minima nemo ratione molestiae in ab laborum perferendis
-                    beatae impedit dolorem iusto sunt.
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions className={styles.cardLink}>
-                <Link href="" />
-              </CardActions>
-            </Card>
-            <Card className={styles.newsCard}>
-              <CardActionArea>
-                <CardMedia
-                  height={250}
-                  component="img"
-                  image="https://lh5.googleusercontent.com/bDp4TqmugenBz4t8K9J4PfQkJbnEzwef49kbULsCaJ-7BY4VZ0Jg0I4V7SYcvb4lFISHnvjeYm1ARN4WVsoRUwdEcAwB9_ogpPV90CBlRMeAkFns7XDevbB3kKlTrwlvZQ=w1280"
-                  alt="Satakuntalainen Osakunta"
-                />
-                <CardContent className={styles.newsCardContent}>
-                  <Typography className={styles.cardTitle}>Title</Typography>
-                  <Typography className={styles.cardDescription}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Itaque, numquam magnam, eum nihil adipisci tenetur quasi vel
-                    minima nemo ratione molestiae in ab laborum perferendis
-                    beatae impedit dolorem iusto sunt.
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions className={styles.cardLink}>
-                <Link href="" />
-              </CardActions>
-            </Card>
-          </span>
-        </section>
+
         {/* Calendar */}
         <section className={styles.calendarSection}>
           <span className={styles.sectionContainer}>

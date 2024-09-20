@@ -1,5 +1,6 @@
 .verticalCard {
   width: 15rem;
+  min-width: 15rem;
   border-radius: 1rem;
   box-shadow: none;
 }
