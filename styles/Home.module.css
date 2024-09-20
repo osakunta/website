@@ -136,6 +136,50 @@
   height: 100%;
 }
 
+.calendarFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendarLegend {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.legendItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 500;
+}
+
+.legendGreen {
+  background-color: #a09c44;
+  width: 20px;
+  height: 20px;
+  border-radius: 10rem;
+}
+
+.legendBlue {
+  background-color: var(--blue300);
+  width: 20px;
+  height: 20px;
+  border-radius: 10rem;
+}
+
+.legendOrange {
+  background-color: #ff8a57;
+  width: 20px;
+  height: 20px;
+  border-radius: 10rem;
+}
+
 /* Carousel */
 .karhunkierros {
   width: 100%;

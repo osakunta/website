@@ -4,6 +4,7 @@ import Navbar, { NavbarProps } from "@/components/Navbar";
 import VerticalCard from "@/components/VerticalCard";
 import WeekCalendar from "@/components/WeekCalendar";
 import createClient from "@/lib/cmsClient";
+import { useLanguage } from "@/lib/LanguageContext";
 import styles from "@/styles/Home.module.css";
 import { readItems } from "@directus/sdk";
 import { Button } from "@mui/material";
@@ -11,6 +12,7 @@ import { EmblaOptionsType } from "embla-carousel";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import aino from "../public/aino.png";
 import cAside from "../public/contact-aside.png";
 
@@ -35,6 +37,7 @@ type HomePageProps = {
 };
 
 export default function Home({ navBar }: HomePageProps) {
+  const { language } = useLanguage();
   return (
     <>
       <Head>
@@ -43,15 +46,16 @@ export default function Home({ navBar }: HomePageProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Navbar links={navBar.links} />
+      {/* Hero */}
       <header className={styles.hero}>
         <h2 className={styles.h2}>Ystäviä, tapahtumia ja koti Kampissa</h2>
-        <Button variant="contained" className="button darkBlue">
-          Liity osakuntaan
-        </Button>
+        <Link href="/nation-info" locale={language} passHref>
+          <Button variant="contained" className="button darkBlue">
+            Liity osakuntaan
+          </Button>
+        </Link>
       </header>
       <main className={styles.main}>
-        {/* Hero */}
-
         {/* Cards */}
         <section className={styles.cards}>
           <VerticalCard
@@ -110,10 +114,17 @@ export default function Home({ navBar }: HomePageProps) {
             </p>
             <br />
             <br />
-
-            <Button variant="contained" className="button lightBlue">
-              Satalinnan säätiö{" "}
-            </Button>
+            <Link
+              href="https://www.satalinnansaatio.fi/asunnot/"
+              target="_blank"
+              rel="noopener noreferrer"
+              locale={language}
+              passHref
+            >
+              <Button variant="contained" className="button lightBlue">
+                Satalinnan säätiö{" "}
+              </Button>
+            </Link>
           </article>
         </section>
 
@@ -122,6 +133,27 @@ export default function Home({ navBar }: HomePageProps) {
           <span className={styles.sectionContainer}>
             <h2>Kalenteri</h2>
             <WeekCalendar />
+            <div className={styles.calendarFooter}>
+              <ul className={styles.calendarLegend}>
+                <li className={styles.legendItem}>
+                  <div className={styles.legendGreen} />
+                  <p>Meetings</p>
+                </li>
+                <li className={styles.legendItem}>
+                  <div className={styles.legendBlue} />
+                  <p>Events</p>
+                </li>
+                <li className={styles.legendItem}>
+                  <div className={styles.legendOrange} />
+                  <p>Sports</p>
+                </li>
+              </ul>
+              <Link href="/calendar" locale={language} passHref>
+                <Button variant="contained" className="button darkBlue">
+                  Katso lisää
+                </Button>
+              </Link>
+            </div>
           </span>
         </section>
         {/* Carousel */}
@@ -154,9 +186,11 @@ export default function Home({ navBar }: HomePageProps) {
                 dolorem et mollitia quia. Recusandae dolores modi quaerat
                 magnam! Autem distinctio ipsa a alias.
               </p>
-              <Button variant="contained" className="button darkBlue">
-                Ota yhteyttä
-              </Button>
+              <Link href="/harassment-form" locale={language} passHref>
+                <Button variant="contained" className="button darkBlue">
+                  Ota yhteyttä
+                </Button>
+              </Link>
             </div>
             <Image
               src={cAside}
