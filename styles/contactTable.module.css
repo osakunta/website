@@ -34,3 +34,19 @@
 .searchBar:focus {
   color: var(--blue300);
 }
+
+@media (max-width: 431px) {
+  .table {
+    width: 90%;
+  }
+
+  .tableLabel {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .searchBar {
+    width: 70%;
+    margin-bottom: 0.5rem;
+  }
+}

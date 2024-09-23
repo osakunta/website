@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid -- Disable because of a lot of placeholder hrefs */
 import Navbar, { NavbarProps } from "@/components/Navbar";
+import useTranslate from "@/hooks/useTranslate";
 import createClient from "@/lib/cmsClient";
 import styles from "@/styles/official-documents.module.css";
 import { readItems } from "@directus/sdk";
@@ -29,6 +30,8 @@ type OfficialDocumentsPageProps = {
 export default function OfficialDocuments({
   navBar,
 }: OfficialDocumentsPageProps) {
+  const t = useTranslate();
+
   return (
     <>
       <Head>
@@ -39,7 +42,7 @@ export default function OfficialDocuments({
       <Navbar links={navBar.links} />
       <header className="header">
         <div className="headerContainer">
-          <h1>Viralliset Documentit</h1>
+          <h1>{t("nav:officialDocuments")}</h1>
           <p className="headerText">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor
             doloribus impedit sapiente ipsum rerum neque consequatur tempore,
@@ -52,90 +55,90 @@ export default function OfficialDocuments({
         <section className={styles.documentSection}>
           <List className={styles.documentList}>
             <ListSubheader className={styles.listSubheading}>
-              Rules
+              {t("officialDocuments:rules")}
             </ListSubheader>
             <ListItem>
               <a href="" className={styles.documentLink}>
-                Rules 2011
+                {t("officialDocuments:rules")}2011
               </a>
             </ListItem>
             <ListSubheader className={styles.listSubheading}>
-              Old Rules
+              {t("officialDocuments:oldRules")}
             </ListSubheader>
             <ListItem>
               <a href="" className={styles.documentLink}>
-                Rules 2007
+                {t("officialDocuments:rules")} 2007
               </a>
             </ListItem>
             <ListItem>
               <a href="" className={styles.documentLink}>
-                Rules 2004
+                {t("officialDocuments:rules")} 2004
               </a>
             </ListItem>
             <ListItem>
               <a href="" className={styles.documentLink}>
-                Rules at the time of <br /> the cooperative building
+                {t("officialDocuments:foundingRules")}
               </a>
             </ListItem>
           </List>
           <List className={styles.documentList}>
             <ListSubheader className={styles.listSubheading}>
-              Regulations
+              {t("officialDocuments:regulations")}
             </ListSubheader>
             <ListItem>
               <a href="" className={styles.documentLink}>
-                Guidelines 2020
+                {t("officialDocuments:regulations")} 2020
               </a>
             </ListItem>
             <ListSubheader className={styles.listSubheading}>
-              Old Regulations
+              {t("officialDocuments:oldRegulations")}
             </ListSubheader>
             <ListItem>
               <a href="" className={styles.documentLink}>
-                Guidelines 2019
+                {t("officialDocuments:regulations")} 2019
               </a>
             </ListItem>
             <ListItem>
               <a href="" className={styles.documentLink}>
-                Guidelines 2017
+                {t("officialDocuments:regulations")} 2017
               </a>
             </ListItem>
             <ListItem>
               <a href="" className={styles.documentLink}>
-                Guidelines 2016
+                {t("officialDocuments:regulations")} 2016
               </a>
             </ListItem>
             <ListItem>
               <a href="" className={styles.documentLink}>
-                Guidelines 2011
+                {t("officialDocuments:regulations")} 2011
               </a>
             </ListItem>
           </List>
           <List className={styles.documentList}>
             <ListSubheader className={styles.listSubheading}>
-              Other Documents
+              {t("officialDocuments:otherDocuments")}
             </ListSubheader>
             <ListItem>
               <a href="" className={styles.documentLink}>
-                Equality Plan
+                {t("officialDocuments:equalityPlan")}
               </a>
             </ListItem>
             <ListItem>
               <a href="" className={styles.documentLink}>
-                SatO Safe Space
+                {t("officialDocuments:safeSpace")}
               </a>
             </ListItem>
             <ListItem>
               <a href="" className={styles.documentLink}>
-                Environmental plan
+                {t("officialDocuments:environment")}
               </a>
             </ListItem>
             <ListSubheader className={styles.listSubheading}>
-              Dormitory
+              {t("officialDocuments:dormitoryTitle")}
             </ListSubheader>
             <ListItem>
               <a href="" className={styles.documentLink}>
-                Dormitory Regulations
+                {t("officialDocuments:dormitoryText")}
               </a>
             </ListItem>
           </List>
@@ -144,10 +147,9 @@ export default function OfficialDocuments({
           <p className={styles.archiveRedirect}>
             Looking for the Satakunta series or Maila Talvio&apos;s collected
             works? You can now find them on the
-            <Link href="archive" className={styles.documentLink}>
-              {" "}
+            <Link href="/archive" className={styles.documentLink}>
               Archive
-            </Link>{" "}
+            </Link>
             page!
           </p>
         </section>

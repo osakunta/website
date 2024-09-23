@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import { NavigationLink } from "@/lib/cmsClient";
-import sato_logo_nav from "../public/sato_logo_nav.png";
+import sato_logo_nav from "../public/sato_logo_nav.webp";
 import Sidebar from "./Sidebar";
 
 export type NavbarProps = {
@@ -39,7 +39,7 @@ const Navbar = ({ links }: NavbarProps) => {
           <Image
             src={sato_logo_nav}
             alt="A nav link to the home page"
-            width={120}
+            width={95}
           />
         </Link>
         <Sidebar links={links} />

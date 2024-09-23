@@ -210,6 +210,61 @@
     "en": "Säätiö Rental Page",
     "sv": "Satalinnan säätiös webbsida"
   },
+  "officialDocuments:dormitoryText": {
+    "fi": "Satalinnan Säätiön Asuntoloiden ohjesääntö\t",
+    "en": "Satalinna foundation dormitory guidelines\t",
+    "sv": "Satalinna stiftelse studerandebostads reglering\t"
+  },
+  "officialDocuments:dormitoryTitle": {
+    "fi": "Asuntolatoiminta\t",
+    "en": "Dormitory Regulations\t",
+    "sv": "Internatverksamheten\t"
+  },
+  "officialDocuments:environment": {
+    "fi": "Osakunnan ympäristösuunnitelma\t",
+    "en": "The Nations environmental plan\t",
+    "sv": "Nationens miljöplan\t"
+  },
+  "officialDocuments:equalityPlan": {
+    "fi": "Osakunnan yhdenvertaisuussuunnitelma\t",
+    "en": "The nations equality plan\t",
+    "sv": "Nationens Jämställdighetsplan\t"
+  },
+  "officialDocuments:foundingRules": {
+    "fi": "Osakuntatalon aikaiset säänöt\t",
+    "en": "The Nation house's previous rules\t",
+    "sv": "Nationshusets tidigare regler\t"
+  },
+  "officialDocuments:oldRegulations": {
+    "fi": "Vanhat ohjesäännöt\t",
+    "en": "Old regulations\t",
+    "sv": "Gamla regleringar\t"
+  },
+  "officialDocuments:oldRules": {
+    "fi": "Vanhat säännöt\t",
+    "en": "Old Rules\t",
+    "sv": "Gamla regler\t"
+  },
+  "officialDocuments:otherDocuments": {
+    "fi": "Muut dokumentit\t",
+    "en": "Other documents\t",
+    "sv": "Andra dokument\t"
+  },
+  "officialDocuments:regulations": {
+    "fi": "Ohjesäännöt\t",
+    "en": "Regulations\t",
+    "sv": "Regleringar\t"
+  },
+  "officialDocuments:rules": {
+    "fi": "Säännöt\t",
+    "en": "Rules\t",
+    "sv": "Regler\t"
+  },
+  "officialDocuments:safeSpace": {
+    "fi": "SatO:n turvallisemman tilan periaatteet\t",
+    "en": "SatO principles for a safer space\t",
+    "sv": "SatO principer för ett säkrare utrymme\t"
+  },
   "snackbar:languageChanged": {
     "fi": "Hienoa! Kieli on vaihdettu suomeksi.",
     "en": "Success! Language set to English.",

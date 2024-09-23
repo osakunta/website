@@ -42,3 +42,18 @@
   background-color: var(--yellow);
   color: var(--blue300);
 }
+
+@media (max-width: 431px) {
+  .horizontalCard {
+    width: 100%;
+  }
+
+  .cardContent {
+    gap: 2rem;
+    width: 90%;
+  }
+
+  .cardMedia {
+    display: none;
+  }
+}

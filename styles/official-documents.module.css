@@ -88,13 +88,20 @@
 }
 
 @media (max-width: 431px) {
-  .headerText {
-    width: 80%;
+  .documentSection,
+  .externalRef {
+    width: 90%;
   }
+
   .documentSection {
     flex-direction: column;
     gap: 0;
   }
+
+  .documentLink {
+    width: 90%;
+  }
+
   .archiveRedirect {
     width: 80%;
   }
