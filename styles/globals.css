@@ -94,7 +94,7 @@ h1 {
 }
 
 .headerText {
-  width: 70%;
+  width: 60%;
 }
 
 .headerContainer {
@@ -307,7 +307,19 @@ h1 {
   h1 {
     font-size: 2.5rem;
   }
+
+  .headerContainer {
+    width: 90%;
+  }
+
+  .headerText {
+    width: 80%;
+  }
   .embla {
     --slide-size: 65%;
+  }
+
+  .fc-toolbar-chunk {
+    display: flex;
   }
 }

@@ -1,4 +1,5 @@
 import Navbar, { NavbarProps } from "@/components/Navbar";
+import useTranslate from "@/hooks/useTranslate";
 import createClient from "@/lib/cmsClient";
 import styles from "@/styles/nation-info.module.css";
 import { readItems } from "@directus/sdk";
@@ -7,6 +8,7 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import arrowWhite from "../public/arrow_forward_white.svg";
+import Placeholder from "../public/Placeholder_1.png";
 
 export const getStaticProps: GetStaticProps<NationInfoPageProps> = async () => {
   const client = createClient();
@@ -25,6 +27,8 @@ type NationInfoPageProps = {
 };
 
 export default function NationInfo({ navBar }: NationInfoPageProps) {
+  const t = useTranslate();
+
   return (
     <>
       <Head>
@@ -36,58 +40,53 @@ export default function NationInfo({ navBar }: NationInfoPageProps) {
       {/* Image Header */}
       <header className="header">
         <div className="headerContainer">
-          <h1>Tietoa Osakunnosta</h1>
-          <p className="headerText">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem odit
-            distinctio, ullam doloremque provident voluptas illo quaerat ex
-            saepe voluptate reiciendis rerum fuga obcaecati esse sit cum maxime,
-            dolorem facilis?
-          </p>
+          <h1>{t("nationInfo:headerTitle")}</h1>
+          <p className="headerText">{t("nationInfo:headerDescription")}</p>
         </div>
       </header>
       <main className="main">
         <section className={styles.infoSection}>
-          <aside className={styles.infoContainer}>
-            <h2 className={styles.h2}>Mikä on Satakuntalainen osakunta?</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Veritatis possimus tempore deleniti est quam? Reiciendis,
-              pariatur. Cupiditate, dolore. Quidem, repellendus nostrum! Officia
-              nulla et vitae nesciunt id quod autem hic.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-              velit ea perferendis ex labore odit alias debitis minima, delectus
-              quas est. Ad possimus neque rem veniam aliquid quasi eligendi
-              debitis!
-            </p>
-            <br />
-            <h2 className={styles.h2}>Mitä osakunnalla tehdään?</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-              eveniet tempore rem consequuntur, ea eos fugit architecto
-              reprehenderit aliquam enim porro, nihil soluta cum. Quibusdam
-              aperiam labore earum sint ducimus! Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Quas ducimus id quod eaque, voluptas
-              consectetur ab ex nemo esse repellendus nulla, vel delectus dolore
-              similique qui in voluptatum corrupti illo?
-            </p>
-            <br />
-            <Button variant="contained" className="button darkBlue">
-              Tapahtumakalenteri
-              <Image src={arrowWhite} alt="arrow forward" />
-            </Button>
-          </aside>
-          <aside className={styles.imageContainer}>
-            <Image
-              src="https://scontent-hel3-1.xx.fbcdn.net/v/t1.6435-9/107354119_3037696582946348_7547856174935966713_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=13d280&_nc_ohc=Q6CiSe2OORwQ7kNvgH1ZGW9&_nc_ht=scontent-hel3-1.xx&oh=00_AYDFDI4vGpKGjt1izA_zDjyngQIBTXqGVnwTp8ICEtuqLA&oe=66DAF42B"
-              alt="some placeholder image"
-              width={1}
-              height={1}
-              className={styles.sectionImage}
-            />
-          </aside>
+          <div className={styles.subSection}>
+            <span className={styles.infoContainer}>
+              <h2 className={styles.h2}>{t("nationInfo:whatIsSatoTitle")}</h2>
+              <p>{t("nationInfo:whatIsSatoDescription")}</p>
+
+              <br />
+              <h2 className={styles.h2}>{t("nationInfo:whatWeDoTitle")}</h2>
+              <p>{t("nationInfo:whatWeDoDescription")}</p>
+              <br />
+              <Button variant="contained" className="button darkBlue">
+                Tapahtumakalenteri
+                <Image src={arrowWhite} alt="arrow forward" />
+              </Button>
+            </span>
+            <div className={styles.imageContainer}>
+              <Image
+                src={Placeholder}
+                alt="placeholder"
+                width={100}
+                height={100}
+                className={styles.sectionImage}
+              />
+            </div>
+          </div>
+          <div className={styles.subSection}>
+            <div className={styles.imageContainer}>
+              <Image
+                src={Placeholder}
+                alt="placeholder"
+                width={100}
+                height={100}
+                className={styles.sectionImage}
+              />
+            </div>
+            <span className={styles.infoContainer}>
+              <h2 className={styles.h2}>{t("nationInfo:howToJoinTitle")}</h2>
+              <p>{t("nationInfo:howToJoinDescription")}</p>
+            </span>
+          </div>
         </section>
+
         <footer className="footer" />
       </main>
     </>
