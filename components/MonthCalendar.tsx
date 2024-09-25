@@ -14,6 +14,7 @@ const MonthCalendar = () => {
     en: enLocale,
   };
   const currentLocale = localeMap[language] || enLocale;
+
   return (
     <>
       <FullCalendar

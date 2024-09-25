@@ -136,6 +136,51 @@
   height: 100%;
 }
 
+.calendarFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendarLegend {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.legendItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 500;
+}
+
+.legendGreen {
+  background-color: #a09c44;
+  width: 20px;
+  height: 20px;
+  border-radius: 10rem;
+}
+
+.legendBlue {
+  background-color: var(--blue300);
+  width: 20px;
+  height: 20px;
+  border-radius: 10rem;
+}
+
+.legendOrange {
+  background-color: #ff8a57;
+  width: 20px;
+  height: 20px;
+  border-radius: 10rem;
+}
+
 /* Carousel */
 .karhunkierros {
   width: 100%;
@@ -219,7 +264,17 @@
   .h2 {
     font-size: 2.5rem;
   }
+
+  .cards,
+  .news,
+  .sectionContainer,
+  .carouselContainer,
+  .contactSectionContainer {
+    width: 90%;
+  }
+
   .cards {
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: 0.5rem;
@@ -231,8 +286,21 @@
     padding: 0.5rem;
   }
 
-  .newsCard {
-    min-width: 15rem;
+  /* Calendar */
+  .calendarFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .calendarLegend {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 0.8rem;
   }
 
   .contactInfo {

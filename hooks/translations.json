@@ -42,6 +42,133 @@
     "en": "Satakunta Nation",
     "sv": "Satakunta Nation"
   },
+  "general:seeMore": { "fi": "Katso lisää", "en": "See more", "sv": "Se mer" },
+  "homepage:calendarLabelEvents": {
+    "fi": "Tapahtumat",
+    "en": "Events",
+    "sv": "Evenemang"
+  },
+  "homepage:calendarLabelMeeting": {
+    "fi": "Kokoukset",
+    "en": "Meetings",
+    "sv": "Möten"
+  },
+  "homepage:calendarLabelSports": {
+    "fi": "Urheilut",
+    "en": "Sports",
+    "sv": "Sport"
+  },
+  "homepage:contactBoardDescription": {
+    "fi": "Voit ottaa yhteyttä osakunnan hallitukseen sähköpostitse osoitteella hallitus@satakuntatalo.fi tai alla olevalla lomakkeella. Halutessasi tavoittaa tietyn virkailijan, virkailijoiden yhteystiedot löytyvät \"Ota yhteyttä\" sivulta.\t ",
+    "en": "You can contact the board by sending an email to hallitus@satakuntatalo.fi or by filling out the form. If you need to get in touch with a specific official you can find their contact info on the \"Contact us\" page.\t \t \t \t",
+    "sv": "Du kan kontakta styrelsen via e-post på addressen hallitus@satakuntatalo.fi eller via formuläret. Du kan även kontakta specifika funktionärer, vars kontaktuppgifter hittas på \"Ta kontakt\" sidan.\t \t \t \t"
+  },
+  "homepage:contactBoardHeader": {
+    "fi": "Postia hallitukselle",
+    "en": "Contact the board",
+    "sv": "Kontakta styrelsen"
+  },
+  "homepage:contactFormButton": {
+    "fi": "Siiry Lomakkeelle",
+    "en": "Fill out the form",
+    "sv": "Fyll i formuläret"
+  },
+  "homepage:eventsCard": {
+    "fi": "Tapahtumat",
+    "en": "Events",
+    "sv": "Evengemang"
+  },
+  "homepage:harassmentFormDescription": {
+    "fi": "Tällä lomakkeella voit kertoa osakunnalla kokemastasi häirinnästä tai epätasa-arvoisesta kohtelusta. Tiedot käsittelee luottamuksellisesti osakunnan yhdenvertaisuusvastaavana toimiva kuraattori.\t \t \t \t \t",
+    "en": "With this form, you can report any harassment or unequal treatment you have experienced within the student nation. The curator, who serves as the equality officer, will handle the information confidentially.\t \t \t \t \t",
+    "sv": "Med detta formulär kan du anmäla trakasserier eller ojämlik behandling du upplevt inom nationen. Kuratorn, som fungerar som nationens jämställdhetsanvarig, behandlar uppgifterna konfidentiellt.  \t \t \t \t \t"
+  },
+  "homepage:harassmentFormHeader": {
+    "fi": "Härintälomake\t",
+    "en": "Harrassment form\t",
+    "sv": "Trakasserianmälan\t"
+  },
+  "homepage:heroSectionText": {
+    "fi": "Ystäviä, tapahtumia ja koti kampissa",
+    "en": "Friends, events and a home in Kamppi",
+    "sv": "Vänner, evengemang och hem i kampen"
+  },
+  "homepage:join": {
+    "fi": "Liity Osakuntaan",
+    "en": "Join the Nation",
+    "sv": "Bli medlem"
+  },
+  "homepage:karhunkierrosHeader": {
+    "fi": "Osakuntalehti Karhunkierros\t",
+    "en": "Nation Magazine: Karhunkierros\t",
+    "sv": "Nations tidning: Karhunkierros\t"
+  },
+  "homepage:livingInfoDescription": {
+    "fi": "Satakuntatalon asuntola sijaitsee loistavalla paikalla aivan Helsingin ydinkeskustan tuntumassa. Eri korkeakoulut ovat hyvien kulkuyhteyksien päässä, ja edulliselle vuokralle saa vastinetta monien etujen muodossa.\t \t \t \t",
+    "en": "The Satakunta House dormitory is located in a great spot in the middle of Helsinki. The Universities are easily accessible with good transport connections, and rent is affordable with many great benefits included.\t \t \t \t",
+    "sv": "Satakunta husets studerandebostäder finns i Helsingfors centrum. Högskolorna är lätta att nå på grund av nära förbindelser till kollektivtrafik. Hyran är förmånlig och inkluderar många bra förmåner.\t \t \t \t"
+  },
+  "homepage:livingInfoHeader": {
+    "fi": "Asuminen Satakuntatalolla",
+    "en": "Live at the Satakunta house",
+    "sv": "Bo på Satakunta huset"
+  },
+  "homepage:memberCard": {
+    "fi": "Liity jäseneksi\t",
+    "en": "Become a member",
+    "sv": "Bli medlem"
+  },
+  "homepage:nationInfoCard": {
+    "fi": "Tietoa osakunnasta",
+    "en": "Nation Info",
+    "sv": "Nations info"
+  },
+  "homepage:newsCard": { "fi": "Uutiset", "en": "News", "sv": "Nyheter" },
+  "homepage:saatioLinkButtonText": {
+    "fi": "Satalinnan säätiö\t",
+    "en": "Satalinna foundation\t",
+    "sv": "Satalinna Stiftelse\t"
+  },
+  "nationInfo:headerDescription": {
+    "fi": "Talo Kampissa, mahtavia tapahtumia, hyviä tyyppejä! Tältä sivulta löydät Satakuntalaisesta Osakunnasta tietoa, mitä me teemme ja miten voit liittyä mukaan!\t \t \t \t",
+    "en": "House in Kamppi, amazing events, great people! On this page you will find information about Satakuntalainen Osakunta, what we do and how you can join us!\t \t \t \t",
+    "sv": "Hus i Kampen, fantastiska evenemang, fantastiska människor! På den här sidan hittar du information om Satakuntalainen Osakunta, vad vi gör och hur du kan bli medlem hos oss!\t \t \t \t"
+  },
+  "nationInfo:headerTitle": {
+    "fi": "Tietoa Osakunnasta\t",
+    "en": "Nation Info\t",
+    "sv": "Information om Nationen\t"
+  },
+  "nationInfo:howToJoinDescription": {
+    "fi": "Kiinnostuitko liittymisestä tai haluatko lisätietoja toiminnastamme? Ota yhteyttä jäsenasioiden sihteeriimme osoitteessa jasensihteeri(a)satakuntatalo.fi, tai piipahda toimistollamme osoitteessa Lapinrinne 1 E1 keskiviikkoisin klo 18:00-18:30.  Opiskelija-asumiseen liittyvissä kysymyksissä voit olla yhteydessä asuntoasiainhoitokuntaamme osoitteessa ajk(a)satakuntatalo.fi.  Jäsenmaksumme on vain 12 € vuodessa, Liittyessäsi jäseneksi saat mahdollisuuden ostaa sähköisen avaimen, jolla pääset kulkemaan Satakuntatalolla, aktiivisella opiskelijatalollamme. Jäsenenä saat vapaasti käyttää yhteisiä tilojamme, kuten keittiötä, TV-huonetta joka pelikonsolien kera,kirjastoa, kuntosalia ja saunaa. Saat myös viikoittain uutiskirjeen tulevista tapahtumista sekä erillisiä viestejä erityistapahtumista.  Jäsenenä voit liittyä erilaisiin kerhoihin ja toimikuntiin, osallistua akateemisiin pöytäjuhliin ja nauttia kaikesta muusta, mitä yhteisömme tarjoaa!  ",
+    "en": "Interested in joining or learning more about our activities? Feel free to reach out to our membership secretary at jasensihteeri(a)satakuntatalo.fi, or simply drop by our office at Lapinrinne 1 E1 on Wednesdays between 18:00 and 18:30.  For inquiries about student accommodation, please contact our housing board at ajk(a)satakuntatalo.fi.  Our annual membership fee is just €12. Becoming a member grants you the chance to get an electronic key to access Satakuntatalo, our vibrant student house. As a member, you’ll have full access to shared spaces like our kitchen, TV room with gaming consoles, a library, a gym and a sauna. You’ll also receive a weekly newsletter with updates on upcoming events, along with additional emails for specific happenings.  Once you join, you can participate in various clubs and committees, attend our traditional dinner parties, and enjoy much more of what our community has to offer! ",
+    "sv": "Vill du bli medlem eller få mer information om våra aktiviteter? Kontakta vår medlemssekreterare på jasensihteeri(a)satakuntatalo.fi, eller besök vårt kontor på Lapinrinne 1 E1 på onsdagar mellan 18:00 och 18:30.  För frågor om studentboende, kontakta vår bostadsstyrelse på ajk(a)satakuntatalo.fi.  Vår medlemsavgift är endast 12 € per år, och när du blir medlem får du möjlighet att en elektronisk nyckel som ger dig tillgång till Satakuntatalo, vårt aktiva studenthus. Som medlem har du fri tillgång till gemensamma utrymmen som köket, TV-rummet med spelkonsoler, biblioteket, gym och bastu. Du får även ett veckobrev med information om kommande evenemang samt extra meddelanden om specifika händelser.  Som medlem kan du gå med i olika klubbar och kommittéer, delta i våra traditionella middagar och njuta av allt annat som vårt gemenskap erbjuder! "
+  },
+  "nationInfo:howToJoinTitle": {
+    "fi": "Miten voin liittyä?\t \t",
+    "en": "How do I join?\t \t",
+    "sv": "Hur blir jag medlem?\t \t"
+  },
+  "nationInfo:whatIsSatoDescription": {
+    "fi": "Satakuntalainen Osakunta, tuttavallisemmin SatO, kutsuu yhteen Helsinkiin muuttaneiden satakuntalaisten, tai satakuntalaismielisten opiskelijat. Vuonna 1653 perustettu SatO on yksi yliopiston vanhimmista osakunnista, ja sen toiminnan keskus on upea Satakuntatalo aivan Helsingin ytimessä. Tämä ikoninen talo toimii paitsi tapahtuma- ja juhlatilana, myös opiskelijoiden kodikkaana kokoontumispaikkana. Tule mukaan ja koe Helsingissä opiskelun parhaat puolet!\t \t \t \t",
+    "en": "Satakuntalainen Osakunta, or SatO, brings together students from Satakunta who have moved to Helsinki. Founded in 1653, SatO is one of the oldest nations of the university, and its centre of activity is the magnificent Satakuntatalo in the heart of Helsinki. This iconic house serves not only as an event and party venue, but also as a cosy meeting place for students. Come and experience the best of studying in Helsinki! ",
+    "sv": "Satakuntalainen Osakunta, eller SatO, samlar studenter från Satakunta som har flyttat till Helsingfors. SatO grundades 1653 och är en av universitetets äldsta institutioner, och dess centrum är den magnifika Satakuntatalo i hjärtat av Helsingfors. Denna ikoniska byggnad fungerar inte bara som en evenemangs- och festlokal utan också som en mysig mötesplats för studenter. Kom och upplev det bästa med att studera i Helsingfors!\t \t \t \t"
+  },
+  "nationInfo:whatIsSatoTitle": {
+    "fi": "Mikä on Satakuntalainen Osakunta?\t \t",
+    "en": "What is Satakuntalainen Osakunta?\t \t",
+    "sv": "Vad är Satakuntalainen Osakunta?\t \t"
+  },
+  "nationInfo:whatWeDoDescription": {
+    "fi": "Satakuntalaisen Osakunnan jäsenenä pääset osaksi rikasta opiskelijakulttuuria, joka tarjoaa kaikkea akateemisista pöytäjuhlista urheilu- ja kulttuuritapahtumiin. Satakuntatalon opiskelija-asunnot mahdollistavat asumisen lähellä kaikkea, mitä Helsingin keskusta tarjoaa. SatO on täydellinen paikka verkostoitumiseen, uusiin opintoalat läpäiseviin ystävyyssuhteisiin.                  \t \t \t \t",
+    "en": "As a member of Satakuntalainen Osakunta, you are part of a vibrant student culture that offers everything from academic dinner parties to sports and cultural events. The student apartments in Satakuntatalo allow you to live right in the heart of Helsinki, close to everything the city has to offer. SatO is the perfect place for networking, building cross-disciplinary friendships.\t \t \t \t",
+    "sv": "Som medlem i Satakuntalainen Osakunta blir du del av en rik studentkultur som erbjuder allt från akademiska middagar till sport- och kulturevenemang. Studentlägenheterna i Satakuntatalo gör det möjligt att bo mitt i Helsingfors, nära allt vad staden har att erbjuda. SatO är den perfekta platsen för nätverkande, att knyta vänskapsband över ämnesgränser.\t \t \t \t"
+  },
+  "nationInfo:whatWeDoTitle": {
+    "fi": "Mitä osakunnalla tehdään?\t \t",
+    "en": "What do you do in a student nation?\t \t",
+    "sv": "Vad görs på nationen?\t \t"
+  },
   "nav:archive": { "fi": "Arkisto", "en": "Archive", "sv": "Arkiv" },
   "nav:calendar": { "fi": "Kalenteri", "en": "Calendar", "sv": "Kalender" },
   "nav:contacts": {
@@ -62,7 +189,7 @@
   },
   "nav:home": { "fi": "Etusivu", "en": "Home", "sv": "Framsida" },
   "nav:karhunkierros": {
-    "fi": "Karhunkierros Lehti",
+    "fi": "Osakuntalehti Karhunkierros",
     "en": "Karhunkierros Magazine",
     "sv": "Karhunkierros Tidningen"
   },
@@ -70,7 +197,7 @@
   "nav:nationInfo": {
     "fi": "Tietoa osakunnasta",
     "en": "Nation Info",
-    "sv": "Samma på svenska"
+    "sv": "Information om Nationen\t"
   },
   "nav:news": { "fi": "Uutiset", "en": "News", "sv": "Nyheter" },
   "nav:officialDocuments": {
@@ -82,6 +209,61 @@
     "fi": "Satalinnan säätiön verkkosivut",
     "en": "Säätiö Rental Page",
     "sv": "Satalinnan säätiös webbsida"
+  },
+  "officialDocuments:dormitoryText": {
+    "fi": "Satalinnan Säätiön Asuntoloiden ohjesääntö\t",
+    "en": "Satalinna foundation dormitory guidelines\t",
+    "sv": "Satalinna stiftelse studerandebostads reglering\t"
+  },
+  "officialDocuments:dormitoryTitle": {
+    "fi": "Asuntolatoiminta\t",
+    "en": "Dormitory Regulations\t",
+    "sv": "Internatverksamheten\t"
+  },
+  "officialDocuments:environment": {
+    "fi": "Osakunnan ympäristösuunnitelma\t",
+    "en": "The Nations environmental plan\t",
+    "sv": "Nationens miljöplan\t"
+  },
+  "officialDocuments:equalityPlan": {
+    "fi": "Osakunnan yhdenvertaisuussuunnitelma\t",
+    "en": "The nations equality plan\t",
+    "sv": "Nationens Jämställdighetsplan\t"
+  },
+  "officialDocuments:foundingRules": {
+    "fi": "Osakuntatalon aikaiset säänöt\t",
+    "en": "The Nation house's previous rules\t",
+    "sv": "Nationshusets tidigare regler\t"
+  },
+  "officialDocuments:oldRegulations": {
+    "fi": "Vanhat ohjesäännöt\t",
+    "en": "Old regulations\t",
+    "sv": "Gamla regleringar\t"
+  },
+  "officialDocuments:oldRules": {
+    "fi": "Vanhat säännöt\t",
+    "en": "Old Rules\t",
+    "sv": "Gamla regler\t"
+  },
+  "officialDocuments:otherDocuments": {
+    "fi": "Muut dokumentit\t",
+    "en": "Other documents\t",
+    "sv": "Andra dokument\t"
+  },
+  "officialDocuments:regulations": {
+    "fi": "Ohjesäännöt\t",
+    "en": "Regulations\t",
+    "sv": "Regleringar\t"
+  },
+  "officialDocuments:rules": {
+    "fi": "Säännöt\t",
+    "en": "Rules\t",
+    "sv": "Regler\t"
+  },
+  "officialDocuments:safeSpace": {
+    "fi": "SatO:n turvallisemman tilan periaatteet\t",
+    "en": "SatO principles for a safer space\t",
+    "sv": "SatO principer för ett säkrare utrymme\t"
   },
   "snackbar:languageChanged": {
     "fi": "Hienoa! Kieli on vaihdettu suomeksi.",

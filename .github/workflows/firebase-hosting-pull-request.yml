@@ -12,6 +12,11 @@ jobs:
       - run: npm install && npm run lint && npm run test && npm run build
         env:
           DIRECTUS_URL: ${{ secrets.CMS_URL }}
+          NEXT_PUBLIC_GOOGLE_API_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_API_KEY }}
+          NEXT_PUBLIC_CALENDAR_ID_1: ${{ secrets.NEXT_PUBLIC_CALENDAR_ID_1 }}
+          NEXT_PUBLIC_CALENDAR_ID_2: ${{ secrets.NEXT_PUBLIC_CALENDAR_ID_2 }}
+          NEXT_PUBLIC_CALENDAR_ID_3: ${{ secrets.NEXT_PUBLIC_CALENDAR_ID_3}}
+          NEXT_PUBLIC_HARASSMENT_FORM_URL: ${{ secrets.NEXT_PUBLIC_HARASSMENT_FORM_URL }}
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: firebase

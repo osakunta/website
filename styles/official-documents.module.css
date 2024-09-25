@@ -24,7 +24,7 @@
 .documentLink {
   text-decoration: none;
   font-size: 1.2rem;
-  width: 11rem;
+  width: 12rem;
   text-wrap: wrap;
   font-family: "Raleway", sans-serif;
 }
@@ -88,13 +88,20 @@
 }
 
 @media (max-width: 431px) {
-  .headerText {
-    width: 80%;
+  .documentSection,
+  .externalRef {
+    width: 90%;
   }
+
   .documentSection {
     flex-direction: column;
     gap: 0;
   }
+
+  .documentLink {
+    width: 90%;
+  }
+
   .archiveRedirect {
     width: 80%;
   }

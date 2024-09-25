@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid -- Disable because of a lot of placeholder hrefs */
 import Navbar, { NavbarProps } from "@/components/Navbar";
+import useTranslate from "@/hooks/useTranslate";
 import createClient from "@/lib/cmsClient";
 import styles from "@/styles/official-documents.module.css";
 import { readItems } from "@directus/sdk";
@@ -29,6 +30,8 @@ type OfficialDocumentsPageProps = {
 export default function OfficialDocuments({
   navBar,
 }: OfficialDocumentsPageProps) {
+  const t = useTranslate();
+
   return (
     <>
       <Head>
@@ -39,7 +42,7 @@ export default function OfficialDocuments({
       <Navbar links={navBar.links} />
       <header className="header">
         <div className="headerContainer">
-          <h1>Viralliset Documentit</h1>
+          <h1>{t("nav:officialDocuments")}</h1>
           <p className="headerText">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor
             doloribus impedit sapiente ipsum rerum neque consequatur tempore,
@@ -52,100 +55,164 @@ export default function OfficialDocuments({
         <section className={styles.documentSection}>
           <List className={styles.documentList}>
             <ListSubheader className={styles.listSubheading}>
-              Rules
+              {t("officialDocuments:rules")}
             </ListSubheader>
             <ListItem>
-              <a href="" className={styles.documentLink}>
-                Rules 2011
-              </a>
+              <Link
+                href="https://julkaisut.satakuntalainenosakunta.fi/saannot/osakunta/saannot-2011.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.documentLink}
+              >
+                {t("officialDocuments:rules")}2011
+              </Link>
             </ListItem>
             <ListSubheader className={styles.listSubheading}>
-              Old Rules
+              {t("officialDocuments:oldRules")}
             </ListSubheader>
             <ListItem>
-              <a href="" className={styles.documentLink}>
-                Rules 2007
-              </a>
+              <Link
+                href="https://julkaisut.satakuntalainenosakunta.fi/saannot/osakunta/saannot-2007.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.documentLink}
+              >
+                {t("officialDocuments:rules")} 2007
+              </Link>
             </ListItem>
             <ListItem>
-              <a href="" className={styles.documentLink}>
-                Rules 2004
-              </a>
+              <Link
+                href="https://julkaisut.satakuntalainenosakunta.fi/saannot/osakunta/saannot-2004.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.documentLink}
+              >
+                {t("officialDocuments:rules")} 2004
+              </Link>
             </ListItem>
             <ListItem>
-              <a href="" className={styles.documentLink}>
-                Rules at the time of <br /> the cooperative building
-              </a>
+              <Link
+                href="https://julkaisut.satakuntalainenosakunta.fi/saannot/osakunta/osakuntatalon-aikaiset-saannot.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.documentLink}
+              >
+                {t("officialDocuments:foundingRules")}
+              </Link>
             </ListItem>
           </List>
           <List className={styles.documentList}>
             <ListSubheader className={styles.listSubheading}>
-              Regulations
+              {t("officialDocuments:regulations")}
             </ListSubheader>
             <ListItem>
-              <a href="" className={styles.documentLink}>
-                Guidelines 2020
-              </a>
+              <Link
+                href="https://julkaisut.satakuntalainenosakunta.fi/saannot/osakunta/ohjesaannot-2020.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.documentLink}
+              >
+                {t("officialDocuments:regulations")} 2020
+              </Link>
             </ListItem>
             <ListSubheader className={styles.listSubheading}>
-              Old Regulations
+              {t("officialDocuments:oldRegulations")}
             </ListSubheader>
             <ListItem>
-              <a href="" className={styles.documentLink}>
-                Guidelines 2019
-              </a>
+              <Link
+                href="https://julkaisut.satakuntalainenosakunta.fi/saannot/osakunta/ohjesaannot-2019.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.documentLink}
+              >
+                {t("officialDocuments:regulations")} 2019
+              </Link>
             </ListItem>
             <ListItem>
-              <a href="" className={styles.documentLink}>
-                Guidelines 2017
-              </a>
+              <Link
+                href="https://julkaisut.satakuntalainenosakunta.fi/saannot/osakunta/ohjesaannot-2017.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.documentLink}
+              >
+                {t("officialDocuments:regulations")} 2017
+              </Link>
             </ListItem>
             <ListItem>
-              <a href="" className={styles.documentLink}>
-                Guidelines 2016
-              </a>
+              <Link
+                href="https://julkaisut.satakuntalainenosakunta.fi/saannot/osakunta/ohjesaannot-2016.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.documentLink}
+              >
+                {t("officialDocuments:regulations")} 2016
+              </Link>
             </ListItem>
             <ListItem>
-              <a href="" className={styles.documentLink}>
-                Guidelines 2011
-              </a>
+              <Link
+                href="https://julkaisut.satakuntalainenosakunta.fi/saannot/osakunta/ohjesaannot-2011.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.documentLink}
+              >
+                {t("officialDocuments:regulations")} 2011
+              </Link>
             </ListItem>
           </List>
           <List className={styles.documentList}>
             <ListSubheader className={styles.listSubheading}>
-              Other Documents
+              {t("officialDocuments:otherDocuments")}
             </ListSubheader>
             <ListItem>
-              <a href="" className={styles.documentLink}>
-                Equality Plan
-              </a>
+              <Link
+                href="https://docs.google.com/document/d/1D94Hq5XUv9kuaMXqhn_thZ9vZ7pAF-pdJbfBQY-1MU4/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.documentLink}
+              >
+                {t("officialDocuments:equalityPlan")}
+              </Link>
             </ListItem>
             <ListItem>
-              <a href="" className={styles.documentLink}>
-                SatO Safe Space
-              </a>
+              <Link
+                href="https://drive.google.com/file/d/1v5dg71ixbbA42C_50K9QkhX_6uJrEuKb/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.documentLink}
+              >
+                {t("officialDocuments:safeSpace")}
+              </Link>
             </ListItem>
             <ListItem>
-              <a href="" className={styles.documentLink}>
-                Environmental plan
-              </a>
+              <Link
+                href="https://drive.google.com/file/d/1rFmPPeN6MXN4wLsD9hNqloqrIrybk7FE/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.documentLink}
+              >
+                {t("officialDocuments:environment")}
+              </Link>
             </ListItem>
             <ListSubheader className={styles.listSubheading}>
-              Dormitory
+              {t("officialDocuments:dormitoryTitle")}
             </ListSubheader>
             <ListItem>
-              <a href="" className={styles.documentLink}>
-                Dormitory Regulations
-              </a>
+              <Link
+                href="https://julkaisut.satakuntalainenosakunta.fi/saannot/saatio/asuntoloiden-ohjesaanto.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.documentLink}
+              >
+                {t("officialDocuments:dormitoryText")}
+              </Link>
             </ListItem>
           </List>
         </section>
         <section className={styles.externalRef}>
           <p className={styles.archiveRedirect}>
             Looking for the Satakunta series or Maila Talvio&apos;s collected
-            works? You can now find them on the
-            <Link href="archive" className={styles.documentLink}>
-              {" "}
+            works? You can now find them on the{" "}
+            <Link href="/archive" className={styles.documentLink}>
               Archive
             </Link>{" "}
             page!

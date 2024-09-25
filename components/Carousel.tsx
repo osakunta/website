@@ -1,9 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from "react";
-import Link from "next/link";
+import useTranslate from "@/hooks/useTranslate";
 import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect } from "react";
 import { NextButton, PrevButton, usePrevNextButtons } from "./CarouselArrows";
 
 type PropType = {
@@ -36,6 +37,7 @@ const setOpacity = (emblaApi: EmblaCarouselType) => {
 
 const Carousel: React.FC<PropType> = ({ slides, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
+  const t = useTranslate();
 
   const {
     prevBtnDisabled,
@@ -77,7 +79,7 @@ const Carousel: React.FC<PropType> = ({ slides, options }) => {
         <div className="embla__buttons">
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- Placeholder href */}
           <Link href="" className="embla__link">
-            Katso Lisää
+            {t("general:seeMore")}
           </Link>
         </div>
       </div>
