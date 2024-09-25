@@ -80,15 +80,6 @@
   color: var(--blue300);
 }
 
-.news {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 70%;
-  margin: 5rem 0 5rem 0;
-}
-
 .cardContainer {
   display: flex;
   flex-direction: row;
@@ -269,7 +260,8 @@
   .news,
   .sectionContainer,
   .carouselContainer,
-  .contactSectionContainer {
+  .contactSectionContainer,
+  .livingArticle {
     width: 90%;
   }
 
