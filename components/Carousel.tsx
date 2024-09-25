@@ -21,7 +21,12 @@ const wrappedDistance = (a: number, b: number) => {
   return Math.min(bigger - smaller, 1 + smaller - bigger);
 };
 
+let lastSetOpacity = 0;
+
 const setOpacity = (emblaApi: EmblaCarouselType) => {
+  const now = Date.now();
+  if (now - lastSetOpacity < 16) return;
+  lastSetOpacity = now;
   const slideNodes = emblaApi.slideNodes();
 
   const currentPosition = emblaApi.scrollProgress();
