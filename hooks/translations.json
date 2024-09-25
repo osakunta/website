@@ -89,7 +89,7 @@
     "sv": "Trakasserianmälan\t"
   },
   "homepage:heroSectionText": {
-    "fi": "Ystävia, tapahtumia ja koti kampissa",
+    "fi": "Ystäviä, tapahtumia ja koti kampissa",
     "en": "Friends, events and a home in Kamppi",
     "sv": "Vänner, evengemang och hem i kampen"
   },
@@ -189,7 +189,7 @@
   },
   "nav:home": { "fi": "Etusivu", "en": "Home", "sv": "Framsida" },
   "nav:karhunkierros": {
-    "fi": "Karhunkierros Lehti",
+    "fi": "Osakuntalehti Karhunkierros",
     "en": "Karhunkierros Magazine",
     "sv": "Karhunkierros Tidningen"
   },

@@ -7,7 +7,7 @@ import { Button } from "@mui/material";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import arrowWhite from "../public/arrow_forward_white.svg";
+import Link from "next/link";
 import Placeholder from "../public/Placeholder_1.png";
 
 export const getStaticProps: GetStaticProps<NationInfoPageProps> = async () => {
@@ -55,10 +55,11 @@ export default function NationInfo({ navBar }: NationInfoPageProps) {
               <h2 className={styles.h2}>{t("nationInfo:whatWeDoTitle")}</h2>
               <p>{t("nationInfo:whatWeDoDescription")}</p>
               <br />
-              <Button variant="contained" className="button darkBlue">
-                Tapahtumakalenteri
-                <Image src={arrowWhite} alt="arrow forward" />
-              </Button>
+              <Link href="/calendar">
+                <Button variant="contained" className="button darkBlue">
+                  Tapahtumakalenteri
+                </Button>
+              </Link>
             </span>
             <div className={styles.imageContainer}>
               <Image
