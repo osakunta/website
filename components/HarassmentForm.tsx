@@ -47,7 +47,7 @@ const HarassmentForm = () => {
   const [buttonText, setButtonText] = useState("Submit");
   const [buttonDisabled, setButtonDisabled] = useState(false);
   // For development only, disable or delete for prod
-  const corsProxy: string = "https://cors-anywhere.herokuapp.com/";
+  // const corsProxy: string = "https://cors-anywhere.herokuapp.com/";
 
   const handleSnackbarClose = () => {
     setSnackbarOpen(false);
@@ -89,7 +89,8 @@ const HarassmentForm = () => {
           formData.append("entry.200517309", values.name); // Example ID for 'name'
           formData.append("entry.1828602041", values.email); // Example ID for 'email'
 
-          fetch(`${corsProxy + process.env.NEXT_PUBLIC_HARASSMENT_FORM_URL}`, {
+          // Add corsProxy + to this for development
+          fetch(`${process.env.NEXT_PUBLIC_HARASSMENT_FORM_URL}`, {
             method: "POST",
             body: formData,
           })
