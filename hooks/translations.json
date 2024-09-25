@@ -59,9 +59,9 @@
     "sv": "Sport"
   },
   "homepage:contactBoardDescription": {
-    "fi": "Voit ottaa yhteyttä osakunnan hallitukseen sähköpostitse osoitteella hallitus@satakuntatalo.fi tai alla olevalla lomakkeella. Halutessasi tavoittaa tietyn virkailijan, virkailijoiden yhteystiedot löytyvät \"Ota yhteyttä\" sivulta.\t ",
-    "en": "You can contact the board by sending an email to hallitus@satakuntatalo.fi or by filling out the form. If you need to get in touch with a specific official you can find their contact info on the \"Contact us\" page.\t \t \t \t",
-    "sv": "Du kan kontakta styrelsen via e-post på addressen hallitus@satakuntatalo.fi eller via formuläret. Du kan även kontakta specifika funktionärer, vars kontaktuppgifter hittas på \"Ta kontakt\" sidan.\t \t \t \t"
+    "fi": "Voit ottaa yhteyttä osakunnan hallitukseen sähköpostitse osoitteella hallitus(a)satakuntatalo.fi tai alla olevalla lomakkeella. Halutessasi tavoittaa tietyn virkailijan, virkailijoiden yhteystiedot löytyvät \"Ota yhteyttä\" sivulta.\t ",
+    "en": "You can contact the board by sending an email to hallitus(a)satakuntatalo.fi or by filling out the form. If you need to get in touch with a specific official you can find their contact info on the \"Contact us\" page.\t \t \t \t",
+    "sv": "Du kan kontakta styrelsen via e-post på addressen hallitus(a)satakuntatalo.fi eller via formuläret. Du kan även kontakta specifika funktionärer, vars kontaktuppgifter hittas på \"Ta kontakt\" sidan.\t \t \t \t"
   },
   "homepage:contactBoardHeader": {
     "fi": "Postia hallitukselle",
