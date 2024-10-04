@@ -12,8 +12,7 @@
     "format": "prettier . --write",
     "test:watch": "vitest",
     "test": "vitest run",
-    "fetchTranslations": "tsx fetchTranslations.ts && prettier hooks/translations.json --write",
-    "prepare": "husky && npm run fetchTranslations"
+    "prepare": "husky"
   },
   "dependencies": {
     "@directus/sdk": "^17.0.0",

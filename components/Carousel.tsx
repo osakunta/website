@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import useTranslate from "@/hooks/useTranslate";
 import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
+import { useTranslate } from "@/hooks/TranslationContext";
 import { NextButton, PrevButton, usePrevNextButtons } from "./CarouselArrows";
 
 type PropType = {

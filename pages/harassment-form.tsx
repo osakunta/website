@@ -1,16 +1,13 @@
 import HarassmentForm from "@/components/HarassmentForm";
 import Navbar, { NavbarProps } from "@/components/Navbar";
 import createClient from "@/lib/cmsClient";
+import withTranslations from "@/lib/withTranslations";
 import styles from "@/styles/harassmentForm.module.css";
-import { readItems } from "@directus/sdk";
-import { GetStaticProps } from "next";
 import Head from "next/head";
 
-export const getStaticProps: GetStaticProps<
-  HarassmentFormPageProps
-> = async () => {
+export const getStaticProps = async () => {
   const client = createClient();
-  const links = await client.request(readItems("NavigationLink"));
+  const links = await client.getCollection("NavigationLink");
   return {
     props: {
       navBar: {
@@ -24,7 +21,7 @@ type HarassmentFormPageProps = {
   navBar: NavbarProps;
 };
 
-export default function News({ navBar }: HarassmentFormPageProps) {
+function HarassmentFormPage({ navBar }: HarassmentFormPageProps) {
   return (
     <>
       <Head>
@@ -53,3 +50,5 @@ export default function News({ navBar }: HarassmentFormPageProps) {
     </>
   );
 }
+
+export default withTranslations(HarassmentFormPage);

@@ -1,16 +1,25 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { render, renderHook } from "@testing-library/react";
-import useTranslate from "./useTranslate";
 import { Language, LanguageContext } from "../lib/LanguageContext";
+import { TranslationProvider, useTranslate } from "./TranslationContext";
 
 describe("useTranslate", () => {
   const wrapper =
     (language: Language) =>
-    // eslint-disable-next-line react/display-name
     ({ children }: any) => (
       <LanguageContext.Provider value={{ language, setLanguage: () => {} }}>
-        {" "}
-        {children}{" "}
+        <TranslationProvider
+          translations={[
+            {
+              key: "general:nation",
+              en: "Satakunta Nation",
+              fi: "Satakuntalainen Osakunta",
+              sv: "Satakunta Nation",
+            },
+          ]}
+        >
+          {children}
+        </TranslationProvider>
       </LanguageContext.Provider>
     );
 
@@ -40,17 +49,18 @@ describe("useTranslate", () => {
   });
 
   it("fails gracefully if LanguageContext is not provided", () => {
+    vi.spyOn(console, "error").mockImplementation(() => {});
     const Component = () => {
       const t = useTranslate();
       return <div>{t("general:nation")}</div>;
     };
 
-    expect(() => render(<Component></Component>)).toThrow();
+    expect(() => render(<Component />)).toThrow();
   });
 
   it("fails gracefully with a wrong key", () => {
     const t = renderUseTranslate("fi");
 
-    expect(() => t("hello" as any)).toThrow();
+    expect(() => t("hello" as any)).toThrow("Could not find translation hello");
   });
 });

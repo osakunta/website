@@ -2,13 +2,12 @@ import Navbar, { NavbarProps } from "@/components/Navbar";
 import NewsCard from "@/components/NewsCard";
 import createClient from "@/lib/cmsClient";
 import styles from "@/styles/news.module.css";
-import { readItems } from "@directus/sdk";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 
 export const getStaticProps: GetStaticProps<NewsPageProps> = async () => {
   const client = createClient();
-  const links = await client.request(readItems("NavigationLink"));
+  const links = await client.getCollection("NavigationLink");
   return {
     props: {
       navBar: {

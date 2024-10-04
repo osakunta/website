@@ -1,5 +1,4 @@
 import { Contact } from "@/lib/cmsClient";
-import useTranslate from "@/hooks/useTranslate";
 import {
   TableContainer,
   Table,
@@ -12,6 +11,7 @@ import {
 } from "@mui/material";
 import styles from "@/styles/contactTable.module.css";
 import { useMemo, useState } from "react";
+import { useTranslate } from "@/hooks/TranslationContext";
 
 export type ContactTableProps = {
   contactData: Contact[];
