@@ -2,13 +2,12 @@ import HorizontalCard from "@/components/HorizontalCard";
 import Navbar, { NavbarProps } from "@/components/Navbar";
 import createClient from "@/lib/cmsClient";
 import styles from "@/styles/archive.module.css";
-import { readItems } from "@directus/sdk";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 
 export const getStaticProps: GetStaticProps<ArchivePageProps> = async () => {
   const client = createClient();
-  const links = await client.request(readItems("NavigationLink"));
+  const links = await client.getCollection("NavigationLink");
   return {
     props: {
       navBar: {

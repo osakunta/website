@@ -39,7 +39,7 @@ export const useLanguage = () => {
   const ctx = useContext(LanguageContext);
 
   if (ctx === null) {
-    throw new Error("could not find LanguageContext");
+    throw new Error("useLanguage failed, make sure LanguageProvider is set");
   }
 
   return ctx;

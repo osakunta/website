@@ -16,8 +16,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import useTranslate from "@/hooks/useTranslate";
 import { NavigationLink } from "@/lib/cmsClient";
+import { useTranslate } from "@/hooks/TranslationContext";
 import close from "../public/close.svg";
 import menu from "../public/menu.svg";
 

@@ -1,35 +1,31 @@
 /* eslint-disable jsx-a11y/anchor-is-valid -- Disable because of a lot of placeholder hrefs */
 import Navbar, { NavbarProps } from "@/components/Navbar";
-import useTranslate from "@/hooks/useTranslate";
+import { useTranslate } from "@/hooks/TranslationContext";
 import createClient from "@/lib/cmsClient";
+import withTranslations from "@/lib/withTranslations";
 import styles from "@/styles/official-documents.module.css";
-import { readItems } from "@directus/sdk";
 import { List, ListItem, ListSubheader } from "@mui/material";
-import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 
-export const getStaticProps: GetStaticProps<
-  OfficialDocumentsPageProps
-> = async () => {
+export const getStaticProps = async () => {
   const client = createClient();
-  const links = await client.request(readItems("NavigationLink"));
+  const links = await client.getCollection("NavigationLink");
+  const translations = await client.getCollection("Translation");
   return {
     props: {
       navBar: {
         links,
       },
+      translations,
     },
   };
 };
 
-type OfficialDocumentsPageProps = {
+type OfficialDocumentsProps = {
   navBar: NavbarProps;
 };
-
-export default function OfficialDocuments({
-  navBar,
-}: OfficialDocumentsPageProps) {
+function OfficialDocuments({ navBar }: OfficialDocumentsProps) {
   const t = useTranslate();
 
   return (
@@ -223,3 +219,5 @@ export default function OfficialDocuments({
     </>
   );
 }
+
+export default withTranslations(OfficialDocuments);

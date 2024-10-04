@@ -1,32 +1,33 @@
 import Navbar, { NavbarProps } from "@/components/Navbar";
-import useTranslate from "@/hooks/useTranslate";
-import createClient from "@/lib/cmsClient";
 import styles from "@/styles/nation-info.module.css";
-import { readItems } from "@directus/sdk";
 import { Button } from "@mui/material";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { TranslationProvider, useTranslate } from "@/hooks/TranslationContext";
+import createClient, { Translation } from "@/lib/cmsClient";
 import Placeholder from "../public/Placeholder_1.png";
 
 export const getStaticProps: GetStaticProps<NationInfoPageProps> = async () => {
   const client = createClient();
-  const links = await client.request(readItems("NavigationLink"));
+  const links = await client.getCollection("NavigationLink");
+  const translations = await client.getCollection("Translation");
   return {
     props: {
       navBar: {
         links,
       },
+      translations,
     },
   };
 };
 
-type NationInfoPageProps = {
+type NationInfoContentProps = {
   navBar: NavbarProps;
 };
 
-export default function NationInfo({ navBar }: NationInfoPageProps) {
+const NationInfoContent = ({ navBar }: NationInfoContentProps) => {
   const t = useTranslate();
 
   return (
@@ -91,5 +92,21 @@ export default function NationInfo({ navBar }: NationInfoPageProps) {
         <footer className="footer" />
       </main>
     </>
+  );
+};
+
+type NationInfoPageProps = {
+  navBar: NavbarProps;
+  translations: Translation[];
+};
+
+export default function NationInfo({
+  navBar,
+  translations,
+}: NationInfoPageProps) {
+  return (
+    <TranslationProvider translations={translations}>
+      <NationInfoContent navBar={navBar} />
+    </TranslationProvider>
   );
 }

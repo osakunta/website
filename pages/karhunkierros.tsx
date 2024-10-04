@@ -3,7 +3,6 @@ import Navbar, { NavbarProps } from "@/components/Navbar";
 import VerticalCard from "@/components/VerticalCard";
 import createClient from "@/lib/cmsClient";
 import styles from "@/styles/karhunkierros.module.css";
-import { readItems } from "@directus/sdk";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 
@@ -11,7 +10,7 @@ export const getStaticProps: GetStaticProps<
   KarhunkierrosPageProps
 > = async () => {
   const client = createClient();
-  const links = await client.request(readItems("NavigationLink"));
+  const links = await client.getCollection("NavigationLink");
   return {
     props: {
       navBar: {

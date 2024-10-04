@@ -3,17 +3,16 @@ import Carousel from "@/components/Carousel";
 import Navbar, { NavbarProps } from "@/components/Navbar";
 import VerticalCard from "@/components/VerticalCard";
 import WeekCalendar from "@/components/WeekCalendar";
-import useTranslate from "@/hooks/useTranslate";
-import createClient from "@/lib/cmsClient";
+import createClient, { Translation } from "@/lib/cmsClient";
 import { useLanguage } from "@/lib/LanguageContext";
 import styles from "@/styles/Home.module.css";
-import { readItems } from "@directus/sdk";
 import { Button } from "@mui/material";
 import { EmblaOptionsType } from "embla-carousel";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { TranslationProvider, useTranslate } from "@/hooks/TranslationContext";
 import aino from "../public/aino.png";
 import cAside from "../public/contact-aside.png";
 
@@ -23,9 +22,11 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
   const client = createClient();
-  const links = await client.request(readItems("NavigationLink"));
+  const translations = await client.getCollection("Translation");
+  const links = await client.getCollection("NavigationLink");
   return {
     props: {
+      translations,
       navBar: {
         links,
       },
@@ -33,13 +34,13 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
   };
 };
 
-type HomePageProps = {
+type HomeContentProps = {
   navBar: NavbarProps;
 };
 
-export default function Home({ navBar }: HomePageProps) {
-  const t = useTranslate();
+const HomeContent = ({ navBar }: HomeContentProps) => {
   const { language } = useLanguage();
+  const t = useTranslate();
   return (
     <>
       <Head>
@@ -187,5 +188,17 @@ export default function Home({ navBar }: HomePageProps) {
         <section />
       </main>
     </>
+  );
+};
+
+type HomePageProps = HomeContentProps & {
+  translations: Translation[];
+};
+
+export default function Home({ navBar, translations }: HomePageProps) {
+  return (
+    <TranslationProvider translations={translations}>
+      <HomeContent navBar={navBar} />
+    </TranslationProvider>
   );
 }

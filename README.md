@@ -17,6 +17,16 @@
 
 A file `translations.json` is downloaded from the CMS every time you run a command. This allows Typescript to use it's type data for autocompleting and build-time verifying translation keys.
 
+## CMS cache
+
+On the first run, the project fetches data from the CMS. This data is stored in `.cache`, which is used for subsequent fetches. The cache TTL is 1 hour.
+When the `Translation` collection is fetched, a type file is also generated in the cache directory, which holds the type of the translation keys. If the type file does not exist, the translation key type is inferred as `string`. For example
+
+```
+const t = useTranslate();
+const string = t("doesnt:exist"); // does not fail if there is no type file in the cache
+```
+
 ## License
 
 This project contains both code and content. The code of the website is licensed under GPLv3. By content we mean text, image, logos or designs specific to the Satakunta Nation. The content is proprietary. In other words, you can freely use the technical implementation (code, config files) of this website for your purposes, but make your own content.
