@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "label_key": "contact:verkkovastaava",
+      "first_name": "Stephen",
+      "last_name": "Swanson",
+      "contact": "verkkovastaava(a)satakuntatalo.fi",
+      "id": 12
+    },
+    {
+      "label_key": "contact:verkkovastaava",
+      "first_name": "Elma",
+      "last_name": "Nevala",
+      "contact": "verkkovastaava(a)satakuntatalo.fi",
+      "id": 13
+    },
+    {
+      "label_key": "contect:inspehtori",
+      "first_name": "FT Jari",
+      "last_name": " Yli-Kauhaluoma",
+      "contact": "inspehtori(a)satakuntatalo.fi",
+      "id": 14
+    },
+    {
+      "label_key": "contact:kuraattori",
+      "first_name": "Maria",
+      "last_name": "Djakonowsky",
+      "contact": "kuraattori(a)satakuntatalo.fi",
+      "id": 15
+    },
+    {
+      "label_key": "contact:hallitus",
+      "first_name": null,
+      "last_name": null,
+      "contact": "hallitus(a)satakuntatalo.fi",
+      "id": 16
+    }
+  ],
+  "expires": 1728049741605
+}

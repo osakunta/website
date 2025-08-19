@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: osakunta/website
+  branch: cms
+media_folder: public/uploads
+public_folder: /uploads
+
+i18n:
+  structure: single_file
+  locales: [fi, sv, en]
+  default_locale: fi
+
+collections:
+  - name: "text"
+    label: "Text"
+    folder: "cms/text"
+    i18n: true
+    create: true
+    delete: false
+    extension: json
+    identifier_field: key
+    fields:
+      - name: key
+        label: "Key"
+        widget: string
+      - name: content
+        label: "Content"
+        widget: text
+        i18n: true

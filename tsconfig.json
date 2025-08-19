@@ -14,7 +14,8 @@
     "incremental": true,
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    "target": "ES2017"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "fetchTranslations.mjs"],
   "exclude": ["node_modules"]
