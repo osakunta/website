@@ -1,12 +1,6 @@
 {
-  "fi": {
-    "key": "general:nation",
-    "content": "Satakuntalainen Osakunta"
-  },
-  "sv": {
-    "content": "Satakunta Nation"
-  },
-  "en": {
-    "content": "Satakunta Nation"
-  }
+  "key": "general:nation",
+  "fi": "Satakuntalainen Osakunta",
+  "sv": "Satakunta Nation",
+  "en": "Satakunta Nation"
 }
