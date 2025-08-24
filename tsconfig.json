@@ -17,6 +17,12 @@
     },
     "target": "ES2017"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "fetchTranslations.mjs"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.d.ts",
+    "**/*.tsx",
+    "fetchTranslations.mjs"
+  ],
   "exclude": ["node_modules"]
 }

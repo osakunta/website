@@ -2,19 +2,16 @@ backend:
   name: github
   repo: osakunta/website
   branch: cms
+  api_root: http://localhost:3000/api/github/proxy
+  base_url: http://localhost:3000
+  auth_endpoint: /api/github/auth
+  token_keyword: Bearer
 media_folder: public/uploads
 public_folder: /uploads
-
-i18n:
-  structure: single_file
-  locales: [fi, sv, en]
-  default_locale: fi
-
 collections:
   - name: "text"
     label: "Text"
     folder: "cms/text"
-    i18n: true
     create: true
     delete: false
     extension: json
@@ -23,7 +20,12 @@ collections:
       - name: key
         label: "Key"
         widget: string
-      - name: content
-        label: "Content"
+      - name: fi
+        label: "Finnish"
         widget: text
-        i18n: true
+      - name: sv
+        label: "Swedish"
+        widget: text
+      - name: en
+        label: "English"
+        widget: text

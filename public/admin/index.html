@@ -9,5 +9,16 @@
   <body>
     <!-- Include the script that builds the page and powers Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      // Dirty hack to customize GitHub backends tokenKeyword
+      // By default it is "token", but @fastify/jwt uses "Bearer"
+      const oldInit = CMS.getBackend("github").init;
+      const newInit = (...args) => {
+        const backendInstance = oldInit(...args);
+        backendInstance.tokenKeyword = "Bearer";
+        return backendInstance;
+      };
+      CMS.getBackend("github").init = newInit;
+    </script>
   </body>
 </html>

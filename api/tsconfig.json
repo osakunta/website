@@ -1,0 +1,9 @@
+{
+  "extends": "../tsconfig.json",
+  "include": ["src/index.ts", "src/index.d.ts"],
+  "compilerOptions": {
+    "incremental": false,
+    "noEmit": false,
+    "outDir": "dist"
+  }
+}
